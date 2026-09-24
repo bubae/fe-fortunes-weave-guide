@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전투 전략 — 파이어 엠블렘 만자천홍 하드/클래식</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.conf.nodata { background: var(--white); color: var(--red-600); border: 1px dashed var(--red-600); }
+tr.nodata-row td { background: #fdf2f4; }
+.chk { font-weight: 700; color: var(--green-700); }
+.card code, td code { font-size: .85em; background: var(--slate-100); padding: 0 .3em; border-radius: 4px; }
+section > h3[id] { scroll-margin-top: 4rem; }
+.card[id], .tip[id] { scroll-margin-top: 4rem; }
+.tip h3 { font-size: 1.1rem; font-weight: 800; color: var(--green-900); margin-bottom: .6rem; }
+.tip ol, .tip ul, .warning ul { padding-left: 1.3rem; }
+.tip li { margin-bottom: .35rem; }
+.card ol ul, .card ul ul, .card ul ol { margin-top: .3rem; }
+td ul, td ol { padding-left: 1.1rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-badge">전투 전략</div>
+  <h1>하드 / 클래식 전투 전략</h1>
+  <p class="subtitle">파이어 엠블렘 만자천홍 — 천각·가호 운용, 디트리히 / 레다 1부 장별 공략, 2부 공통 맵, 3부 최종전</p>
+  <p class="asof">자료 기준일 2026-09-24 · 하드 / 클래식</p>
+</header>
+
+<nav class="nav-bar">
+  <a href="index.html">허브</a>
+  <a href="build_guide.html">육성</a>
+  <a href="progression.html">진행</a>
+  <a href="combat.html" class="active">전투</a>
+  <a href="sources.html">출처·신뢰도</a>
+  <a href="#about">안내</a>
+  <a href="#core">핵심 원칙</a>
+  <a href="#s0">0 시스템</a>
+  <a href="#s1">1 하드 원칙</a>
+  <a href="#s1_7">사망 방지</a>
+  <a href="#s2">2 기본 운용</a>
+  <a href="#s3">3 유닛 운용</a>
+  <a href="#s4">4 디트리히</a>
+  <a href="#s5">5 레다</a>
+  <a href="#s6">6 2부 공통</a>
+  <a href="#s7">7 3부</a>
+  <a href="#s8">8 상황별 대응</a>
+  <a href="#s9">9 난관 요약</a>
+  <a href="#s10">10 체크리스트</a>
+  <a href="#s11">11 자료 공백</a>
+</nav>
+
+<div class="container">
+
+<section id="about">
+<h2>문서 안내</h2>
+<div class="card card-blue">
+<ul><li><strong>자료 기준일</strong>: 2026-09-24 (발매 7일 차, 3중 검증 모드 2단계 산출물)</li><li><strong>근거 문서</strong>: <code>01c_fact_check.md</code>(통합 주장 C-001~C-150, 최우선 근거) → <code>01_game_research.md</code> → <code>01a/01b</code> 본문 → <code>02_build_guide.md</code>(유닛·병종·역할 전제)</li><li><strong>스포일러</strong>: 2부·3부 보스와 합류 조건 전부 포함</li><li><strong>전제 빌드</strong>: 디트리히 루트 = "디트리히 캐리 + 막타 몰아주기 + 에스메랄다/미카엘라 2탱 + 양계·피아나 2힐" / 레다 루트 = "레다 버프·재행동 + 무우·시로코·그자람·올림피아 딜 + 에스메랄다/버커니어 탱 + 피아나·소피아 2힐" (02_build_guide 2-5, 3-7)</li></ul>
+</div>
+<h3>근거 표기 규칙</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>표기</th><th>뜻</th></tr></thead><tbody>
+<tr><td><a class="conf conf-verified" href="sources.html">✅ C-xxx</a> <a class="conf conf-multi" href="sources.html">🔵 C-xxx</a> <a class="conf conf-single" href="sources.html">🟡 C-xxx</a></td><td>01c 등급 그대로 (3곳 이상 / 2곳 / 단일·의견). 배지를 누르면 출처·신뢰도 페이지의 해당 주장으로 이동</td></tr>
+<tr><td><span class="conf conf-guess">⚪ 01b 본문</span> <span class="conf conf-guess">⚪ 01a 본문</span></td><td>조사 본문에는 있으나 01c에서 ID를 받지 못한 정보. <strong>추정 공략 취급</strong></td></tr>
+<tr><td><span class="conf conf-guess">⚪ 설계 판단</span></td><td>이 문서 작성자의 전술 판단. FE 시리즈 일반론 또는 위 사실들의 조합</td></tr>
+<tr><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>해당 장의 맵·보스 자료를 찾지 못함. 지어내지 않고 빈칸으로 둔다</td></tr>
+</tbody></table></div>
+<div class="warning"><strong>데이터 충분도 경고</strong>: 1부 장별 맵 공략은 "고비 장의 기믹 한 줄" 수준이고, 2부는 장 제목·기믹 요약 수준, 3부는 최종전 정보 몇 줄뿐이다. 보스 스탯·패턴 타임라인·증원 턴 수치는 <strong>어느 장도 확보되지 않았다.</strong> 아래의 페이즈 표는 확인된 기믹을 뼈대로, 나머지는 <span class="conf conf-guess">⚪ 추정</span>로 채운 "추정 공략"이다.</div>
+</section>
+
+<section id="core">
+<h2>하드 / 클래식 핵심 원칙</h2>
+<div class="stat-row">
+<div class="stat-box"><div class="stat-value">5</div><div class="stat-label">천각 1회 백사 (하드)</div></div>
+<div class="stat-box"><div class="stat-value">10</div><div class="stat-label">백사 비상금 하한 (천각 2회분)</div></div>
+<div class="stat-box"><div class="stat-value">20</div><div class="stat-label">아우로라 하드 비용</div></div>
+<div class="stat-box"><div class="stat-value">40</div><div class="stat-label">칼라 하드 비용 (천각 8회분)</div></div>
+</div>
+<div class="compare-grid">
+<div class="card card-gold"><h3>천각 · 백사 비상금 10</h3><ul>
+<li>천각은 <strong>"사망 사고 되돌리기" 전용 보험</strong>이다 <a class="conf conf-verified" href="sources.html#C-006">✅ C-006</a> <a class="conf conf-verified" href="sources.html#C-002">✅ C-002</a></li><li>하드 1회 <strong>백사 5</strong>, 백사는 장마다 다시 가득 찬다 <a class="conf conf-verified" href="sources.html#C-006">✅ C-006</a> <a class="conf conf-verified" href="sources.html#C-007">✅ C-007</a></li><li><strong>비상금 하한</strong>: 어떤 가호를 쓰든 천각 2회분(백사 10)은 남긴다 <span class="conf conf-guess">⚪ 설계 판단</span></li><li>하드 백사 최대치는 <span class="conf conf-guess nodata">〔자료 없음〕</span> (추정 약 100 <span class="conf conf-guess">⚪ 추정</span>)</li></ul>
+<p><a href="#s1_2">→ 1-2 천각 사용 정책 T1~T8</a></p></div>
+<div class="card card-green"><h3>가호 비용</h3><ul>
+<li>포르투나 5 · 주라 15 · <strong>아우로라 20</strong> · 크레르 20 · 마스 30 · 스미르노스 30 · <strong>칼라 40</strong> <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a></li><li>하드 비용은 KeenGamer 한 곳의 표 → <strong>인게임에서 반드시 다시 확인</strong> <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a>. 하드는 비용 상승 <a class="conf conf-multi" href="sources.html#C-009">🔵 C-009</a></li><li>포르투나 외 턴당 1회·중첩 불가 <a class="conf conf-single" href="sources.html#C-011">🟡 C-011</a></li><li><strong>아우로라 1순위</strong>(적 페이즈 직전), <strong>칼라는 비상용</strong> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> <span class="conf conf-guess">⚪ 설계 판단</span></li></ul>
+<p><a href="#s1_3">→ 1-3 가호 운용 G1~G5</a></p></div>
+<div class="card card-red"><h3>블레이즈 아츠 버스트</h3><ul>
+<li>50% 오버 블레이즈, 100% 버스트. <strong>명부형(카이·디트리히·세오도라·레다 등)은 버스트 때 최대 HP가 줄어든다</strong> <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a></li><li><strong>게이지 100% 직전에서 멈춘다.</strong> 버스트는 보스 막타·탈출처럼 "이번 턴에 끝내는" 경우에만 <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a> <span class="conf conf-guess">⚪ 추정</span></li><li>최대 HP 감소의 지속 기간은 <span class="conf conf-guess nodata">〔자료 없음〕</span> → <strong>지속된다고 가정하고 관리</strong> <span class="conf conf-guess">⚪ 설계 판단</span></li></ul>
+<p><a href="#s1_4">→ 1-4 버스트 관리 B1~B5</a></p></div>
+<div class="card card-blue"><h3>내구도</h3><ul>
+<li><strong>일반 공격은 소모 없음, 전투 기술만 소모</strong> <a class="conf conf-verified" href="sources.html#C-136">✅ C-136</a></li><li>내구 0이면 위력·명중이 떨어지고 전투 기술을 못 쓴다. 대장간은 각 루트 6장부터 <a class="conf conf-single" href="sources.html#C-137">🟡 C-137</a></li><li>전투 기술은 <strong>확정 처치로 위협을 제거할 때</strong>만 <span class="conf conf-guess">⚪ 설계 판단</span></li></ul>
+<p><a href="#s1_5">→ 1-5 내구도 운용</a></p></div>
+</div>
+</section>
+
+<section id="s0">
+<h2>0. 전투 시스템 요약</h2>
+<div class="card">
+<ul><li><strong>전투 유형</strong>: 턴제 SRPG. 1부 본편 최대 출격은 게스트 제외 9명(장마다 다름), 2부 13명 <a class="conf conf-single" href="sources.html#C-028">🟡 C-028</a>, 월드맵 조우전 6명 <a class="conf conf-single" href="sources.html#C-027">🟡 C-027</a>, 3부 최종전 25명 <a class="conf conf-single" href="sources.html#C-053">🟡 C-053</a></li><li><strong>핵심 메커니즘</strong><ul><li>천각(되감기): 하드 1회 <strong>백사 5</strong>, 백사는 장마다 다시 가득 찬다 <a class="conf conf-verified" href="sources.html#C-006">✅ C-006</a> <a class="conf conf-verified" href="sources.html#C-007">✅ C-007</a></li><li>가호: 백사를 쓰는 전장 버프. 포르투나 외 턴당 1회·중첩 불가 <a class="conf conf-single" href="sources.html#C-011">🟡 C-011</a>. 하드는 비용 상승 <a class="conf conf-multi" href="sources.html#C-009">🔵 C-009</a></li><li>블레이즈 아츠: HP 소모 → 게이지, 50% 오버 블레이즈, 100% 버스트(명부형은 최대 HP 감소) <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a></li><li>내구도: <strong>일반 공격은 소모 없음, 전투 기술만 소모</strong> <a class="conf conf-verified" href="sources.html#C-136">✅ C-136</a></li><li>무기: 상성 없음. 검 추격 피해 1.2배, 창 기병 유효, 도끼 최소 피해 5 <a class="conf conf-single" href="sources.html#C-138">🟡 C-138</a>. 공속 +4 이상이면 추격, 특효 2배, 활→비병 3배 <a class="conf conf-single" href="sources.html#C-140">🟡 C-140</a>. 전투 기술을 써도 추격 가능 <a class="conf conf-single" href="sources.html#C-139">🟡 C-139</a></li><li>난수: 전투 난수는 필드 전체 공유, 공격 1회마다 소모 <a class="conf conf-single" href="sources.html#C-015">🟡 C-015</a>. <strong>레벨업은 고정 난수</strong>(되감아도 같다) <a class="conf conf-multi" href="sources.html#C-016">🔵 C-016</a></li></ul></li><li><strong>클래식 규칙</strong>: 쓰러진 유닛은 영구 이탈 <a class="conf conf-verified" href="sources.html#C-002">✅ C-002</a>. 로드가 쓰러지면 게임 오버(재시도)로 보는 것이 FE 규칙상 타당하다 <a class="conf conf-guess" href="sources.html#C-075">⚪ C-075</a></li><li><strong>되돌리기 수단 3가지</strong>: 천각 / 장 다시 시작하기(지원·위업록·파편은 유지 <a class="conf conf-single" href="sources.html#C-020">🟡 C-020</a>) / 방첨탑에서 장 재시작. 세이브 슬롯이 사실상 1개이고 자동 저장이 촘촘하다는 보고 <span class="conf conf-guess">⚪ 01a 본문</span></li></ul>
+</div>
+</section>
+
+<section id="s1">
+<h2>1. 하드 클래식 전투 원칙</h2>
+<div class="card " id="s1_1">
+<h3>1-1. 적 행동 범위 표시 (ZL)</h3>
+<ul><li>적 공격 범위 전체 표시 버튼이 무엇인지는 <strong>조사 자료에서 확인되지 않았다</strong> <span class="conf conf-guess nodata">〔자료 없음〕</span>. 요청서의 "ZL"은 시리즈 관례로 보이며, 인게임 조작 도움말에서 확인한다 <span class="conf conf-guess">⚪ 설계 판단</span>.</li><li>운용 규칙 <span class="conf conf-guess">⚪ 설계 판단</span>:<ol><li><strong>매 턴 시작 시</strong> 전체 범위를 켜고, "범위 밖 안전 칸"과 "1체만 닿는 칸"을 먼저 표시한다.</li><li>적 <strong>한 명씩</strong> 개별 범위를 켜서 활·마법(사거리 2 이상)·기병(이동 큼)·비병을 따로 본다. 비병은 활 3배 특효 대상이므로 반대로 궁수가 노출되는 순간이다 <a class="conf conf-single" href="sources.html#C-140">🟡 C-140</a>.</li><li>이동을 모두 끝낸 뒤 <strong>턴 종료 직전에 한 번 더</strong> 전체 범위를 켠다(1-7 체크리스트).</li><li>증원·포대는 범위 표시에 나오지 않을 수 있다. 2부 포대 한 방 위험 보고가 있으니 <a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a> 포대 사거리는 개별 선택으로 확인한다.</li></ol></li></ul>
+</div>
+<div class="card card-gold" id="s1_2">
+<h3>1-2. 천각(되감기) 사용 정책 — 하드 1회 백사 5</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>규칙</th><th>내용</th><th>근거</th></tr></thead><tbody>
+<tr><td>T1</td><td><strong>천각은 "사망 사고 되돌리기" 전용 보험</strong>이다. 명중 70% 재굴림 같은 효율 목적의 사용은 보험 잔고가 충분할 때만</td><td><a class="conf conf-verified" href="sources.html#C-006">✅ C-006</a> <a class="conf conf-verified" href="sources.html#C-002">✅ C-002</a></td></tr>
+<tr><td>T2</td><td>백사는 장마다 다시 찬다 → <strong>장 후반일수록 과감히 쓰고, 장 초반일수록 아낀다</strong></td><td><a class="conf conf-verified" href="sources.html#C-007">✅ C-007</a></td></tr>
+<tr><td>T3</td><td><strong>비상금 하한</strong>: 어떤 가호를 쓰든 천각 2회분(백사 10)은 남긴다. 하드 백사 최대치는 미확인</td><td><span class="conf conf-guess">⚪ 설계 판단</span> (최대치는 <span class="conf conf-guess nodata">〔자료 없음〕</span>)</td></tr>
+<tr><td>T4</td><td>천각으로 되돌리면 그 사이 가호에 쓴 백사도 돌려받는다는 보고 → "위험해 보이면 먼저 아우로라를 켜고, 결과가 나쁘면 천각" 순서가 싸다</td><td><a class="conf conf-single" href="sources.html#C-008">🟡 C-008</a> (단일 댓글, 인게임 확인 필요)</td></tr>
+<tr><td>T5</td><td>되감아도 <strong>레벨업 결과는 바뀌지 않는다.</strong> 스탯 재굴림 목적의 천각은 백사 낭비다</td><td><a class="conf conf-multi" href="sources.html#C-016">🔵 C-016</a></td></tr>
+<tr><td>T6</td><td>전투 난수는 공유·소모형이라, 되감은 뒤 <strong>행동 순서를 바꾸면</strong> 명중·필살 결과가 달라질 수 있다. 같은 순서 반복은 같은 결과를 부를 가능성이 있다</td><td><a class="conf conf-single" href="sources.html#C-015">🟡 C-015</a></td></tr>
+<tr><td>T7</td><td>백사가 바닥났는데 사망 → <strong>장 다시 시작하기</strong>가 최후 수단(지원·위업록·파편 유지)</td><td><a class="conf conf-single" href="sources.html#C-020">🟡 C-020</a></td></tr>
+<tr><td>T8</td><td>월드맵 조우전·칼날울림 교전도 같은 백사 풀을 쓰는지, 조우전에서도 영구 이탈이 적용되는지는 확인되지 않았다 → <strong>본 장 직전 조우전은 백사 잔고를 보고 결정</strong>, 조우전도 클래식 사망이 있다고 가정한다</td><td><span class="conf conf-guess">⚪ 설계 판단</span> <span class="conf conf-guess nodata">〔자료 없음〕</span></td></tr>
+</tbody></table></div>
+<ul><li>참고: KR 후기에 "모래를 아끼면 한 전투에서 천각 + 아우로라를 4번까지 쓸 수 있었다"가 있다 <span class="conf conf-guess">⚪ 01a 본문</span>. 하드 비용(5 + 20 = 25)으로 계산하면 백사 약 100 수준이라는 추정이 되지만 <strong>최대치는 확정 아님</strong> <span class="conf conf-guess">⚪ 추정</span>.</li></ul>
+</div>
+<div class="card card-green" id="s1_3">
+<h3>1-3. 가호 운용 — 아우로라 중심, 칼라는 비상용</h3>
+<p>하드 비용은 KeenGamer 한 곳의 표라서 <strong>인게임에서 반드시 다시 확인</strong>한다 <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a>.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>가호</th><th>하드 비용</th><th>효과 요약</th><th>이 공략에서의 쓰임</th><th>근거</th></tr></thead><tbody>
+<tr><td>포르투나</td><td>5</td><td>천각(되감기)</td><td>1-2 정책</td><td><a class="conf conf-verified" href="sources.html#C-006">✅ C-006</a></td></tr>
+<tr><td><strong>아우로라</strong></td><td>20</td><td>피해 절반(물리 → 단계에 따라 마법)</td><td><strong>1순위.</strong> 적 페이즈 직전에 켜는 "전멸 방지 버튼". 2부 전 2단계 이상</td><td><a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> / 비용 <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a> / 마법 확장 여부 <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td>주라</td><td>15</td><td>특효·추격·치명 무효화</td><td>보스 필살·특효 무기 대응(비병 유닛이 궁수에게 노출될 때, 필살 보스 앞)</td><td>비용 <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a>, 효과 <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td>크레르</td><td>20</td><td>시야 +5, 선제 계열</td><td>시야 제한(색적) 맵</td><td>비용 <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a>, 효과 <span class="conf conf-guess">⚪ 01b 본문</span>. 색적 맵 유용 <span class="conf conf-single">〔KR의견 C-013 메모〕</span></td></tr>
+<tr><td>마스</td><td>30</td><td>명중·격파 시 회복·힘</td><td>공격력 벽(레다 9~11장)을 넘을 때</td><td>비용 <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a>, 효과 <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td>스미르노스</td><td>30</td><td>마법 명중·사거리</td><td>마법 딜러 중심 턴(2부 5장 용 형태)</td><td>비용 <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a>, 효과 <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td><strong>칼라</strong></td><td><strong>40</strong></td><td>회피·이동</td><td><strong>비상 탈출·레버/스위치 도달용.</strong> 천각 8회분이므로 상시 사용 금지</td><td><a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a>. 하드에서 칼라 40 = 천각 8회분 <span class="conf conf-guess">⚪ 01_game_research 3장</span></td></tr>
+</tbody></table></div>
+<p>가호 규칙 <span class="conf conf-guess">⚪ 설계 판단</span> (<a class="conf conf-single" href="sources.html#C-011">🟡 C-011</a> 턴당 1회·중첩 불가를 전제):</p>
+<ul><li><strong>G1</strong>: 가호는 "플레이어 페이즈 마지막 행동 직후, 턴 종료 직전"에 켠다. 효과가 적 페이즈에 걸리는 것이 목적이다(지속 시간은 <span class="conf conf-guess nodata">〔자료 없음〕</span> — 1턴 지속으로 가정).</li><li><strong>G2</strong>: 턴당 1개뿐이므로 아우로라와 주라 중 하나를 고른다. <strong>다수 물리 적 → 아우로라 / 필살·특효 보스 1체 → 주라</strong>.</li><li><strong>G3</strong>: 칼라(40)는 ① 레버·스위치 마감 턴에 이동이 1~2칸 모자랄 때, ② 포위된 유닛을 빼낼 때만. 쓰기 전에 "천각 2회분이 남는가"를 본다(T3).</li><li><strong>G4</strong>: 가호를 쓰는 것이 하드 체감 난이도를 가른다는 국내 의견이 다수다 → 아끼다 사망하는 것보다 <strong>아우로라를 일찍 켜는 쪽</strong>이 백사 효율이 좋다 <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> <span class="conf conf-guess">⚪ 01a 본문</span>.</li><li><strong>G5</strong>: game8의 "아이언맨" 가호 추천(크레르·아우로라·주라)은 되감기를 아예 안 쓰는 기준이다. 클래식에서는 천각을 쓸 수 있으므로 그대로 따르지 않는다 <a class="conf conf-multi" href="sources.html#C-014">🔵 C-014</a>.</li></ul>
+</div>
+<div class="card card-red" id="s1_4">
+<h3>1-4. 블레이즈 아츠 버스트 관리 — 최대 HP 감소를 막는다</h3>
+<ul><li>블레이즈 아츠는 HP를 쓰고 게이지를 채운다. 50% 오버 블레이즈, 100% 버스트. <strong>명부형(카이·디트리히·세오도라·레다 등)은 버스트 때 최대 HP가 줄어든다</strong> <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a>.</li><li>명부형 게이지는 저주받은 보물로 오른다는 해외 설명이 있다 <span class="conf conf-guess">⚪ 01b 본문</span>. 최대 HP 감소가 장을 넘어 지속되는지는 <span class="conf conf-guess nodata">〔자료 없음〕</span> → <strong>지속된다고 가정하고 관리한다</strong> <span class="conf conf-guess">⚪ 설계 판단</span>.</li></ul>
+<div class="table-wrap"><table>
+<thead><tr><th>규칙</th><th>내용</th></tr></thead><tbody>
+<tr><td>B1</td><td>게이지 <strong>50% 이상(오버 블레이즈)</strong> 구간에서 로드를 적 사거리 안에 세울 때는, 다음 블레이즈 아츠로 100%를 넘기지 않는지 먼저 계산한다 <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>B2</td><td><strong>게이지 100% 직전에서 멈춘다.</strong> 버스트는 보스 막타·탈출처럼 "이번 턴에 끝내는" 경우에만 허용 <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>B3</td><td>블레이즈 아츠는 HP를 소모한다 → 사용 직후의 로드는 <strong>실제 HP가 낮아진 상태</strong>다. 사용 턴에는 적 페이즈 피해 예상치를 다시 계산하고, 필요하면 아우로라 <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a></td></tr>
+<tr><td>B4</td><td>버스트가 이미 났다면 해당 로드를 <strong>다음 적 페이즈에 반격 담당으로 쓰지 않는다</strong>(최대 HP가 줄어 한 방 라인이 내려온다) <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>B5</td><td>스토리 강제 버스트가 있다(세오도라 사례) <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a> → 로드의 HP 여유를 스탯 목표에 넉넉히 둔다 <span class="conf conf-guess">⚪ 추정</span></td></tr>
+</tbody></table></div>
+</div>
+<div class="card card-blue" id="s1_5">
+<h3>1-5. 내구도 — 전투 기술만 소모</h3>
+<ul><li>일반 공격은 공짜, <strong>전투 기술만 내구도를 쓴다</strong> <a class="conf conf-verified" href="sources.html#C-136">✅ C-136</a>. 내구 0이면 위력·명중이 떨어지고 전투 기술을 못 쓴다. 대장간은 각 루트 6장부터 <a class="conf conf-single" href="sources.html#C-137">🟡 C-137</a>.</li><li>운용 <span class="conf conf-guess">⚪ 설계 판단</span> (02_build_guide P6 준수):<ul><li>전투 기술은 <strong>확정 처치로 위협을 제거할 때</strong> 또는 <strong>적 페이즈에 반격으로 죽을 유닛을 살리기 위해 적을 먼저 지울 때</strong>만 쓴다.</li><li>결투·보스전 직전에는 디트리히 주무기 내구를 확인한다(비전 전투 기술을 쓸 무기 포함) <a class="conf conf-multi" href="sources.html#C-074">🔵 C-074</a>.</li><li>레다 칼라의 활 전용 저격은 내구 10 소모·사거리 3~10이라는 보고 <a class="conf conf-single" href="sources.html#C-146">🟡 C-146</a> → "보스 막타·원거리 위협 제거용 1~2발"로 계획한다. 6장 이후 수리 전제 <a class="conf conf-single" href="sources.html#C-137">🟡 C-137</a>.</li><li>대장장이 마스터 스킬(전투 기술 내구 무소모 확률)은 디트리히 루트 해금 <a class="conf conf-multi" href="sources.html#C-076">🔵 C-076</a>, 효과는 <span class="conf conf-single">〔GL의견〕</span>.</li></ul></li></ul>
+</div>
+<div class="card " id="s1_6">
+<h3>1-6. 칼날울림(디트리히) / 월드맵 조우전</h3>
+<ul><li>칼날울림은 월드맵의 숨은 적을 드러내 교전한다 <a class="conf conf-multi" href="sources.html#C-073">🔵 C-073</a>. 조우전은 6인 출격 <a class="conf conf-single" href="sources.html#C-027">🟡 C-027</a>.</li><li>목적은 <strong>2군 훈련장</strong>이다(02_build_guide E2) <a class="conf conf-multi" href="sources.html#C-065">🔵 C-065</a>.</li><li>편성 <span class="conf conf-guess">⚪ 설계 판단</span>: 디트리히 + 힐러 1(양계) + 2군 4명. 디트리히는 <strong>적을 빈사로 만들고 막타는 2군</strong>(E1). 디트리히는 적 페이즈에 적이 몰리는 위치(좁은 길목)에 세우되, 반격으로 잡몹을 처치하지 않도록 <strong>무기 해제 대신 "위력 낮은 무기"</strong>로 바꿔 둔다(무기 해제 가능 여부는 <span class="conf conf-guess nodata">〔자료 없음〕</span>).</li><li>교전 여부 판단: 백사 잔고(T8), 조우 적의 레벨 표시(표시 여부 <span class="conf conf-guess nodata">〔자료 없음〕</span>), 2군 평균 레벨. 파티보다 레벨 높은 던전은 <strong>퀵배틀(스킵)</strong>로 돌리는 편이 EXP 효율이 좋다 <a class="conf conf-multi" href="sources.html#C-026">🔵 C-026</a> → 수동 조작이 필요 없는 퀵배틀에서 사망 판정이 어떻게 되는지는 <span class="conf conf-guess nodata">〔자료 없음〕</span>이므로 첫 1회는 결과를 확인하고 반복한다 <span class="conf conf-guess">⚪ 추정</span>.</li></ul>
+</div>
+<div class="tip" id="s1_7">
+<h3>✔ 1-7. 턴 종료 전 사망 방지 체크리스트 (매 턴)</h3>
+<ol><li><span class="chk">☐</span> 전체 적 범위를 다시 켰다 — <strong>범위 안의 아군 전원</strong>에 대해 "닿는 적 수 × 최대 피해"가 현재 HP 미만인가 <span class="conf conf-guess">⚪ 추정</span></li><li><span class="chk">☐</span> 필살 가능성: 적 필살률이 0이 아닌 유닛 앞에 HP 여유가 1타 분 이상 남는가. 아니면 주라 <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a></li><li><span class="chk">☐</span> 추격: 적 공속이 아군보다 4 이상 높은가(=2회 공격) <a class="conf conf-single" href="sources.html#C-140">🟡 C-140</a></li><li><span class="chk">☐</span> 특효: 비병(활 3배)·기병(창 유효)이 노출됐는가 <a class="conf conf-single" href="sources.html#C-138">🟡 C-138</a> <a class="conf conf-single" href="sources.html#C-140">🟡 C-140</a></li><li><span class="chk">☐</span> 로드 게이지·HP: 블레이즈 아츠로 HP가 깎인 로드가 사거리 안에 있는가(B3) <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a></li><li><span class="chk">☐</span> 힐러: 힐러가 적 사거리 밖인가. 리브로(원거리) 힐러가 다음 턴에 닿는가 <a class="conf conf-multi" href="sources.html#C-123">🔵 C-123</a> <a class="conf conf-single" href="sources.html#C-082">🟡 C-082</a></li><li><span class="chk">☐</span> 증원: 이 장에 증원/포대가 있는 것으로 알려졌는가(4~6장 표). 후방·측면이 비었는가 <a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a></li><li><span class="chk">☐</span> 게스트·영입 대상: 아스완·타호니아(2부), 네이선(2부 3장)이 위험 범위 안인가 <a class="conf conf-multi" href="sources.html#C-059">🔵 C-059</a> <a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a></li><li><span class="chk">☐</span> 가호: 1~8 중 하나라도 "아니오"가 남았으면 아우로라(또는 주라)를 켰다 <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a></li><li><span class="chk">☐</span> 백사 잔고: 천각 2회분(10) 이상 남는가(T3) <span class="conf conf-guess">⚪ 추정</span></li></ol>
+</div>
+</section>
+
+<section id="s2">
+<h2>2. 기본 전투 운용</h2>
+<div class="card " id="s2_1">
+<h3>2-1. 기본 턴 로테이션 (플레이어 페이즈)</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>순서</th><th>행동</th><th>타이밍</th><th>효과</th><th>비고</th></tr></thead><tbody>
+<tr><td>1</td><td>전체 범위 확인, 이번 턴 "처치 목표"와 "안전선" 결정</td><td>턴 시작</td><td>계획</td><td>1-1 <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>2</td><td><strong>레다: 버프 노래</strong>(레다 루트)</td><td>딜러가 움직이기 전</td><td>광역 버프(수치 미확정)</td><td><a class="conf conf-single" href="sources.html#C-127">🟡 C-127</a> <a class="conf conf-single" href="sources.html#C-129">🟡 C-129</a></td></tr>
+<tr><td>3</td><td>원거리(궁수·마법)로 위협 적 제거</td><td>근접 진입 전</td><td>반격 없이 체력 깎기</td><td><span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>4</td><td>주 딜러(디트리히/무우·그자람) 처치, <strong>막타는 2군</strong></td><td>중반</td><td>EXP 분배</td><td><a class="conf conf-multi" href="sources.html#C-065">🔵 C-065</a></td></tr>
+<tr><td>5</td><td><strong>레다: 재행동(Song of Angels, 맵당 1회)</strong></td><td>핵심 딜러가 행동한 뒤</td><td>한 턴 더</td><td><a class="conf conf-multi" href="sources.html#C-128">🔵 C-128</a></td></tr>
+<tr><td>6</td><td>탱커(에스메랄다·가디언·버커니어)를 전선에</td><td>마지막 이동</td><td>적 페이즈 흡수</td><td><a class="conf conf-multi" href="sources.html#C-118">🔵 C-118</a> <a class="conf conf-multi" href="sources.html#C-108">🔵 C-108</a></td></tr>
+<tr><td>7</td><td>힐러 회복(리브로), 힐러는 후방</td><td>마지막</td><td>전선 유지</td><td><a class="conf conf-multi" href="sources.html#C-123">🔵 C-123</a></td></tr>
+<tr><td>8</td><td>체크리스트(1-7) → 필요 시 가호</td><td>턴 종료 직전</td><td>사망 방지</td><td><span class="conf conf-guess">⚪ 추정</span></td></tr>
+</tbody></table></div>
+</div>
+<div class="card " id="s2_2">
+<h3>2-2. 상황별 운용</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>전략</th><th>핵심 포인트</th></tr></thead><tbody>
+<tr><td>1:1 교전(보스)</td><td>원거리로 깎고, 디트리히(또는 무우) 선공 → 막타. 필살 보스는 주라</td><td>디트리히 살의(선공 필살 +5) <a class="conf conf-multi" href="sources.html#C-108">🔵 C-108</a>, 검 추격 1.2배 <a class="conf conf-single" href="sources.html#C-138">🟡 C-138</a></td></tr>
+<tr><td>다수 상대</td><td>좁은 길목에 탱커 1명, 옆 칸은 비우거나 방어형으로 채운다. 적 페이즈 전 아우로라</td><td><a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>증원 맵</td><td><strong>증원부터 정리하고 진군</strong>, 유인("니가와") 운용</td><td><a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a> <span class="conf conf-guess">⚪ 01a 본문</span></td></tr>
+<tr><td>수비/후퇴</td><td>칼라(이동·회피)는 비상 탈출 전용. 천각이 더 싸면 천각</td><td><a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a> <a class="conf conf-verified" href="sources.html#C-006">✅ C-006</a></td></tr>
+<tr><td>궁지(포위·힐러 위기)</td><td>8장 상황별 대응표 참조</td><td>—</td></tr>
+</tbody></table></div>
+</div>
+</section>
+
+<section id="s3">
+<h2>3. 블레이즈 아츠·핵심 유닛 운용</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>유닛</th><th>블레이즈 아츠·핵심 능력</th><th>운용 규칙</th><th>근거</th></tr></thead><tbody>
+<tr><td><strong>디트리히</strong></td><td><strong>무빙 섀도우</strong>: 최대 3칸 워프 후 공격</td><td>① 보스 뒤·옆으로 워프해 <strong>포위망 밖의 보스를 직접 처치</strong>. ② 결투에서 유리한 지형 선점. ③ 워프 후 적 한가운데 남으므로 <strong>아우로라 없이 쓰지 않는다</strong>(HP 소모 + 적 페이즈 집중)</td><td><a class="conf conf-multi" href="sources.html#C-132">🔵 C-132</a> <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>디트리히</td><td>두 번째 블레이즈 아츠: 10칸 광역 속박</td><td>증원 러시·다수 근접 적의 발을 묶는 용도로 추정. 사거리·지속은 미확인</td><td><a class="conf conf-single" href="sources.html#C-131">🟡 C-131</a></td></tr>
+<tr><td>디트리히</td><td>살의(선공 시 필살 +5), 혈인 Diadem of the Endless(공격 시 HP 회복, 10%)</td><td>선공 위주로 쓴다. 혈인 회복은 확률이라 계산에 넣지 않는다</td><td><a class="conf conf-multi" href="sources.html#C-108">🔵 C-108</a> / 혈인 <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td>디트리히</td><td>운용 원칙</td><td><strong>보스·결투·방어선 담당, 잡몹 막타 금지</strong>. 2군과 레벨 차 −5 이내 유지</td><td><a class="conf conf-multi" href="sources.html#C-064">🔵 C-064</a> <a class="conf conf-multi" href="sources.html#C-065">🔵 C-065</a> (02 E4)</td></tr>
+<tr><td><strong>레다</strong></td><td><strong>Song of Angels(재행동, 맵당 1회)</strong></td><td>맵당 1회뿐 → <strong>"이번 턴에 보스를 끝내는" 턴</strong> 또는 <strong>"포위된 아군을 구출하는" 턴</strong>에 아낀다. 1부 11장에서 4인 재행동이 된다는 보고</td><td><a class="conf conf-multi" href="sources.html#C-128">🔵 C-128</a> / 4인 <a class="conf conf-single" href="sources.html#C-128">🟡 C-128</a></td></tr>
+<tr><td>레다</td><td>버프 노래: 광역 공/방 +7 보고 vs Song of Icewater 수비·마방 +4</td><td>수치가 두 출처에서 다르다 → <strong>인게임에서 수치를 확인하기 전에는 "+4"로 가정</strong>하고 피해 계산한다(보수적)</td><td><a class="conf conf-single" href="sources.html#C-127">🟡 C-127</a> <a class="conf conf-single" href="sources.html#C-129">🟡 C-129</a> (쟁점 8) <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>레다</td><td>35레벨 이후 블레이즈 아츠 뒤에도 본인 공격 가능</td><td>확인되면 버프 → 칼라의 활 저격 콤보. 확인 전에는 버프 후 대기로 계획</td><td><a class="conf conf-single" href="sources.html#C-130">🟡 C-130</a> <a class="conf conf-multi" href="sources.html#C-146">🔵 C-146</a></td></tr>
+<tr><td>레다</td><td>야습(선공 시 5% 반격 무효), 혈인 Diadem of the Earth(Atk+7, 3%)</td><td>확률 효과는 계산에 넣지 않는다</td><td><a class="conf conf-multi" href="sources.html#C-108">🔵 C-108</a> / 혈인 <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td>레다</td><td>음료(레다 루트 음료 판매상): 전투 내내 스탯 버프·상태이상 면역</td><td>9~11장 보스전 전에 구매 검토. 종류·수치 <span class="conf conf-guess nodata">〔자료 없음〕</span></td><td><span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td>레다</td><td>명부형 버스트</td><td>레다는 HP 성장 40·수비 30이라 버스트로 최대 HP가 줄면 위험이 크다 → B2 엄수</td><td><a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a> <a class="conf conf-verified" href="sources.html#C-103">✅ C-103</a></td></tr>
+<tr><td>에스메랄다</td><td>블레이즈 아츠 <span class="conf conf-guess nodata">〔자료 없음〕</span>. 괴력(장비 무게 80%), 혈인 3% 1.5배, 디트리히 루트 전용 투척 무기</td><td>코끼리·골렘 상대 전용 투척 무기가 최강이라는 국내 평</td><td><a class="conf conf-multi" href="sources.html#C-108">🔵 C-108</a> <a class="conf conf-single" href="sources.html#C-110">🟡 C-110</a> <a class="conf conf-single" href="sources.html#C-116">🟡 C-116</a> <span class="conf conf-guess">⚪ 01a 본문</span></td></tr>
+<tr><td>에스메랄다</td><td>주의</td><td>2부에서 가호 없이 돌진하면 위험하다는 국내 평 → 적 페이즈 앞 아우로라와 세트</td><td><span class="conf conf-guess">⚪ 01a 본문</span> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a></td></tr>
+<tr><td>버커니어</td><td>수호 기사의 의무(받는 피해 90%)</td><td>1부 중반까지 1번 탱커. 속도 성장 25라 후반에는 추격당한다 → 에스메랄다 합류 후 2번 탱커</td><td><a class="conf conf-multi" href="sources.html#C-108">🔵 C-108</a>, 성장률은 02 3-2 표<span class="conf conf-single">〔R🟡〕</span></td></tr>
+<tr><td>시몬</td><td>구사일생(HP 2 이상에서 치명 피해 시 행운% 확률로 HP 1)</td><td><strong>보험이지 계획이 아니다.</strong> 확률이므로 체크리스트에서는 무시</td><td><a class="conf conf-multi" href="sources.html#C-109">🔵 C-109</a></td></tr>
+<tr><td>무우</td><td>성장의 징조, 세스타스 회피형</td><td>회피형은 명중 높은 보스·다수 공격에 약할 수 있다 → 보스 정면은 탱커에게</td><td><a class="conf conf-verified" href="sources.html#C-106">✅ C-106</a> <a class="conf conf-single" href="sources.html#C-101">🟡 C-101</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>힐러(양계·피아나·소피아)</td><td>리브로(백마법 B, 원거리 회복)</td><td>힐러 2명 이상. 리브로 힐러는 전선 3칸 뒤 이상에서 운용</td><td><a class="conf conf-multi" href="sources.html#C-123">🔵 C-123</a> <a class="conf conf-single" href="sources.html#C-082">🟡 C-082</a></td></tr>
+<tr><td>궁수(키로이카·그자람 활)</td><td>활 → 비병 3배 특효</td><td>비병 증원(디트리히 8장 Vouivre, 2부 비병 증원) 전담</td><td><a class="conf conf-single" href="sources.html#C-140">🟡 C-140</a> <a class="conf conf-single" href="sources.html#C-079">🟡 C-079</a> <span class="conf conf-guess">⚪ 01a 본문</span></td></tr>
+<tr><td>가디언(미카엘라 등)</td><td>창 + 백마법, 마법 회복 +10, 가다듬기(처치 시 물방 +3)</td><td>마법 적이 섞인 전선의 탱커 겸 서브 힐</td><td><a class="conf conf-multi" href="sources.html#C-090">🔵 C-090</a></td></tr>
+<tr><td>선더소드 보유자(카타냐·시로코 등)</td><td>마력으로 싸우는 검</td><td>중갑·고수비 적 처리</td><td><a class="conf conf-single" href="sources.html#C-144">🟡 C-144</a></td></tr>
+<tr><td>3부 진영장·이스마르</td><td>베르트랑·타리문은 명부형, 이스마르·아나톨리아는 일반 공격으로 게이지, 오르헬은 블레이즈 아츠로만 게이지</td><td>3부 편성 시 명부형은 B2 규칙 적용</td><td><span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s4">
+<h2><span class="badge badge-gold">디트리히</span> 4. 디트리히 루트 1부 장별 공략</h2>
+<div class="card card-gold" id="s4_0">
+<h3>4-0. 루트 전투 성격</h3>
+<ul><li>디트리히는 하드에서도 혼자 전선을 버티는 최상위 캐리다 <a class="conf conf-multi" href="sources.html#C-064">🔵 C-064</a>. "숙련자용 입문", 본격 전투에 가장 빨리 밀어 넣는다 <a class="conf conf-multi" href="sources.html#C-066">🔵 C-066</a>.</li><li>최대 위험은 <strong>2군 미성장</strong>(레벨 7~8 격차) <a class="conf conf-multi" href="sources.html#C-065">🔵 C-065</a> → 2부 4·5장 사고 <a class="conf conf-single" href="sources.html#C-071">🟡 C-071</a>. 1부 전투의 모든 운용은 <strong>"디트리히가 깎고 2군이 막타"</strong>가 기본형이다.</li><li>초반 궁수 부족(키로이카·밴디츠 정도) <a class="conf conf-single" href="sources.html#C-120">🟡 C-120</a> → 비병 대응은 키로이카 영입(6장) 전까지 <strong>파비오 마법 + 창 유닛</strong>으로 버틴다 <span class="conf conf-guess">⚪ 추정</span>.</li></ul>
+</div>
+<h3 id="s4_1">4-1. 장별 표</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>장</th><th>알려진 기믹·보스</th><th>전술</th><th>근거</th></tr></thead><tbody>
+<tr class="nodata-row"><td>1장</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span> 파비오 자동 합류</td><td>파비오(유일한 마법 공격수)에게 막타. 디트리히 반격 처치 최소화</td><td><a class="conf conf-verified" href="sources.html#C-060">✅ C-060</a></td></tr>
+<tr><td>2장</td><td><strong>패배 조건: 디트리히 또는 에스메랄다 격파.</strong> 에스메랄다 합류</td><td>에스메랄다를 단독 돌출시키지 않는다. 합류 직후라 레벨·장비가 낮을 수 있다 <span class="conf conf-guess">⚪ 추정</span></td><td><a class="conf conf-verified" href="sources.html#C-060">✅ C-060</a> (RPG Site 패배 조건)</td></tr>
+<tr class="nodata-row"><td>3장</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>기본 로테이션</td><td>—</td></tr>
+<tr><td>4장</td><td>미카엘라 자동, 양계 영입 튜토리얼. <strong>이오 스카우트(지원 2 / 명성 3 / 800G)를 이 장에 끝낸다</strong></td><td>5장 레버를 위해 이오 필수</td><td><a class="conf conf-verified" href="sources.html#C-060">✅ C-060</a> <a class="conf conf-multi" href="sources.html#C-078">🔵 C-078</a> <a class="conf conf-single" href="sources.html#C-124">🟡 C-124</a></td></tr>
+<tr><td><strong>5장</strong></td><td><strong>한니발전: 10턴 안에 레버를 모두 조작</strong>하고 보스를 쓰러뜨린다. RPG Site: "이오와 양계를 왼쪽으로"</td><td>아래 4-2 상세</td><td><a class="conf conf-multi" href="sources.html#C-078">🔵 C-078</a></td></tr>
+<tr><td>6장</td><td>대장간 해금. 키로이카 스카우트(지원 1 / 명성 4 / 성수 3)</td><td>전투 기술 내구 수리 시작. 궁수 확보</td><td><a class="conf conf-single" href="sources.html#C-137">🟡 C-137</a> <a class="conf conf-multi" href="sources.html#C-121">🔵 C-121</a></td></tr>
+<tr class="nodata-row"><td>7장</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>—</td><td>—</td></tr>
+<tr><td><strong>8장</strong></td><td><strong>케투스전: 증원(Vouivre)을 계속 부른다. 활 유닛 유효.</strong> 이동 시 즉사급 피해 기믹 보고. 보상 그라시타(에스메랄다 영웅 유물)</td><td>아래 4-3 상세</td><td><a class="conf conf-single" href="sources.html#C-079">🟡 C-079</a> / 즉사급·보상 <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td>9장</td><td>자유 행동 160턴. RPG Site가 주력에게 다 미나 무기를 권한다. 베르트랑 외전(9/17)이 이 시기</td><td>10장 전에 기한 퀘스트·결투·외전을 몰아서 끝낸다</td><td><a class="conf conf-single" href="sources.html#C-080">🟡 C-080</a> <a class="conf conf-single" href="sources.html#C-144">🟡 C-144</a>(다 미나 <span class="conf conf-multi">🔵 2곳</span> 수준) <a class="conf conf-multi" href="sources.html#C-077">🔵 C-077</a></td></tr>
+<tr><td>10장</td><td>자유 행동 <strong>20턴뿐</strong></td><td>9장에서 준비를 끝내지 않으면 10장에서 준비할 시간이 없다</td><td><a class="conf conf-single" href="sources.html#C-080">🟡 C-080</a></td></tr>
+<tr><td><strong>11장</strong></td><td><strong>가시 바닥이 피해와 내구 감소</strong>를 준다</td><td>아래 4-4</td><td><span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td><strong>12장</strong></td><td><strong>마르스(Mars) 2연전</strong> (가호 신 마스와의 관계는 미확인 <span class="conf conf-guess">⚪ 추정</span>). 게이츠 합류(베르트랑 외전 조건)</td><td>아래 4-5</td><td><span class="conf conf-guess">⚪ 01b 본문</span> <a class="conf conf-single" href="sources.html#C-125">🟡 C-125</a></td></tr>
+</tbody></table></div>
+<div class="card card-gold" id="s4_2">
+<h3>4-2. 5장 한니발전 — 레버 10턴 (추정 공략 포함)</h3>
+<ul><li><strong>난이도</strong>: 보통~어려움(턴 제한) / <strong>권장</strong>: 이오 영입 완료, 양계 합류 <a class="conf conf-multi" href="sources.html#C-078">🔵 C-078</a></li></ul>
+<div class="table-wrap"><table>
+<thead><tr><th>구간</th><th>목표</th><th>대응</th><th>근거</th></tr></thead><tbody>
+<tr><td>1~2턴</td><td>레버 담당 분리</td><td><strong>이오(기병)와 양계는 왼쪽</strong>, 본대(디트리히·에스메랄다·미카엘라·파비오)는 반대/중앙</td><td><a class="conf conf-multi" href="sources.html#C-078">🔵 C-078</a> (RPG Site 원문 "Have Io and Yang Jie move left")</td></tr>
+<tr><td>3~7턴</td><td>레버 순차 조작</td><td>레버 담당 경로의 적을 본대가 먼저 끌어낸다. 이오가 레버에서 반격당할 위치면 에스메랄다가 옆 칸</td><td><span class="conf conf-guess">⚪ 설계 판단</span></td></tr>
+<tr><td>8~10턴</td><td>마지막 레버 + 보스</td><td>레버가 1~2칸 모자라면 <strong>칼라(이동)</strong>가 해답. 보스는 디트리히 무빙 섀도우로 직행</td><td><a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a> <a class="conf conf-multi" href="sources.html#C-132">🔵 C-132</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+</tbody></table></div>
+<ul><li>핵심 포인트: ① 레버 위치·개수·보스 스탯은 <span class="conf conf-guess nodata">〔자료 없음〕</span> → <strong>1턴에 맵 전체를 훑고 레버 경로 턴 수를 역산</strong>한다. ② 10턴 실패는 게임 오버일 가능성 → 칼라 40 + 천각 2회(10)를 이 장의 예산으로 잡는다 <span class="conf conf-guess">⚪ 추정</span>.</li><li><strong>초보자 안전 전략</strong>: 7턴 시점에 레버가 절반 이하라면 천각으로 3~4턴 전으로 돌려 경로를 다시 짠다(2턴 이상 되감을 수 있는지는 <span class="conf conf-guess nodata">〔자료 없음〕</span>) <span class="conf conf-guess">⚪ 추정</span>.</li></ul>
+</div>
+<div class="card card-gold" id="s4_3">
+<h3>4-3. 8장 케투스전 — 무한형 증원(추정)</h3>
+<ul><li><strong>난이도</strong>: 어려움(보고 수준) / 증원 Vouivre를 계속 부르고 활이 유효 <a class="conf conf-single" href="sources.html#C-079">🟡 C-079</a>. 이동 시 즉사급 피해 기믹 <span class="conf conf-guess">⚪ 01b 본문</span>.</li></ul>
+<div class="table-wrap"><table>
+<thead><tr><th>페이즈</th><th>패턴</th><th>대응</th><th>근거</th></tr></thead><tbody>
+<tr><td>1 (접근)</td><td>케투스가 증원을 부른다</td><td><strong>궁수(키로이카·미카엘라 활)를 증원 출현 방향에 배치</strong>. Vouivre가 비병이면 활 3배 특효</td><td><a class="conf conf-single" href="sources.html#C-079">🟡 C-079</a> <a class="conf conf-single" href="sources.html#C-140">🟡 C-140</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>2 (보스 공략)</td><td>이동 시 큰 피해 기믹(내용 불명)</td><td>기믹 타일/조건을 확인하기 전까지 <strong>보스 인접 칸으로 이동하는 행동 직전마다 수동 판단</strong>, 필요 시 아우로라</td><td><span class="conf conf-guess">⚪ 01b 본문</span> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a></td></tr>
+<tr><td>3 (마무리)</td><td>증원이 계속 나오면 보스 처치가 최선</td><td>디트리히 무빙 섀도우 + 레벨 여유분 딜로 단기 결전. 증원 정리에 턴을 쓰지 않는다</td><td><a class="conf conf-multi" href="sources.html#C-132">🔵 C-132</a> <span class="conf conf-guess">⚪ 설계 판단</span> (C-149의 "증원 먼저 정리"는 2부 유한 증원 기준)</td></tr>
+</tbody></table></div>
+</div>
+<div class="card " id="s4_4">
+<h3>4-4. 11장 — 가시 바닥 (추정)</h3>
+<ul><li>가시 바닥이 피해 + <strong>내구 감소</strong> <span class="conf conf-guess">⚪ 01b 본문</span>. 전투 기술 사용이 잦은 무기(비전 기술 무기)는 가시 위에서 쓰지 않는다 <span class="conf conf-guess">⚪ 추정</span>. 이동 경로를 가시 밖으로 우회하고, 불가피하면 힐러 2명(양계·피아나)이 매 턴 회복 <a class="conf conf-multi" href="sources.html#C-123">🔵 C-123</a> <span class="conf conf-guess">⚪ 추정</span>.</li></ul>
+</div>
+<div class="card " id="s4_5">
+<h3>4-5. 12장 — 마르스 2연전 (추정)</h3>
+<ul><li>"2연전" 구조만 보고됨 <span class="conf conf-guess">⚪ 01b 본문</span>. 2전 사이에 회복·재배치 기회가 있는지 <span class="conf conf-guess nodata">〔자료 없음〕</span> → <strong>1전에서 디트리히 게이지를 50% 미만으로 끝내고, HP를 가득 채운 상태로 1전을 끝낸다</strong> <span class="conf conf-guess">⚪ 추정</span> (B2).</li><li>레다 루트 12장의 베르트랑 각성(覇ノ覚醒)에 원거리로 대응하라는 해외 메모와 같은 장 구조일 가능성은 확인되지 않았다 <span class="conf conf-guess nodata">〔자료 없음〕</span>.</li></ul>
+</div>
+<div class="card " id="s4_6">
+<h3>4-6. 결투(1:1) — 「비창의 일·이라」(가디언 해금) 등</h3>
+<ul><li>결투는 <strong>디트리히 혼자 치르는 1:1 전투</strong>, 승리 시 비전 전투 기술·골드·명성 <a class="conf conf-multi" href="sources.html#C-074">🔵 C-074</a>. 가디언 해금 = 일·이라 결투(디오네 요새, 명성 6), 보상 윈드피어스·10,000G·명성 150 <a class="conf conf-multi" href="sources.html#C-086">🔵 C-086</a>. 레인저 해금 = 「필멸의 오우코」(명성 10) <a class="conf conf-multi" href="sources.html#C-088">🔵 C-088</a>.</li><li>결투 패배 = 로드 영구 이탈이라는 주장은 <strong>기각</strong>됐다. 실제 비용은 재시도 시간·백사·기한 <a class="conf conf-guess" href="sources.html#C-075">⚪ C-075</a> (쟁점 1-b).</li><li>다른 결투 상대(아귀레 등)와 보상 목록은 해외 본문에만 있다 <span class="conf conf-guess">⚪ 01b 본문</span>. 상대별 스탯·패턴은 <span class="conf conf-guess nodata">〔자료 없음〕</span>.</li></ul>
+<h4>결투 준비 체크리스트</h4>
+<div class="table-wrap"><table>
+<thead><tr><th>#</th><th>준비</th><th>근거</th></tr></thead><tbody>
+<tr><td>D1</td><td><strong>수동 세이브</strong>(슬롯이 사실상 1개라는 보고가 있으니, 결투 직전 세이브가 결투 이전 상태를 덮는다는 점을 인지)</td><td>쟁점 1-b / <span class="conf conf-guess">⚪ 01a 본문</span></td></tr>
+<tr><td>D2</td><td><strong>레벨 여유</strong>: 명성 조건이 되자마자가 아니라 디트리히 레벨에 여유가 있을 때. 기준은 <span class="conf conf-guess">⚪ 설계 판단</span>으로 "해당 장 적 평균 +3 이상"</td><td>쟁점 1-b <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>D3</td><td><strong>지형</strong>: 무빙 섀도우(3칸 워프)로 회피 보정 지형(엉겅퀴 등)을 선점. selphie 공략도 결투에서 이동 확장용으로 쓴다</td><td><a class="conf conf-multi" href="sources.html#C-132">🔵 C-132</a> (S40, 쟁점 1-b)</td></tr>
+<tr><td>D4</td><td>게이지·HP: 결투 시작 시 게이지가 50% 미만인지. 무빙 섀도우는 HP를 쓰므로 <strong>1턴 워프 → 지형 확보 → 적이 들어오면 반격</strong> 순</td><td><a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>D5</td><td>무기 내구: 주력 검 + 전투 기술 1~2회분. 내구 0이면 기술 불가</td><td><a class="conf conf-verified" href="sources.html#C-136">✅ C-136</a> <a class="conf conf-single" href="sources.html#C-137">🟡 C-137</a></td></tr>
+<tr><td>D6</td><td>가호: 결투 안에서 가호가 쓰이는지는 <span class="conf conf-guess nodata">〔자료 없음〕</span>. 쓸 수 있다면 필살형 상대에 주라, 다타형에 아우로라</td><td><a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>D7</td><td>기한: 일·이라는 <strong>11/24 기준</strong>(11/27 표기도 있음), 늦어도 1부 12장 전. game8.co는 8장부터 가능이라고 적었다</td><td><a class="conf conf-single" href="sources.html#C-087">🟡 C-087</a></td></tr>
+</tbody></table></div>
+</div>
+<div class="card " id="s4_7">
+<h3>4-7. 베르트랑 외전 (9/17 하루)</h3>
+<ul><li>디트리히 루트 베르트랑 외전은 <strong>9/17 하루만</strong> 받을 수 있다 <a class="conf conf-multi" href="sources.html#C-077">🔵 C-077</a>. 게이츠 영입 <a class="conf conf-single" href="sources.html#C-125">🟡 C-125</a>과 3부 베르트랑 합류 <a class="conf conf-multi" href="sources.html#C-058">🔵 C-058</a>가 걸려 있다. 외전은 다그시온에서 정해진 날에 받아야 한다 <a class="conf conf-multi" href="sources.html#C-084">🔵 C-084</a>.</li><li>외전 맵·보스 자료는 <span class="conf conf-guess nodata">〔자료 없음〕</span>. 전술 <span class="conf conf-guess">⚪ 설계 판단</span>:<ul><li>9/17 <strong>이전 자유 행동을 이 외전 대비에 쓴다</strong>(퀵배틀로 2군 레벨 확보 <a class="conf conf-multi" href="sources.html#C-026">🔵 C-026</a>).</li><li>외전은 본 장과 별개로 백사가 다시 차는지 <span class="conf conf-guess nodata">〔자료 없음〕</span> → 본 장 수준의 예산(천각 2회 비상금)을 가정.</li><li>외전을 안 깨면 <strong>베르트랑이 2부 5장에 적으로 나온다</strong>는 보고 <a class="conf conf-single" href="sources.html#C-058">🟡 C-058 후반</a> → 2부 5장 난이도에 직접 영향. 놓치지 않는다.</li></ul></li></ul>
+</div>
+</section>
+
+<section id="s5">
+<h2><span class="badge badge-green">레다</span> 5. 레다 루트 1부 장별 공략</h2>
+<div class="card card-green" id="s5_0">
+<h3>5-0. 루트 전투 성격</h3>
+<ul><li>레다 팀은 강하고 관리 부담이 가장 적다 <a class="conf conf-multi" href="sources.html#C-062">🔵 C-062</a>. 레다 본인은 서포터(재행동·버프) <a class="conf conf-multi" href="sources.html#C-128">🔵 C-128</a>.</li><li>최대 위험은 <strong>9~11장(카이·세오도라·마르틸라전)의 공격력 벽</strong> <a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a>. "초기 4명, 공격수 1명"이라는 일본 측 지적(스니펫) <a class="conf conf-multi" href="sources.html#C-067">🔵 C-067 메모</a>. 반대로 "어려운 스테이지가 없었다"는 하드 클래식 후기도 있다 <a class="conf conf-single" href="sources.html#C-068">🟡 C-068</a>.</li><li>1~8장은 <strong>4장 스카우트(그자람·카타냐·에스메랄다)로 공격수를 늘리는 준비 기간</strong>이다(02 3-5) <a class="conf conf-multi" href="sources.html#C-032">🔵 C-032</a>.</li></ul>
+</div>
+<h3 id="s5_1">5-1. 장별 표</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>장</th><th>알려진 기믹·보스</th><th>전술</th><th>근거</th></tr></thead><tbody>
+<tr class="nodata-row"><td>1~2장</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span>. 레다·무우·버커니어·시로코</td><td>무우·시로코에게 막타, 버커니어는 벽, 레다는 버프</td><td><a class="conf conf-multi" href="sources.html#C-061">🔵 C-061</a> <a class="conf conf-verified" href="sources.html#C-106">✅ C-106</a> <a class="conf conf-verified" href="sources.html#C-105">✅ C-105</a></td></tr>
+<tr><td><strong>3장</strong></td><td><strong>칼라 신전 이벤트 전투: 올림피아전</strong> → 전투 뒤 올림피아 자동 합류</td><td>아래 5-2</td><td><a class="conf conf-multi" href="sources.html#C-061">🔵 C-061</a></td></tr>
+<tr><td>4장</td><td>그자람(지원 1 / 명성 3)·카타냐(지원 1 / 명성 2) 스카우트, 에스메랄다(명성 6 + 다마센 곶 해수 무리 토벌)</td><td>공격수 확보(스카우트 조건 수치는 <span class="badge badge-red">잠정</span> — 4장 진입 즉시 확인). 해수 무리 토벌 전투의 맵은 <span class="conf conf-guess nodata">〔자료 없음〕</span></td><td><a class="conf conf-single" href="sources.html#C-124">🟡 C-124</a> <a class="conf conf-single" href="sources.html#C-119">🟡 C-119</a></td></tr>
+<tr><td>5~6장</td><td>피아나·키로이카(5장), 자스민(6장). 6장부터 대장간</td><td>칼라의 활 수리 시작</td><td><a class="conf conf-single" href="sources.html#C-137">🟡 C-137</a> <a class="conf conf-multi" href="sources.html#C-146">🔵 C-146</a> <span class="conf conf-single">〔R🟡〕</span></td></tr>
+<tr class="nodata-row"><td>7~8장</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>9장 전에 공격수 5명 중급 이상(02 3-5)</td><td>—</td></tr>
+<tr><td><strong>9장</strong></td><td><strong>카이전.</strong> 버커니어가 첫 턴에 카이 쪽으로 넘어가고 전투 뒤 돌아온다. 무희의 목걸이 퀘스트(기한 10/15)</td><td>아래 5-3</td><td><a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a> <a class="conf conf-single" href="sources.html#C-081">🟡 C-081</a> <a class="conf conf-verified" href="sources.html#C-089">✅ C-089</a></td></tr>
+<tr><td><strong>10장</strong></td><td><strong>세오도라전.</strong> 레다 첫 루트면 가호 없이 어렵다. "2턴마다 스위치를 켜며 빠르게 전진하라"는 설계라는 국내 평</td><td>아래 5-4</td><td><a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a> <span class="conf conf-guess">⚪ 01a 본문</span></td></tr>
+<tr><td><strong>11장</strong></td><td><strong>마르틸라전.</strong> 적 대부분이 명마 → 힐러 2~3명. 4인 재행동이 열린다는 보고</td><td>아래 5-5</td><td><a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a> <a class="conf conf-single" href="sources.html#C-082">🟡 C-082</a> <a class="conf conf-single" href="sources.html#C-128">🟡 C-128</a></td></tr>
+<tr><td>12장</td><td>베르트랑의 각성(覇ノ覚醒)에는 <strong>원거리로 대응</strong></td><td>아래 5-6. 출격 10명 제보</td><td><span class="conf conf-guess">⚪ 01b 본문</span> <a class="conf conf-single" href="sources.html#C-028">🟡 C-028</a></td></tr>
+</tbody></table></div>
+<div class="card " id="s5_2">
+<h3>5-2. 3장 칼라 신전 — 올림피아 이벤트 전투</h3>
+<ul><li>올림피아는 3장 칼라 신전 이벤트 전투 뒤 <strong>자동 합류</strong>한다(스카우트 아님) <a class="conf conf-multi" href="sources.html#C-061">🔵 C-061</a>.</li><li>올림피아는 마법형(마 성장 50은 02 3-2 표<span class="conf conf-single">〔R🟡〕</span>, 개인 스킬 호승심 = 마법 장비 시 필살 +10 <span class="conf conf-guess">⚪ 01b 본문</span>).</li><li>전술 <span class="conf conf-guess">⚪ 설계 판단</span>:<ul><li><strong>마방 낮은 버커니어(마방 성장 20)를 올림피아 사거리에 두지 않는다.</strong> 올림피아 정면은 시로코(마방 35)·레다(마방 35).</li><li>필살 +10 스킬 보고가 있으므로 올림피아 사거리 진입 턴에는 <strong>주라(필살 무효, 15)</strong>를 우선 검토한다 <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a>.</li><li>이 전투에서 올림피아를 "격파"하는 것이 합류 조건인지, 처치해도 사망하지 않는지는 확인되지 않았다 <span class="conf conf-guess nodata">〔자료 없음〕</span> → 이벤트 전투 승리 조건을 전투 시작 화면에서 확인한다.</li></ul></li></ul>
+</div>
+<div class="card card-green" id="s5_3">
+<h3>5-3. 9장 카이전 — 버커니어 일시 이탈</h3>
+<ul><li><strong>난이도</strong>: 어려움 <a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a></li><li>버커니어가 <strong>첫 턴에 카이 쪽으로 넘어간다</strong>, 전투 뒤 복귀 <a class="conf conf-single" href="sources.html#C-081">🟡 C-081</a> (검색 요약 기반).</li></ul>
+<div class="table-wrap"><table>
+<thead><tr><th>구간</th><th>패턴</th><th>대응</th><th>근거</th></tr></thead><tbody>
+<tr><td>출격 준비</td><td>버커니어가 1턴에 빠진다</td><td><strong>탱커를 버커니어 하나에 맡기지 않는다.</strong> 에스메랄다(4장 영입)를 1번 탱커로 출격. 버커니어에게 귀중한 무기·소모품을 맡기지 않는다(적 측에 간 동안 장비 처리 <span class="conf conf-guess nodata">〔자료 없음〕</span>)</td><td><a class="conf conf-single" href="sources.html#C-081">🟡 C-081</a> <a class="conf conf-single" href="sources.html#C-119">🟡 C-119</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>1턴</td><td>버커니어 이탈</td><td>버커니어가 적(카이 측)으로 표시되면 <strong>공격하지 않는다.</strong> 격파 시 처리가 확인되지 않았다. 버커니어 공격 범위(속도 25·물리형)에는 수비 높은 유닛만</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>중반</td><td>카이군과 교전</td><td>레다 버프 → 무우·그자람 선공 → 시로코·올림피아 마무리. 재행동은 카이(보스) 처치 턴까지 아낀다</td><td><a class="conf conf-multi" href="sources.html#C-128">🔵 C-128</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>종반</td><td>카이 처치</td><td>로드 보스는 체력이 높을 것으로 보고, 재행동 + 칼라의 활 저격(내구 10)으로 한 턴에 끝낸다</td><td><a class="conf conf-multi" href="sources.html#C-146">🔵 C-146</a> <a class="conf conf-single" href="sources.html#C-146">🟡 C-146 수치</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+</tbody></table></div>
+<ul><li><strong>무희의 목걸이</strong>: 9장 퀘스트 「위대한 무희의 후계자」(힝고쉬 배달), <strong>기한 10/15</strong>, 레다 루트 한정 <a class="conf conf-verified" href="sources.html#C-089">✅ C-089</a>. 9장 전투 전후로 반드시 처리한다.</li></ul>
+</div>
+<div class="card card-green" id="s5_4">
+<h3>5-4. 10장 세오도라전 — 가호 전제 전투</h3>
+<ul><li><strong>난이도</strong>: 매우 어려움(레다 첫 루트 기준) <a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a>. 세오도라는 HP 성장 70, 불굴의 각오(피격 시 30% 반감) 보유 <a class="conf conf-multi" href="sources.html#C-107">🔵 C-107</a> <span class="conf conf-single">〔R🟡 스킬〕</span> → <strong>장기전에 강한 보스</strong>.</li><li>"2턴마다 스위치를 켜며 빠르게 전진"하는 설계라는 국내 평 <span class="conf conf-guess">⚪ 01a 본문</span>. 스위치의 정확한 효과는 <span class="conf conf-guess nodata">〔자료 없음〕</span>.</li></ul>
+<div class="table-wrap"><table>
+<thead><tr><th>페이즈</th><th>패턴</th><th>대응</th><th>근거</th></tr></thead><tbody>
+<tr><td>1 (전진)</td><td>스위치 구조, 느리면 불리해지는 설계(추정)</td><td>2턴 단위로 스위치 담당(이동 좋은 카타냐 비병)을 정하고 본대는 탱커 선두로 전진. 스위치 1칸 부족 시 <strong>칼라</strong></td><td><span class="conf conf-guess">⚪ 01a 본문</span> <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a></td></tr>
+<tr><td>2 (적 페이즈 흡수)</td><td>세오도라군의 물리 압박(추정)</td><td><strong>적 페이즈마다 아우로라.</strong> 이 장은 아우로라를 매 턴 켠다고 가정하고 백사를 예산한다</td><td><a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a></td></tr>
+<tr><td>3 (보스)</td><td>세오도라 30% 반감 확률</td><td>한 방에 못 잡으면 반감 확률이 누적 위험 → <strong>재행동 턴에 무우·그자람·시로코·올림피아가 연속 공격</strong>. 필살·특효 무효가 필요하면 주라와 아우로라 중 택1(턴당 1개)</td><td><a class="conf conf-multi" href="sources.html#C-128">🔵 C-128</a> <a class="conf conf-single" href="sources.html#C-011">🟡 C-011</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+</tbody></table></div>
+<ul><li>핵심 공략 포인트: ① 가호를 쓰는 것이 이 장의 정답이다 <a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a>. ② 레다의 재행동은 <strong>보스 처치 턴</strong>에 쓴다. ③ 버프 수치는 +4로 보수 계산 <a class="conf conf-single" href="sources.html#C-129">🟡 C-129</a>.</li><li><strong>초보자 안전 전략</strong>: 9장 전에 아우로라를 가능한 한 높은 단계로(가호 레벨은 세이브 공유 <a class="conf conf-single" href="sources.html#C-012">🟡 C-012</a>). 막히면 카이·세오도라 루트를 먼저 하는 것도 정석으로 인정된다(첫 루트 무난 합의) <a class="conf conf-multi" href="sources.html#C-072">🔵 C-072</a>.</li></ul>
+</div>
+<div class="card card-green" id="s5_5">
+<h3>5-5. 11장 마르틸라전 — 명마 다수</h3>
+<ul><li>적 대부분이 명마(冥魔) → <strong>힐러 2~3명</strong> <a class="conf conf-single" href="sources.html#C-082">🟡 C-082</a>. 이 장에서 레다의 4인 재행동이 열린다는 보고 <a class="conf conf-single" href="sources.html#C-128">🟡 C-128</a>.</li><li>편성: 피아나 + 소피아 + (리네/양계/울턴드 중 1) (02 3-5).</li><li>명마의 약점·특효는 <span class="conf conf-guess nodata">〔자료 없음〕</span>. 전술 <span class="conf conf-guess">⚪ 설계 판단</span>: 힐러 3명을 삼각형으로 배치해 <strong>어느 전열 유닛도 다음 턴 리브로 2명 사거리 안</strong>에 둔다 <a class="conf conf-multi" href="sources.html#C-123">🔵 C-123</a>. 4인 재행동이 열리면 <strong>딜러 3 + 힐러 1</strong>에게 준다.</li></ul>
+</div>
+<div class="card " id="s5_6">
+<h3>5-6. 12장 — 베르트랑 각성</h3>
+<ul><li>베르트랑의 각성(覇ノ覚醒)에는 <strong>원거리로 대응</strong> <span class="conf conf-guess">⚪ 01b 본문</span>. 각성 효과(근접 반격 강화 추정)는 <span class="conf conf-guess nodata">〔자료 없음〕</span> → 각성 후에는 궁수(키로이카)·마법(시로코·올림피아)·칼라의 활로만 깎고 근접은 막타만 <span class="conf conf-guess">⚪ 추정</span>.</li><li>출격 10명 제보 <a class="conf conf-single" href="sources.html#C-028">🟡 C-028</a>.</li></ul>
+</div>
+</section>
+
+<section id="s6">
+<h2><span class="badge badge-blue">공통</span> 6. 2부 전쟁편 — 공통 맵 공략</h2>
+<div class="card card-blue" id="s6_0">
+<h3>6-0. 공통 전제</h3>
+<ul><li>2부는 네 로드 모두 <strong>사실상 같은 맵</strong> <a class="conf conf-verified" href="sources.html#C-043">✅ C-043</a> → 아래 공략은 디트리히·레다 공통.</li><li>출격 13명 <a class="conf conf-single" href="sources.html#C-028">🟡 C-028</a>, 신규 영입 불가(키릭·네이선 예외) <a class="conf conf-multi" href="sources.html#C-044">🔵 C-044</a>, 장비 중인 아이템만 사용 <a class="conf conf-single" href="sources.html#C-054">🟡 C-054</a>, 상급 증서 장마다 5장 리필 <a class="conf conf-multi" href="sources.html#C-055">🔵 C-055</a>, 1장 준비의 Training Drills로 Lv37~38 <a class="conf conf-single" href="sources.html#C-056">🟡 C-056</a>.</li><li>첫 루트의 2부는 <strong>스킵 불가</strong> <a class="conf conf-multi" href="sources.html#C-045">🔵 C-045</a>. 2부에서 죽은 유닛은 그 루트 버전으로 3부에 오지 않는다 <a class="conf conf-multi" href="sources.html#C-046">🔵 C-046</a>.</li><li>준비: 아우로라 2단계 이상 <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a>, 궁수 3·중갑 1·힐러+마법 3 <span class="conf conf-single">〔KR의견 🟡〕</span>.</li><li>증원·포대는 무한이 아니다 → <strong>증원부터 정리하고 진군</strong> <a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a>.</li><li>해외 장 목록과 국내 장별 메모가 일부 어긋난다(아래 6-1 주석). 장 번호는 <strong>01c 확정 사실(키릭 2장, 네이선 3장, 불 3장, 다그다 5장)</strong>을 기준으로 맞췄다.</li></ul>
+</div>
+<h3 id="s6_1">6-1. 장별 표</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>장</th><th>기믹·보스</th><th>핵심 대응</th><th>근거</th></tr></thead><tbody>
+<tr><td>1장</td><td>국내 "무난". 해외 장 목록은 「클리티우스 평원」, 보스 키릭</td><td>13인 편성 점검, 증서로 전직 마무리</td><td><span class="conf conf-guess">⚪ 01a 본문</span> <span class="conf conf-guess">⚪ 01b 본문</span> <a class="conf conf-multi" href="sources.html#C-055">🔵 C-055</a></td></tr>
+<tr><td><strong>2장</strong></td><td><strong>키릭 합류 장</strong>(1부 「죽은 여동생의 장신구」 완료 시 격파하면 합류). 포대 한 방 위험, 아이템을 들고 도주하는 적. 해외 목록: 「아그리스 요새」(Lind, Ianuarius)</td><td>6-2</td><td><a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a> <a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a> <span class="conf conf-guess">⚪ 01a·01b 본문</span></td></tr>
+<tr><td><strong>3장</strong></td><td><strong>불 타일이 일정 구간 도달 시 맵 전체로 퍼진다(길크리스)</strong>. 양측 증원. <strong>네이선은 키릭으로 막타</strong></td><td>6-3</td><td><a class="conf conf-multi" href="sources.html#C-148">🔵 C-148</a> <a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a> <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td><strong>4장</strong></td><td>다그시온 강습(Lind), 전투 코끼리, 후방 증원 / 국내: 썬더스톰 + 증원, 다리 전투. 디트리히 하드 클래식에서 특히 어렵다는 후기</td><td>6-4</td><td><span class="conf conf-guess">⚪ 01a·01b 본문</span> <a class="conf conf-single" href="sources.html#C-071">🟡 C-071</a></td></tr>
+<tr><td><strong>5장</strong></td><td><strong>다그다전 2페이즈</strong>(인간형 격파 → 배치 그대로 2페이즈). 용 형태는 마방이 낮아 마법 유효. 발리스타 사정권에서 시작. 디트리히 속박 주의. 외전 미클리어 진영장이 적으로</td><td>6-5</td><td><a class="conf conf-multi" href="sources.html#C-147">🔵 C-147</a> <a class="conf conf-single" href="sources.html#C-147">🟡 C-147 용</a> <a class="conf conf-single" href="sources.html#C-058">🟡 C-058 후반</a> <span class="conf conf-guess">⚪ 01a·01b 본문</span></td></tr>
+<tr><td><strong>6장</strong></td><td>리라전: 방패 파괴 → 번데기 형태 → 다그시온 탈출(퇴각 맵). <strong>2페이즈는 가운데 강적을 건드리지 말고 양 끝으로.</strong> 아우로라 매우 유용</td><td>6-6</td><td><a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> <a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a>(후반 <span class="conf conf-multi">🔵 2곳</span> 수준) <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+</tbody></table></div>
+<div class="warning kirik"><strong>키릭 합류 장 (검증 판정)</strong>: 합류는 <strong>2부 2장에서 격파할 때</strong>다 <a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a>. 01b 장 목록의 "1장 보스 Creek"은 요약 표기(<span class="conf conf-guess">⚪ 추정</span>)이고, 키릭이 1장에 나오더라도 영입 판정은 2장이다. 실전 규칙: 1장에서 키릭이 보이면 <strong>승리 조건을 먼저 확인</strong>한다. 격파가 승리 조건이 아니면 공격하지 않는다(퇴각형 보스로 가정). 영입은 2장에서 격파로 시도하고, 네이선전(3장)까지 키릭을 살려 둔다.</div>
+<div class="card " id="s6_2">
+<h3>6-2. 2장 — 키릭 영입, 포대, 도주 적</h3>
+<ul><li>키릭: 1부 서브 퀘스트 「죽은 여동생의 장신구」를 끝낸 루트라면 <strong>2장에서 쓰러뜨릴 때 합류</strong> <a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a>. 카이·세오도라 루트에서는 안 뜬다는 제보 <a class="conf conf-single" href="sources.html#C-104">🟡 C-104</a>. 스킵 루트는 합류 안 함 <span class="conf conf-guess">⚪ 01a 본문</span>.</li><li>포대 한 방 위험 <a class="conf conf-single" href="sources.html#C-149">🟡 C-149 계열</a> <span class="conf conf-guess">⚪ 01a 본문</span> → <strong>포대 사거리 개별 확인 후 포대 담당부터 처리</strong>, 사거리 안 대기 금지.</li><li>아이템을 들고 도주하는 적 <span class="conf conf-guess">⚪ 01a 본문</span> → 기동 유닛(이오·카타냐)을 도주 경로 쪽에 1명. 단 도주 적을 쫓다 본대와 분리되지 않는다(분리되는 순간 포대·증원 표적) <span class="conf conf-guess">⚪ 추정</span>.</li></ul>
+</div>
+<div class="card card-blue" id="s6_3">
+<h3>6-3. 3장 — 불 타일 + 네이선 막타 (공통 기믹)</h3>
+<ul><li><strong>불 타일</strong>: 일정 구간에 도달하면 길크리스가 맵 전체에 불 타일을 만든다 <a class="conf conf-multi" href="sources.html#C-148">🔵 C-148</a>. 루트 한정 아님 <a class="conf conf-multi" href="sources.html#C-148">🔵 C-148</a>.</li><li><strong>네이선</strong>: <strong>키릭으로 막타</strong>를 쳐야 합류 <a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a>. 다른 유닛이 막타를 치면 사망 <span class="conf conf-guess">⚪ 01a 본문</span>.</li></ul>
+<div class="table-wrap"><table>
+<thead><tr><th>구간</th><th>패턴</th><th>대응</th><th>근거</th></tr></thead><tbody>
+<tr><td>불 발생 전</td><td>트리거 구간이 있다(위치 <span class="conf conf-guess nodata">〔자료 없음〕</span>)</td><td><strong>트리거 전에 증원 방향 정리와 진형 정비를 끝낸다.</strong> 트리거 칸에 들어갈 때는 전원 HP 가득·힐러 인접</td><td><a class="conf conf-multi" href="sources.html#C-148">🔵 C-148</a> <a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>불 발생 후</td><td>불 타일 + 양측 증원</td><td>불 타일 피해량 <span class="conf conf-guess nodata">〔자료 없음〕</span> → 불 위에서 턴을 끝내지 않는다. 퇴로가 막히면 칼라(이동)</td><td><span class="conf conf-guess">⚪ 01b 본문</span> <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a></td></tr>
+<tr><td>네이선 접근</td><td>네이선을 키릭으로 처치</td><td>아래 네이선 프로토콜</td><td><a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a></td></tr>
+</tbody></table></div>
+<p><strong>네이선 막타 프로토콜</strong> <span class="conf conf-guess">⚪ 설계 판단</span> (FE 일반론 + C-104)</p>
+<ol><li>네이선 사거리 안에 서는 유닛은 <strong>반격으로 네이선을 죽일 수 없는 유닛</strong>(약한 무기·낮은 공격력)만. 적 페이즈 반격 처치도 "다른 유닛 막타"로 사망 처리될 수 있다.</li><li>비키릭 유닛으로 네이선 HP를 <strong>키릭 1회 공격(추격 포함) 피해 이하</strong>로 깎는다. 전투 예측 화면에서 처치 표시가 나오지 않는 것을 확인.</li><li>키릭으로 공격. 키릭 명중률이 100%가 아니면 <strong>실패 시 천각(5)</strong>. 백사 5 이상이 남은 턴에만 시도.</li><li>키릭 성장률(힘 50·속 60)은 파갤 DB 단독이라 공격력 예측은 인게임 수치로 한다 <span class="conf conf-guess">⚪ 01a 본문</span>.</li><li>네이선은 성장률상 힘 60·기술 60형(파갤 DB 단독) <span class="conf conf-guess">⚪ 추정</span> → 키릭이 반격으로 죽지 않도록 키릭 공격 턴에 아우로라 <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a>.</li></ol>
+</div>
+<div class="card " id="s6_4">
+<h3>6-4. 4장 — 다그시온 강습 (추정 공략)</h3>
+<ul><li>전투 코끼리, 후방 증원 <span class="conf conf-guess">⚪ 01b 본문</span> / 썬더스톰 + 증원, 다리 전투 <span class="conf conf-guess">⚪ 01a 본문</span>. 디트리히 하드 클래식에서 특히 어렵다(맵당 3~4시간) <a class="conf conf-single" href="sources.html#C-071">🟡 C-071</a>.</li><li>코끼리병: 딜이 잘 안 박힌다 → <strong>창(기병 유효)과 마법</strong>으로 대응 <span class="conf conf-guess">⚪ 01a 본문</span> <a class="conf conf-single" href="sources.html#C-138">🟡 C-138</a>. 에스메랄다 전용 투척 무기가 코끼리 상대 최강이라는 평(디트리히 루트) <span class="conf conf-guess">⚪ 01a 본문</span> <a class="conf conf-single" href="sources.html#C-116">🟡 C-116</a>.</li><li>후방 증원 → <strong>후위(힐러·궁수) 뒤에 가디언/예비 탱커 1명</strong>을 남긴다(02 편성 12번 슬롯 골라이어스·시몬 역할) <span class="conf conf-guess">⚪ 추정</span>.</li><li>다리 전투 → 다리 위는 1열 전투. 다리 입구에 에스메랄다, 뒤에서 궁수·마법. 썬더스톰의 범위·턴은 <span class="conf conf-guess nodata">〔자료 없음〕</span> → 한 칸에 몰리지 않게 1칸 간격 <span class="conf conf-guess">⚪ 추정</span>.</li></ul>
+</div>
+<div class="card card-blue" id="s6_5">
+<h3>6-5. 5장 — 다그다전 (2페이즈)</h3>
+<ul><li><strong>난이도</strong>: 매우 어려움(디트리히 하드 클래식 후기) <a class="conf conf-single" href="sources.html#C-071">🟡 C-071</a></li></ul>
+<div class="table-wrap"><table>
+<thead><tr><th>페이즈</th><th>패턴</th><th>대응</th><th>근거</th></tr></thead><tbody>
+<tr><td>시작</td><td>발리스타(Onager) 사정권에서 시작</td><td>1턴에 발리스타 사거리 밖으로 빠지거나 발리스타 담당부터 처치. 1턴 아우로라</td><td><span class="conf conf-guess">⚪ 01b 본문</span> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a></td></tr>
+<tr><td>1 (인간형)</td><td>다그다 인간형. 디트리히 속박 주의</td><td>디트리히를 다그다 속박 범위(추정)에 단독으로 두지 않는다. 속박 시 디트리히가 고립될 것을 가정하고 옆 칸에 힐러가 닿게</td><td><span class="conf conf-guess">⚪ 01a 본문</span></td></tr>
+<tr><td>전환</td><td><strong>인간형 격파 → 배치 그대로 2페이즈 즉시 시작</strong></td><td><strong>인간형 막타를 치기 전 턴에 전원 HP 회복·진형 재정비</strong>. 막타는 그 턴의 마지막 행동으로 치고, 막타 직전에 아우로라를 켜 둔다(가호가 페이즈 전환 뒤에도 유지되는지는 <span class="conf conf-guess nodata">〔자료 없음〕</span>)</td><td><a class="conf conf-multi" href="sources.html#C-147">🔵 C-147</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td>2 (용 형태)</td><td>용 형태는 <strong>마방이 수비보다 낮다</strong></td><td>마법 딜러(파비오·시로코 / 시로코·올림피아)와 선더소드 보유자 집중. 스미르노스(마법 명중·사거리)는 이 턴의 선택지</td><td><a class="conf conf-single" href="sources.html#C-147">🟡 C-147</a> <a class="conf conf-single" href="sources.html#C-144">🟡 C-144</a> <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a></td></tr>
+<tr><td>별도</td><td>외전 미클리어 진영장이 적으로 등장</td><td>1부에서 외전을 클리어해 두면 등장하지 않는다. 등장 시 진영장은 블레이즈 아츠 보유 강적으로 가정</td><td><a class="conf conf-single" href="sources.html#C-058">🟡 C-058 후반</a> <a class="conf conf-multi" href="sources.html#C-058">🔵 C-058</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+</tbody></table></div>
+</div>
+<div class="card " id="s6_6">
+<h3>6-6. 6장 — 리라전·다그시온 탈출</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>페이즈</th><th>패턴</th><th>대응</th><th>근거</th></tr></thead><tbody>
+<tr><td>1</td><td>리라의 방패를 파괴</td><td>방패 파괴 조건 <span class="conf conf-guess nodata">〔자료 없음〕</span>. 적 페이즈마다 아우로라</td><td><span class="conf conf-guess">⚪ 01b 본문</span> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a></td></tr>
+<tr><td>2</td><td>번데기(cocoon) 형태. <strong>가운데 강적을 건드리지 말고 양 끝으로 진행</strong></td><td>가운데 적의 개별 범위를 켜고 <strong>범위 경계 밖 경로</strong>만 사용. 재계의 검(2부 장 보상)을 2페이즈용으로</td><td><a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a>(후반 <span class="conf conf-multi">🔵 2곳</span> 수준) <span class="conf conf-guess">⚪ 01a 본문</span></td></tr>
+<tr><td>3</td><td>다그시온 탈출(퇴각 맵)</td><td>퇴각 칸 도달 순서: <strong>게스트·힐러·저HP 유닛 먼저</strong>, 탱커가 마지막. 1칸 모자라면 칼라</td><td><span class="conf conf-guess">⚪ 01a·01b 본문</span> <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a></td></tr>
+</tbody></table></div>
+<ul><li>아우로라는 "필수"가 아니라 "매우 유용"(원문) <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a>. 이 장은 백사를 아우로라 위주로 쓴다.</li></ul>
+</div>
+<div class="card " id="s6_7">
+<h3>6-7. 아스완·타호니아 생존 (2부 게스트)</h3>
+<ul><li>2부에서 살아남으면 3부 5구간에 합류 <a class="conf conf-multi" href="sources.html#C-059">🔵 C-059</a>. 등장 장·스탯·조작 가능 여부는 <span class="conf conf-guess nodata">〔자료 없음〕</span>.</li><li><strong>게스트 보호 프로토콜</strong> <span class="conf conf-guess">⚪ 설계 판단</span>:<ol><li>등장 턴에 개별 범위를 켜서 게스트에게 닿는 적 수를 센다.</li><li>조작 가능하면 게스트를 본대 쪽으로 후퇴, 탱커 뒤에 둔다. 조작 불가(NPC)면 게스트 진행 방향의 적을 <strong>본대가 먼저 처치</strong>한다.</li><li>게스트 HP가 적 1명 최대 피해 × 2 이하가 되면 그 턴 아우로라 <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a>.</li><li>게스트 사망 시 <strong>즉시 천각</strong>(체크리스트 8번). 백사가 없으면 장 다시 시작 <a class="conf conf-single" href="sources.html#C-020">🟡 C-020</a>.</li></ol></li></ul>
+</div>
+</section>
+
+<section id="s7">
+<h2><span class="badge badge-blue">공통</span> 7. 3부 구세편 &amp; 최종전</h2>
+<div class="card card-blue">
+<ul><li>구조: 3부는 통합 6구간, 군대가 합쳐진다 <a class="conf conf-verified" href="sources.html#C-040">✅ C-040</a>. 부대는 최대 8명, 2개 → 5개로 늘어나고 부대 밖 유닛도 경험치 <a class="conf conf-multi" href="sources.html#C-052">🔵 C-052</a>. 모든 루트의 무기·아이템이 창고에 모인다 <a class="conf conf-multi" href="sources.html#C-050">🔵 C-050</a>.</li><li>합류: 진영장(외전 클리어분) 1구간 <a class="conf conf-multi" href="sources.html#C-058">🔵 C-058</a>, 아스완·타호니아 5구간 <a class="conf conf-multi" href="sources.html#C-059">🔵 C-059</a>, 신장직 4구간부터 <a class="conf conf-verified" href="sources.html#C-094">✅ C-094</a>.</li><li><strong>최종전(리라·발로르)</strong>: 25명 출격 <a class="conf conf-single" href="sources.html#C-053">🟡 C-053</a>. <strong>최종 보스는 마법 공격이 강하다(마공 70 전후)</strong> <a class="conf conf-single" href="sources.html#C-150">🟡 C-150</a>.</li><li>레벨 스케일링은 추천하지 않는다는 의견 <a class="conf conf-single" href="sources.html#C-150">🟡 C-150</a>.</li><li>구간별 맵·보스 자료는 <span class="conf conf-guess nodata">〔자료 없음〕</span> → 지어내지 않는다.</li></ul>
+<p><strong>최종전 대비 (추정 공략)</strong> <span class="conf conf-guess">⚪ 설계 판단</span></p>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>대비</th><th>근거</th></tr></thead><tbody>
+<tr><td>마법 피해</td><td>보스 사거리에 들어갈 유닛은 <strong>마방 우선</strong>: 가디언(마방 +4 보정), 리네(정령의 목소리: 상대가 마법이면 명중·회피 +10<span class="conf conf-single">〔R🟡〕</span>), 레다·시로코</td><td><a class="conf conf-single" href="sources.html#C-150">🟡 C-150</a> <a class="conf conf-multi" href="sources.html#C-090">🔵 C-090</a> <a class="conf conf-verified" href="sources.html#C-111">✅ C-111</a>(스킬명)</td></tr>
+<tr><td>가호</td><td>아우로라가 고단계에서 마법에도 적용되는지 확인(해외 표 "물리(→마법)") → 적용되면 보스 공격 턴마다 아우로라</td><td><a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td>명부형 보스</td><td>이스마르의 구세의 빛(2칸 안 적의 명부의 가호 무효)이 보스에 통하는지 확인</td><td><span class="conf conf-guess">⚪ 01_game_research 6-1</span></td></tr>
+<tr><td>딜</td><td>신장직(스탯 +10) 유닛과 디트리히(더 블레이드)로 단기 결전. 레다 재행동은 보스 처치 턴</td><td><a class="conf conf-verified" href="sources.html#C-094">✅ C-094</a> <a class="conf conf-multi" href="sources.html#C-098">🔵 C-098</a> <a class="conf conf-multi" href="sources.html#C-128">🔵 C-128</a></td></tr>
+<tr><td>버스트</td><td>명부형 로드 4명(편성 시)은 최종전 전에 게이지 확인. B1~B5</td><td><a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a></td></tr>
+</tbody></table></div>
+</div>
+</section>
+
+<section id="s8">
+<h2>8. 상황별 대응표</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>1순위 대응</th><th>2순위</th><th>3순위 (최후)</th><th>근거</th></tr></thead><tbody>
+<tr><td><strong>아군이 포위됨</strong>(3방향 이상 인접 가능)</td><td>포위 적 중 가장 약한 1체를 처치해 <strong>탈출 칸</strong>을 연다 → 레다 재행동으로 이동</td><td>칼라(회피·이동, 40)로 빠져나온다</td><td>탈출 불가 시 아우로라 + 힐러 인접 배치, 그래도 사망 계산이면 천각</td><td><a class="conf conf-multi" href="sources.html#C-128">🔵 C-128</a> <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> <a class="conf conf-verified" href="sources.html#C-006">✅ C-006</a></td></tr>
+<tr><td><strong>힐러가 적 사거리 안</strong>(위기)</td><td>힐러 대신 적을 처치(원거리 우선)</td><td>힐러를 탱커 뒤로 후퇴, 리브로 사거리로 원격 회복</td><td>아우로라. 힐러가 1명만 남으면 그 장은 진군을 멈춘다</td><td><a class="conf conf-multi" href="sources.html#C-123">🔵 C-123</a> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td><strong>힐러 전멸 위험/회복 부족</strong></td><td>공격을 멈추고 방어 진형(좁은 길목 + 탱커)</td><td>가디언의 서브 힐(마법 회복 +10), 울턴드 응급 처치</td><td>장 다시 시작</td><td><a class="conf conf-multi" href="sources.html#C-090">🔵 C-090</a> <span class="conf conf-single">〔R🟡〕</span> <a class="conf conf-single" href="sources.html#C-020">🟡 C-020</a></td></tr>
+<tr><td><strong>보스 필살/특효 위협</strong></td><td>보스 인접 유닛은 1명만, 그 턴 <strong>주라</strong>(필살·특효·추격 무효)</td><td>필살 회피가 높은 유닛이 상대</td><td>보스 사거리 밖에서 원거리로만</td><td><a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a> <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td><strong>보스 추격(공속 +4)</strong></td><td>추격받지 않는 속도형(레다·카타냐·무우)이 상대</td><td>주라</td><td>원거리</td><td><a class="conf conf-single" href="sources.html#C-140">🟡 C-140</a></td></tr>
+<tr><td><strong>증원 등장</strong></td><td>증원부터 정리, 유인 운용</td><td>증원 방향에 궁수(비병이면 3배)</td><td>무한형으로 보이면(1부 8장 등) 보스 처치로 단기 결전</td><td><a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a> <a class="conf conf-single" href="sources.html#C-079">🟡 C-079</a> <a class="conf conf-single" href="sources.html#C-140">🟡 C-140</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td><strong>포대·발리스타 사정권</strong></td><td>사거리 밖 대기 또는 포대 담당 처치</td><td>1턴 아우로라</td><td>천각</td><td><a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a> <span class="conf conf-guess">⚪ 01b 본문</span></td></tr>
+<tr><td><strong>로드 게이지 50% 이상</strong></td><td>블레이즈 아츠 중지, 일반 공격만</td><td>로드를 2열로</td><td>버스트는 보스 막타에만</td><td><a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a></td></tr>
+<tr><td><strong>무기 내구 0 임박</strong></td><td>일반 공격만(소모 없음)</td><td>예비 무기 장비</td><td>6장 이후 대장간 수리</td><td><a class="conf conf-verified" href="sources.html#C-136">✅ C-136</a> <a class="conf conf-single" href="sources.html#C-137">🟡 C-137</a></td></tr>
+<tr><td><strong>명중 빗나감으로 사망 확정</strong></td><td>천각(5), 행동 순서를 바꿔 재시도</td><td>가호 먼저 켜고 천각(환급 보고)</td><td>장 다시 시작</td><td><a class="conf conf-verified" href="sources.html#C-006">✅ C-006</a> <a class="conf conf-single" href="sources.html#C-015">🟡 C-015</a> <a class="conf conf-single" href="sources.html#C-008">🟡 C-008</a></td></tr>
+<tr><td><strong>턴 제한·레버·스위치 부족</strong></td><td>칼라(이동)</td><td>기동 유닛 재배치 후 천각</td><td>장 다시 시작</td><td><a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a> <a class="conf conf-multi" href="sources.html#C-078">🔵 C-078</a></td></tr>
+<tr><td><strong>게스트·영입 대상이 위험</strong>(아스완·타호니아·네이선)</td><td>위협 적 선처치</td><td>아우로라</td><td>천각(즉시)</td><td><a class="conf conf-multi" href="sources.html#C-059">🔵 C-059</a> <a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a></td></tr>
+<tr><td><strong>백사 10 미만</strong></td><td>그 장은 "안전 우선 모드": 적 사거리 밖에서만 싸운다</td><td>칼라·마스·스미르노스 금지</td><td>—</td><td><span class="conf conf-guess">⚪ 설계 판단</span> (T3)</td></tr>
+<tr><td><strong>레벨업 결과가 나쁨</strong></td><td>천각은 무의미(고정 난수)</td><td>다음 레벨업 전 병종 변경(<span class="conf conf-single">🟡 단일</span>)</td><td>—</td><td><a class="conf conf-multi" href="sources.html#C-016">🔵 C-016</a> <a class="conf conf-single" href="sources.html#C-017">🟡 C-017</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s9">
+<h2>9. 전투 난관 구간 요약 (진행 계획 03과 교차 확인용)</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>구간</th><th>위험 요인</th><th>위험도</th><th>필수 준비</th><th>근거</th></tr></thead><tbody>
+<tr><td><span class="badge badge-gold">디트리히</span> 디트 1부 2장</td><td>에스메랄다 격파 = 패배</td><td><span class="tier-3">중</span></td><td>에스메랄다 돌출 금지</td><td><a class="conf conf-verified" href="sources.html#C-060">✅ C-060</a></td></tr>
+<tr><td><span class="badge badge-gold">디트리히</span> 디트 1부 5장</td><td>레버 10턴 제한 (한니발)</td><td><span class="tier-2">높음</span></td><td><strong>4장에 이오 영입</strong>(지원 2 / 명성 3 / 800G), 칼라 40 + 천각 2회 예산</td><td><a class="conf conf-multi" href="sources.html#C-078">🔵 C-078</a> <a class="conf conf-single" href="sources.html#C-124">🟡 C-124</a></td></tr>
+<tr><td><span class="badge badge-gold">디트리히</span> 디트 1부 8장</td><td>케투스 증원(Vouivre), 이동 시 큰 피해</td><td><span class="tier-2">높음</span></td><td>궁수 1명 이상(키로이카 6장), 단기 결전</td><td><a class="conf conf-single" href="sources.html#C-079">🟡 C-079</a> <span class="conf conf-guess">⚪ 01b</span></td></tr>
+<tr><td><span class="badge badge-gold">디트리히</span> 디트 1부 9→10장</td><td>10장 자유 행동 20턴</td><td><span class="tier-3">중(준비 부족 위험)</span></td><td>9장(160턴)에 결투·외전·다 미나 무기 끝내기</td><td><a class="conf conf-single" href="sources.html#C-080">🟡 C-080</a></td></tr>
+<tr><td><span class="badge badge-gold">디트리히</span> 디트 1부 11장</td><td>가시 바닥(피해·내구 감소)</td><td><span class="tier-3">중</span></td><td>힐러 2명, 전투 기술 무기 아끼기</td><td><span class="conf conf-guess">⚪ 01b</span></td></tr>
+<tr><td><span class="badge badge-gold">디트리히</span> 디트 1부 12장</td><td>마르스 2연전</td><td><span class="tier-2">높음(추정)</span></td><td>1전 종료 시 게이지 50% 미만·HP 가득</td><td><span class="conf conf-guess">⚪ 01b</span></td></tr>
+<tr><td><span class="badge badge-gold">디트리히</span> 디트 결투 일·이라</td><td>1:1, 재시도 비용·기한</td><td><span class="tier-3">중</span></td><td>세이브, 레벨 여유, 무빙 섀도우 지형, <strong>11/24 기준</strong></td><td><a class="conf conf-multi" href="sources.html#C-074">🔵 C-074</a> <a class="conf conf-multi" href="sources.html#C-086">🔵 C-086</a> <a class="conf conf-single" href="sources.html#C-087">🟡 C-087</a> <a class="conf conf-guess" href="sources.html#C-075">⚪ C-075</a></td></tr>
+<tr><td><span class="badge badge-gold">디트리히</span> 디트 베르트랑 외전</td><td>9/17 하루, 놓치면 2부 5장 적 등장</td><td><span class="tier-2">높음(기한)</span></td><td>9/17 전 2군 레벨 확보</td><td><a class="conf conf-multi" href="sources.html#C-077">🔵 C-077</a> <a class="conf conf-single" href="sources.html#C-058">🟡 C-058</a></td></tr>
+<tr><td><span class="badge badge-green">레다</span> 레다 1부 3장</td><td>올림피아(마법·필살)</td><td><span class="tier-3">중</span></td><td>마방 유닛 정면, 주라 검토</td><td><a class="conf conf-multi" href="sources.html#C-061">🔵 C-061</a> <span class="conf conf-guess">⚪ 추정</span></td></tr>
+<tr><td><span class="badge badge-green">레다</span> 레다 1부 9장</td><td>카이전 + 버커니어 첫 턴 이탈</td><td><span class="tier-2">높음</span></td><td>에스메랄다 1번 탱커, 버커니어 공격 금지, 무희의 목걸이(10/15)</td><td><a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a> <a class="conf conf-single" href="sources.html#C-081">🟡 C-081</a> <a class="conf conf-verified" href="sources.html#C-089">✅ C-089</a></td></tr>
+<tr><td><span class="badge badge-green">레다</span> 레다 1부 10장</td><td><strong>세오도라전(가호 없이는 어렵다)</strong>, 2턴 스위치</td><td><span class="tier-1"><strong>매우 높음</strong></span></td><td><strong>아우로라 매 턴 예산</strong>, 스위치 담당 카타냐, 재행동은 보스 턴</td><td><a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a> <a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> <span class="conf conf-guess">⚪ 01a</span></td></tr>
+<tr><td><span class="badge badge-green">레다</span> 레다 1부 11장</td><td>마르틸라전, 명마 다수</td><td><span class="tier-2">높음</span></td><td>힐러 2~3명(피아나·소피아 + 1)</td><td><a class="conf conf-multi" href="sources.html#C-067">🔵 C-067</a> <a class="conf conf-single" href="sources.html#C-082">🟡 C-082</a></td></tr>
+<tr><td><span class="badge badge-green">레다</span> 레다 1부 12장</td><td>베르트랑 각성</td><td><span class="tier-3">중(추정)</span></td><td>원거리 딜러 3명</td><td><span class="conf conf-guess">⚪ 01b</span></td></tr>
+<tr><td><span class="badge badge-blue">공통</span> 2부 1장</td><td>무난</td><td><span class="tier-4">낮음</span></td><td>증서 5장으로 전직, Training Drills</td><td><span class="conf conf-guess">⚪ 01a</span> <a class="conf conf-multi" href="sources.html#C-055">🔵 C-055</a> <a class="conf conf-single" href="sources.html#C-056">🟡 C-056</a></td></tr>
+<tr><td><span class="badge badge-blue">공통</span> 2부 2장</td><td>포대 한 방, 도주 적, <strong>키릭 영입</strong></td><td><span class="tier-3">중</span></td><td>1부 「죽은 여동생의 장신구」 완료</td><td><a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a> <a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a></td></tr>
+<tr><td><span class="badge badge-blue">공통</span> 2부 3장</td><td><strong>불 타일 확산 + 양측 증원, 네이선 = 키릭 막타</strong></td><td><span class="tier-2">높음</span></td><td>트리거 전 정비, 네이선 프로토콜, 백사 10(천각 2회분) 비상금</td><td><a class="conf conf-multi" href="sources.html#C-148">🔵 C-148</a> <a class="conf conf-verified" href="sources.html#C-104">✅ C-104</a></td></tr>
+<tr><td><span class="badge badge-blue">공통</span> 2부 4장</td><td>코끼리·후방 증원·썬더스톰·다리</td><td><span class="tier-1"><strong>매우 높음</strong>(디트)</span></td><td>창·마법 딜, 후방 예비 탱커</td><td><a class="conf conf-single" href="sources.html#C-071">🟡 C-071</a> <span class="conf conf-guess">⚪ 01a·01b</span></td></tr>
+<tr><td><span class="badge badge-blue">공통</span> 2부 5장</td><td><strong>다그다 2페이즈(배치 그대로 전환)</strong>, 발리스타, 속박, 미클리어 진영장</td><td><span class="tier-1"><strong>매우 높음</strong></span></td><td>전환 전 전원 회복, 마법 딜러 2명 이상, 외전 클리어</td><td><a class="conf conf-multi" href="sources.html#C-147">🔵 C-147</a> <a class="conf conf-single" href="sources.html#C-071">🟡 C-071</a> <a class="conf conf-single" href="sources.html#C-058">🟡 C-058</a></td></tr>
+<tr><td><span class="badge badge-blue">공통</span> 2부 6장</td><td>리라 방패 → 번데기 → 탈출, 가운데 강적 회피</td><td><span class="tier-2">높음</span></td><td><strong>아우로라 2단계 이상</strong>, 양 끝 경로, 퇴각 순서</td><td><a class="conf conf-multi" href="sources.html#C-013">🔵 C-013</a> <a class="conf conf-single" href="sources.html#C-149">🟡 C-149</a></td></tr>
+<tr><td><span class="badge badge-blue">공통</span> 2부 전반</td><td>아스완·타호니아 생존</td><td><span class="tier-2">높음(영구 손실)</span></td><td>게스트 보호 프로토콜</td><td><a class="conf conf-multi" href="sources.html#C-059">🔵 C-059</a></td></tr>
+<tr><td><span class="badge badge-blue">공통</span> 3부 최종전</td><td>리라·발로르, 마공 70 전후</td><td><span class="tier-2">높음(추정)</span></td><td>마방 탱커, 아우로라 마법 적용 확인, 신장직</td><td><a class="conf conf-single" href="sources.html#C-053">🟡 C-053</a> <a class="conf conf-single" href="sources.html#C-150">🟡 C-150</a> <a class="conf conf-verified" href="sources.html#C-094">✅ C-094</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s10">
+<h2>10. 전투 체크리스트</h2>
+<div class="compare-grid">
+<div class="card card-gold"><h3>장 시작 전</h3>
+<ul><li><span class="chk">☐</span> 백사가 가득 찼는지(장마다 충전) <a class="conf conf-verified" href="sources.html#C-007">✅ C-007</a> / 가호 비용을 인게임에서 확인 <a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a></li><li><span class="chk">☐</span> 이 장이 9장 난관 표에 있는지, 있다면 필수 준비를 끝냈는지</li><li><span class="chk">☐</span> 힐러 2명(리브로) 출격 <a class="conf conf-multi" href="sources.html#C-123">🔵 C-123</a></li><li><span class="chk">☐</span> 로드 게이지 50% 미만 <a class="conf conf-multi" href="sources.html#C-141">🔵 C-141</a></li><li><span class="chk">☐</span> 전투 기술을 쓸 무기의 내구 확인 <a class="conf conf-verified" href="sources.html#C-136">✅ C-136</a></li><li><span class="chk">☐</span> (2부) 13명 편성, 장비 아이템만 사용 가능하니 소모품을 장비 칸에 <a class="conf conf-single" href="sources.html#C-028">🟡 C-028</a> <a class="conf conf-single" href="sources.html#C-054">🟡 C-054</a></li><li><span class="chk">☐</span> (레다) 음료 버프 검토 <span class="conf conf-guess">⚪ 01b 본문</span></li></ul>
+</div>
+<div class="card card-red"><h3>전투 중 (매 턴)</h3>
+<ul><li><span class="chk">☐</span> 1-7 사망 방지 체크리스트 10개 항목</li><li><span class="chk">☐</span> 막타 분배: 디트리히가 잡몹을 처치하지 않았는가 <a class="conf conf-multi" href="sources.html#C-065">🔵 C-065</a></li><li><span class="chk">☐</span> 레다 재행동은 아직 남았는가(맵당 1회) <a class="conf conf-multi" href="sources.html#C-128">🔵 C-128</a></li></ul>
+</div>
+<div class="card card-green"><h3>전투 후</h3>
+<ul><li><span class="chk">☐</span> 레벨 격차: 2군이 디트리히 −5 이내인가(02 E4) <a class="conf conf-multi" href="sources.html#C-065">🔵 C-065</a></li><li><span class="chk">☐</span> 내구 0 무기 수리(6장 이후) <a class="conf conf-single" href="sources.html#C-137">🟡 C-137</a></li><li><span class="chk">☐</span> 다음 기한 확인: 베르트랑 외전 9/17, 무희의 목걸이 10/15, 일·이라 11/24 <a class="conf conf-multi" href="sources.html#C-077">🔵 C-077</a> <a class="conf conf-verified" href="sources.html#C-089">✅ C-089</a> <a class="conf conf-single" href="sources.html#C-087">🟡 C-087</a></li></ul>
+</div>
+</div>
+</section>
+
+<section id="s11">
+<h2>11. 자료 공백 (인게임 확인이 필요한 항목)</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>현재 상태</th><th>영향</th></tr></thead><tbody>
+<tr class="nodata-row"><td>적 범위 표시 버튼(ZL 여부)</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>1-1</td></tr>
+<tr class="nodata-row"><td>하드 백사 최대치, 가호 지속 시간</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span> (추정 약 100 <span class="conf conf-guess">⚪ 추정</span>)</td><td>1-2 T3, 1-3 G1</td></tr>
+<tr><td>가호 하드 비용·효과</td><td><a class="conf conf-single" href="sources.html#C-010">🟡 C-010</a> 단일 출처</td><td>1-3 전체</td></tr>
+<tr><td>천각 시 가호 백사 환급</td><td><a class="conf conf-single" href="sources.html#C-008">🟡 C-008</a></td><td>1-2 T4</td></tr>
+<tr class="nodata-row"><td>버스트 최대 HP 감소의 지속 기간</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>1-4</td></tr>
+<tr><td>레다 버프 수치(+7 vs +4)</td><td><a class="conf conf-single" href="sources.html#C-127">🟡 C-127</a> <a class="conf conf-single" href="sources.html#C-129">🟡 C-129</a></td><td>3장, 5-4</td></tr>
+<tr class="nodata-row"><td>1부 모든 장의 보스 스탯·증원 턴</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>4장, 5장</td></tr>
+<tr><td>레다 9장 버커니어의 적 측 처리</td><td><a class="conf conf-single" href="sources.html#C-081">🟡 C-081</a> 요약만</td><td>5-3</td></tr>
+<tr><td>2부 장 목록(해외)과 국내 메모의 장 번호 어긋남</td><td>키릭 1장 vs 2장</td><td>6-1 주석</td></tr>
+<tr class="nodata-row"><td>아스완·타호니아 등장 장·조작 가능 여부</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>6-7</td></tr>
+<tr class="nodata-row"><td>3부 1~5구간 맵·보스</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>7장</td></tr>
+<tr class="nodata-row"><td>조우전·퀵배틀의 클래식 사망 처리</td><td><span class="conf conf-guess nodata">〔자료 없음〕</span></td><td>1-6</td></tr>
+</tbody></table></div>
+</section>
+
+</div>
+
+<div class="footer">
+  <p>파이어 엠블렘 만자천홍 하드 / 클래식 전투 전략 · 자료 기준일 2026-09-24 (발매 7일 차)</p>
+  <p>모든 사실은 국내·해외 독립 조사 후 팩트체크(3중 검증)를 거쳤다. 배지를 누르면 <a href="sources.html">출처·신뢰도</a> 페이지의 해당 주장으로 이동한다.</p>
+  <p>🟡/⚪ 항목은 인게임 확인 권장 · 원본: 04_combat_strategy.md</p>
+</div>
+
+</body>
+</html>
