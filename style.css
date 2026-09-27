@@ -538,3 +538,4 @@ a.conf { text-decoration: none; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
 .verdict { font-weight: 800; color: var(--gold-700); }
 .badge-slate  { background: var(--slate-100); color: var(--slate-700); }
+.conf-mini { padding: 0 .3rem; margin-left: .15rem; font-size: .7rem; line-height: 1.4; }
