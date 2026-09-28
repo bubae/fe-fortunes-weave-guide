@@ -7,3 +7,7 @@
 - 웹: https://bubae.github.io/fe-fortunes-weave-guide/
 - 자료 기준일: 2026-09-27 (4차 검증 반영: 선물·마법 부록, 힐러 재배정, 지원도 루프 전제). 🟡/⚪ 항목은 인게임 확인 권장.
 - 이전 판(디트리히 또는 레다 단일 시작 기준): `archive/r1_leda_or_dietrich/`
+
+## 데이터·이미지
+- 캐릭터 도감·병종 페이지는 [fefw 만자천홍 육성 도감](https://fefw.azaws.workers.dev/) (game8.jp 기반) 데이터에 이 공략의 티어·선물·마법·기본치 정보를 합친 것이다. UI도 fefw를 참고했다.
+- 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS.

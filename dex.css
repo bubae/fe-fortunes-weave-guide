@@ -1,0 +1,346 @@
+/* dex.css — build_dex.py가 생성. fefw(만자천홍 육성 도감) 컴포넌트 스타일을 body.dex 아래로 한정하고 우리 블록을 더했다.
+   토큰은 style.css와 같은 값(단독으로 열어도 보이도록 여기에도 둔다). 손으로 고치지 말고 생성기를 고친다. */
+:root{
+ --bg:#f6f5f2; --panel:#fff; --ink:#1c2128; --dim:#5f6b73; --line:#e3e1db;
+ --brand:#1f4d5c; --brand-d:#163a45; --brand-l:#3f7d8c; --amber:#b4652a; --amber-l:#e8d3bc;
+ --t0:#7d8794; --t1:#3f7d8c; --t2:#1f4d5c; --t3:#b4652a; --t4:#8a6d1f; --t5:#45305e;
+ --ok:#1f6b4d; --warn:#9a3412; --info:#25566b;
+ --crim:#9b1c2e; --soft:#fafaf8; --maxw:1040px;
+ --r:10px; --sh:0 1px 2px rgba(28,33,40,.06),0 4px 14px rgba(28,33,40,.05);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body.dex{margin:0;background:var(--bg);color:var(--ink);
+ font-family:"Pretendard","Apple SD Gothic Neo","Segoe UI",system-ui,sans-serif;
+ font-size:14px;line-height:1.72;letter-spacing:-.011em;-webkit-text-size-adjust:100%;
+ -webkit-font-smoothing:antialiased}
+.dex a{color:var(--brand-l);text-decoration:none;border-bottom:1px solid rgba(63,125,140,.35)}
+.dex a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+.dex .wrap{max-width:1280px;margin:0 auto;padding:0 22px}
+.dex header.site{background:var(--brand-d);color:#fff;padding:30px 0 24px;
+ border-bottom:3px solid var(--amber)}
+.dex header.site .kick{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+ color:#8fc0cc;margin-bottom:8px}
+.dex header.site h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.3}
+.dex header.site .sub{margin:9px 0 0;font-size:13px;color:#c2d6dc;max-width:78ch}
+.dex header.site .meta{margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.dex header.site .pill{font-size:11.5px;font-weight:700;background:rgba(255,255,255,.1);
+ border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:3px 11px;color:#e6f0f2}
+.dex .tab,.dex .fb{font:inherit;font-size:13px;font-weight:700;cursor:pointer;
+ border:1px solid var(--line);background:#fff;color:var(--dim);
+ padding:6px 14px;border-radius:7px;transition:.13s}
+.dex .tab:hover,.dex .fb:hover{border-color:var(--brand-l);color:var(--brand)}
+.dex .tab.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.dex .fb.on{background:var(--amber);border-color:var(--amber);color:#fff}
+.dex .tab .n{font-weight:500;opacity:.68;margin-left:5px;font-size:11.5px}
+.dex .gl{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--brand);
+ text-transform:uppercase;margin:0 3px 0 6px}
+.dex select,.dex input[type=search]{font:inherit;font-size:13px;padding:6px 11px;color:var(--ink);
+ border:1px solid var(--line);border-radius:7px;background:#fff;outline:none}
+.dex select:focus,.dex input:focus{border-color:var(--brand-l);box-shadow:0 0 0 3px rgba(63,125,140,.13)}
+.dex input[type=search]{width:196px}
+.dex .spacer{flex:1}
+.dex .hint{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums}
+.dex .reset{border:0;background:none;color:var(--dim);font:inherit;font-size:12px;cursor:pointer;
+ text-decoration:underline;text-underline-offset:2px}
+.dex .legend{display:flex;flex-wrap:wrap;gap:9px 16px;align-items:center;
+ font-size:12px;color:var(--dim);padding:15px 0 3px}
+.dex .legend b{color:var(--brand);font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.dex .legend .chip{font-size:11px}
+.dex section.route{padding:22px 0 10px}
+.dex .rhead{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;
+ padding-bottom:9px;border-bottom:2px solid var(--brand);margin-bottom:2px}
+.dex .rhead h2{margin:0;font-size:21px;font-weight:800;letter-spacing:-.025em;color:var(--brand-d)}
+.dex .rhead .cnt{font-size:12.5px;color:var(--dim)}
+.dex .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(452px,1fr));gap:16px;margin-top:16px}
+@media(max-width:960px){
+.dex .grid{grid-template-columns:1fr}
+}
+.dex .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+ box-shadow:var(--sh);display:flex;flex-direction:column;overflow:hidden}
+.dex .card>.rail{height:3px;background:var(--brand)}
+.dex .chead{display:flex;align-items:center;gap:12px;padding:13px 15px 11px}
+.dex .chead .por{width:54px;height:54px;border-radius:8px;flex-shrink:0;overflow:hidden;
+ background:#eceae4;border:1px solid var(--line)}
+.dex .chead .por img{width:100%;height:100%;object-fit:cover;display:block}
+.dex .chead .nm{font-size:17px;font-weight:800;letter-spacing:-.025em;color:var(--brand-d);line-height:1.2}
+.dex .chead .ja{font-size:11px;color:var(--dim);margin-top:1px}
+.dex .chead .tot{margin-left:auto;text-align:right;flex-shrink:0}
+.dex .chead .tot b{display:block;font-size:19px;font-weight:800;color:var(--amber);
+ letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.1}
+.dex .chead .tot span{font-size:10px;color:var(--dim);letter-spacing:.02em}
+.dex .bdg{display:inline-block;font-size:10px;font-weight:800;border-radius:4px;
+ padding:1px 6px;margin-left:6px;vertical-align:2px;letter-spacing:.02em}
+.dex .bdg.m{background:#dbe8f0;color:#1d4a63}
+.dex .bdg.f{background:#f2dfe6;color:#7a2447}
+.dex .bdg.n{background:#e6e3dc;color:#52555a}
+.dex .bdg.rk{background:var(--brand);color:#fff}
+.dex .bdg.hd{background:var(--t5);color:#fff}
+.dex .cbody{padding:0 15px 15px;display:flex;flex-direction:column;gap:13px}
+.dex .lbl{font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+ color:var(--brand-l);margin-bottom:6px}
+.dex .tagrow{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.dex .tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:5px;border:1px solid}
+.dex .tag.s{color:var(--ok);border-color:#b5dbc8;background:#eff8f3}
+.dex .tag.w{color:var(--warn);border-color:#eccbb8;background:#fdf2eb}
+.dex .tag.i{color:var(--info);border-color:#c5d8e0;background:#eff5f8}
+.dex .tag.c{color:#6b5a1f;border-color:#e0d5b0;background:#faf6ea}
+.dex .tag.n{color:#6f7b83;border-color:#ddd9d2;background:#f4f3ef}
+.dex .pbr{margin-top:5px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.dex .pbl{font-size:9.5px;font-weight:800;letter-spacing:.06em;color:var(--brand-l);
+ text-transform:uppercase;margin-right:2px}
+.dex .pb{font-size:11px;font-weight:800;color:#3d5a2e;background:#f0f6ea;
+ border:1px solid #cfe0bf;border-radius:4px;padding:1px 7px;font-variant-numeric:tabular-nums}
+.dex .join{border:1px solid var(--line);border-left:3px solid var(--brand-l);
+ border-radius:0 8px 8px 0;background:#fafaf8;padding:10px 13px;font-size:12.5px}
+.dex .jt{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.dex .jb{font-size:10.5px;font-weight:800;padding:2px 9px;border-radius:5px;color:#fff;letter-spacing:.02em}
+.dex .jb.story{background:var(--ok)}
+.dex .jb.scout{background:var(--amber)}
+.dex .jt b{font-weight:800;color:var(--brand-d)}
+.dex .jm{color:var(--dim);font-size:11.5px}
+.dex .lvs{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+.dex .lv2{font-size:12px;font-weight:800;border-radius:6px;padding:2px 10px;border:1px solid;
+ font-variant-numeric:tabular-nums}
+.dex .lv2.sup{background:#eff5f8;border-color:#c5d8e0;color:var(--info)}
+.dex .lv2.fame{background:#faf6ea;border-color:#e0d5b0;color:#6b5a1f}
+.dex .lv2 i{font-style:normal;font-weight:500;opacity:.66;font-size:10.5px}
+.dex .ng{font-size:11px;font-weight:800;padding:2px 9px;border-radius:6px;border:1px solid}
+.dex .ng.lo{background:#eff8f3;border-color:#b5dbc8;color:var(--ok)}
+.dex .ng.md{background:#faf6ea;border-color:#e0d5b0;color:#6b5a1f}
+.dex .ng.hi{background:#fdf2eb;border-color:#eccbb8;color:var(--warn)}
+.dex .ng.ex{background:#5a1f1f;border-color:#5a1f1f;color:#fff}
+.dex .ngo{margin-top:9px;padding-top:9px;border-top:1px dashed var(--line);
+ display:flex;flex-direction:column;gap:7px}
+.dex .ngi{font-size:12.5px}
+.dex .ngr{display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
+.dex .ngi .k{font-size:10.5px;font-weight:800;border-radius:5px;padding:2px 8px;white-space:nowrap;
+ background:#eceae4;color:var(--brand-d);border:1px solid var(--line)}
+.dex .ngi .k.gaiden{background:#fdf2eb;border-color:#eccbb8;color:var(--warn)}
+.dex .ngi b{color:var(--brand-d);font-weight:800}
+.dex .ngi .d{display:block;color:var(--dim);font-size:11.5px;margin-top:2px;padding-left:2px}
+.dex .mt{font-size:10px;font-weight:800;border-radius:4px;padding:1px 7px;white-space:nowrap}
+.dex .mt.lv{background:#eff5f8;color:var(--info);border:1px solid #c5d8e0}
+.dex .mt.dl{background:#fdf2eb;color:var(--warn);border:1px solid #eccbb8}
+.dex .warn{margin-top:6px;font-size:11.5px;color:var(--warn);background:#fdf2eb;
+ border:1px solid #eccbb8;border-radius:6px;padding:4px 9px}
+.dex .spb{display:flex;flex-direction:column;gap:6px}
+.dex .spi{font-size:12.5px;border:1px solid var(--line);border-left:3px solid var(--t5);
+ border-radius:0 7px 7px 0;background:#faf9fc;padding:7px 11px}
+.dex .spi b{color:var(--brand-d);font-weight:800}
+.dex .spi .d{display:block;color:var(--dim);font-size:11.5px;margin-top:2px}
+.dex .sk{font-size:10px;font-weight:800;border-radius:4px;padding:1px 7px;margin-right:6px;
+ color:#fff;letter-spacing:.02em}
+.dex .sk.seal{background:#7a2447}
+.dex .sk.root{background:var(--ok)}
+.dex .sk.blaze{background:var(--t5)}
+.dex .stp{font-size:11px;font-weight:800;color:var(--info);background:#eff5f8;
+ border:1px solid #c5d8e0;border-radius:4px;padding:1px 7px;margin-left:5px}
+.dex .path{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.dex .chip{font-size:12px;font-weight:800;padding:4px 11px;border-radius:6px;color:#fff;white-space:nowrap;
+ letter-spacing:-.01em}
+.dex .chip.t0{background:var(--t0)}
+.dex .chip.t1{background:var(--t1)}
+.dex .chip.t2{background:var(--t2)}
+.dex .chip.t3{background:var(--t3)}
+.dex .chip.t4{background:var(--t4)}
+.dex .chip.t5{background:var(--t5)}
+.dex .chip.add{box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+.dex .chip.hyb{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--amber)}
+.dex .arw{color:#b9b6ae;font-size:13px;font-weight:700}
+.dex .plus{display:inline-block;font-size:9.5px;background:rgba(255,255,255,.28);
+ border-radius:3px;padding:0 4px;margin-left:5px;vertical-align:1px}
+.dex .steps{display:flex;flex-direction:column;gap:7px}
+.dex .step{border:1px solid var(--line);border-left:3px solid #ccc;border-radius:0 7px 7px 0;
+ padding:8px 11px;font-size:12.5px;background:#fff}
+.dex .step.t0{border-left-color:var(--t0)}
+.dex .step.t1{border-left-color:var(--t1)}
+.dex .step.t2{border-left-color:var(--t2)}
+.dex .step.t3{border-left-color:var(--t3)}
+.dex .step.t4{border-left-color:var(--t4)}
+.dex .step.t5{border-left-color:var(--t5)}
+.dex .step .sn{font-weight:800;color:var(--brand-d);font-size:13px}
+.dex .step .tg{font-size:9.5px;font-weight:800;color:#fff;border-radius:3px;padding:1px 6px;
+ margin-left:6px;vertical-align:1.5px;letter-spacing:.02em}
+.dex .step .lv{color:var(--dim);font-size:11.5px;margin-left:7px}
+.dex .req{margin-top:4px;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.dex .rq{font-size:11.5px;font-weight:800;padding:2px 8px;border-radius:5px;
+ background:#eceae4;color:var(--brand-d);border:1px solid var(--line)}
+.dex .rq .rqt{opacity:.55;font-weight:600}
+.dex .rq.pick{background:#faf6ea;border-color:#e0d5b0;color:#6b5a1f}
+.dex .rq.opt{background:#f6f5f2;border-color:var(--line);color:var(--dim);font-weight:600}
+.dex .alt{font-size:11px;color:var(--dim);margin:0 2px}
+.dex .tok{font-size:11px;font-weight:700;color:var(--info);background:#eff5f8;
+ border:1px solid #c5d8e0;border-radius:5px;padding:2px 8px}
+.dex .unlock{margin-top:5px;font-size:11.5px;color:var(--warn);background:#fdf2eb;
+ border:1px solid #eccbb8;border-radius:6px;padding:4px 9px}
+.dex .brn{margin-top:5px;font-size:11.5px;background:#faf6ea;border:1px solid #e0d5b0;
+ border-radius:6px;padding:6px 10px;color:#6b5a1f}
+.dex .brn b{color:#7a5a12}
+.dex .brl{display:inline-flex;flex-wrap:wrap;gap:4px;align-items:center;vertical-align:middle}
+.dex .brl .bc{font-size:10.5px;font-weight:800;color:#fff;border-radius:4px;padding:1px 7px;white-space:nowrap}
+.dex .skill{font-size:12.5px;background:#fafaf8;border:1px solid var(--line);
+ border-left:3px solid var(--amber);border-radius:0 7px 7px 0;padding:8px 11px}
+.dex .skill b{color:var(--brand-d);font-weight:800}
+.dex .stats{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;
+ background:#fafaf8;border:1px solid var(--line);border-radius:8px;padding:9px 9px 6px}
+.dex .st{text-align:center;font-size:10px;color:var(--dim)}
+.dex .st .bar{height:38px;display:flex;align-items:flex-end;margin-bottom:3px}
+.dex .st .bar i{display:block;width:100%;border-radius:2px 2px 0 0;background:#b7c3c7}
+.dex .st.hi .bar i{background:var(--amber)}
+.dex .st.lo .bar i{background:#dcdad4}
+.dex .st .v{font-weight:800;color:var(--ink);font-size:10.5px;font-variant-numeric:tabular-nums}
+.dex .st.hi .v{color:var(--amber)}
+.dex .st.lo .v{color:#a8a5a0}
+.dex .unv{border-bottom:1px dotted #a9b3b8;cursor:help}
+.dex details.appx{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+ margin:16px 0;box-shadow:var(--sh);overflow:hidden}
+.dex details.appx>summary{cursor:pointer;padding:15px 18px;font-weight:800;font-size:15.5px;
+ color:var(--brand-d);list-style:none;letter-spacing:-.02em}
+.dex details.appx>summary::-webkit-details-marker{display:none}
+.dex details.appx>summary:before{content:"+";display:inline-block;width:18px;color:var(--amber);
+ font-weight:800}
+.dex details.appx[open]>summary{border-bottom:1px solid var(--line);background:#fafaf8}
+.dex details.appx[open]>summary:before{content:"–"}
+.dex .apbody{padding:14px 18px 18px}
+.dex .apbody h3{font-size:14px;font-weight:800;color:var(--brand-d);margin:18px 0 8px;
+ letter-spacing:-.02em}
+.dex .apbody h3:first-child{margin-top:4px}
+.dex table{width:100%;border-collapse:collapse;font-size:12.5px}
+.dex th,.dex td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.dex thead th{background:var(--brand);color:#fff;font-size:11.5px;font-weight:800;
+ letter-spacing:.02em;position:sticky;top:0}
+.dex tbody tr:hover{background:#fafaf8}
+.dex td.c{text-align:center;white-space:nowrap}
+.dex td.rt{font-weight:800;color:var(--brand);background:#fafaf8;white-space:nowrap;
+ border-right:1px solid var(--line)}
+.dex .tb{font-size:10px;font-weight:800;color:#fff;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.dex .tb.t0{background:var(--t0)}
+.dex .tb.t1{background:var(--t1)}
+.dex .tb.t2{background:var(--t2)}
+.dex .tb.t3{background:var(--t3)}
+.dex .tb.t4{background:var(--t4)}
+.dex .tb.t5{background:var(--t5)}
+.dex .note{font-size:12.5px;color:var(--dim);background:#fafaf8;border:1px solid var(--line);
+ border-left:3px solid var(--brand-l);border-radius:0 7px 7px 0;padding:10px 13px;margin:0 0 13px}
+.dex .note b{color:var(--brand-d)}
+.dex .note+.note{margin-top:-4px}
+.dex .scrollx{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+.dex .empty{padding:34px;text-align:center;color:var(--dim);font-size:13px;
+ border:1px dashed var(--line);border-radius:var(--r);margin-top:16px}
+.dex footer{margin-top:34px;padding:24px 0 44px;border-top:1px solid var(--line);
+ text-align:center;font-size:12px;color:var(--dim)}
+.dex footer .fx{max-width:70ch;margin:0 auto}
+@media(max-width:640px){
+body.dex{font-size:13.5px}
+.dex .wrap{padding:0 13px}
+.dex header.site{padding:20px 0 16px}
+.dex header.site h1{font-size:21px}
+.dex header.site .sub{font-size:12.5px}
+.dex header.site .meta{gap:5px}
+.dex header.site .pill{font-size:10.5px;padding:2px 8px}
+.dex .tab,.dex .fb{font-size:12px;padding:5px 9px;border-radius:6px}
+.dex .tab .n{margin-left:3px;font-size:10.5px}
+.dex .gl{font-size:10px;margin:0 1px 0 3px}
+.dex select,.dex input[type=search]{font-size:12px;padding:5px 8px}
+.dex input[type=search]{width:100%;min-width:130px;flex:1}
+.dex .spacer{display:none}
+.dex .reset{font-size:11px}
+.dex .legend{gap:6px 10px;font-size:11px;padding:11px 0 0}
+.dex .legend>span:not(:has(.chip)):not(:has(.tag)):not(:has(.bdg)){display:none}
+.dex .rhead h2{font-size:18px}
+.dex .grid{gap:12px;margin-top:12px}
+.dex .chead{padding:11px 12px 9px;gap:10px}
+.dex .chead .por{width:46px;height:46px}
+.dex .chead .nm{font-size:15.5px}
+.dex .chead .tot b{font-size:17px}
+.dex .cbody{padding:0 12px 12px;gap:11px}
+.dex .join,.dex .spi,.dex .step,.dex .skill{padding:8px 10px;font-size:12px}
+.dex .stats{grid-template-columns:repeat(9,1fr);gap:2px;padding:7px 5px 4px}
+.dex .st{font-size:9px}
+.dex .st .v{font-size:9.5px}
+.dex .st .bar{height:30px}
+.dex .chip{font-size:11.5px;padding:3px 9px}
+.dex .path{gap:5px}
+.dex details.appx>summary{padding:13px 14px;font-size:14px}
+.dex .apbody{padding:12px 14px 14px}
+.dex table{font-size:11.5px}
+.dex th,.dex td{padding:6px 7px}
+.dex .note{font-size:12px;padding:9px 11px}
+}
+
+/* ── 공유 style.css와 겹치는 선택자 초기화 (도감 페이지에서는 fefw 모양을 쓴다) */
+.dex .card{margin:0;padding:0;transform:none;transition:none}
+.dex .card:hover{transform:none;box-shadow:var(--sh);border-color:var(--line)}
+.dex .card h3,.dex .card p{margin:0}
+.dex section,.dex section.route{margin:0;background:none;border:0;box-shadow:none}
+.dex .rhead h2{border:0;padding:0;background:none}
+.dex .rhead h2::before,.dex .rhead h2::after{content:none}
+.dex .step{flex:none;min-width:0;text-align:left;box-shadow:none;font-weight:400;color:var(--ink);letter-spacing:normal;line-height:inherit}
+.dex .legend{background:none;border:0;margin:0}
+.dex details.appx>summary{position:static;display:block}
+.dex details.appx>:not(summary){margin:0}
+.dex header.site p,.dex header.site h1{margin-left:0;margin-right:0}
+.dex .join,.dex .skill,.dex .spi{font-weight:400}
+.dex details.appx>summary::before{position:static;left:auto;top:auto;margin:0;transform:none;font-size:inherit;transition:none}
+.dex tbody tr:nth-child(even){background:transparent}
+.dex tbody tr:hover{background:#fafaf8}
+.dex tbody td{font-size:inherit}
+.dex table{margin:0;min-width:0}
+.dex footer{background:none}
+
+/* ── 고정 바: 공유 .nav-bar 안의 페이지 전용 줄 (.row.sub.ctl) */
+.dex .wrap{max-width:var(--maxw)}
+.dex .nav-bar .row.ctl{flex-wrap:wrap;overflow:visible}
+.dex .nav-bar .row.ctl-tabs{flex-wrap:wrap}
+.dex .nav-bar .tab,.dex .nav-bar .fb{flex-shrink:0}
+@media(max-width:640px){
+ .dex .nav-bar .row.ctl-tabs{flex-wrap:nowrap;overflow-x:auto}
+ .dex .nav-bar .row.ctl input[type=search]{flex:1 1 100%;width:100%;min-width:0}
+}
+
+/* ── 우리 공략 블록 */
+.dex .bdg.tier{color:#fff}
+.dex .bdg.tier.must{background:var(--amber)}
+.dex .bdg.tier.rec{background:var(--brand-l)}
+.dex .bdg.tier.opt{background:#e8d3bc;color:#6b3f17}
+.dex .bdg.tier.bench{background:#e6e3dc;color:#52555a}
+.dex .ours{border:1px solid var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;
+ background:#fdf8f2;padding:10px 13px;font-size:12.5px}
+.dex .ours .lbl{color:var(--amber)}
+.dex .orow{display:flex;gap:9px;align-items:baseline;padding:4px 0;border-top:1px dashed #ecdcc9}
+.dex .orow:first-of-type{border-top:0;padding-top:0}
+.dex .ol{flex:0 0 74px;font-size:10.5px;font-weight:800;color:#7a4a1c;letter-spacing:.02em}
+.dex .ov{flex:1;min-width:0;overflow-wrap:anywhere}
+.dex .dim{color:var(--dim);font-size:11.5px}
+.dex mark.libro{background:#fde2bf;color:#7a3e0f;font-weight:800;padding:0 3px;border-radius:3px}
+.dex a.cf{border-bottom:0;text-decoration:none;font-size:11px}
+.dex .vnote{margin-top:7px;font-size:11.5px;color:#6b3f17;background:#fff6e8;border:1px solid #efd3ad;
+ border-radius:6px;padding:4px 9px;line-height:1.6}
+.dex .vnote b:first-child{color:var(--amber);margin-right:3px}
+.dex .vnote.inl{display:inline;margin:0;padding:1px 6px}
+.dex .ourpill{font-size:11px;font-weight:800;color:#fff;background:var(--amber);border-radius:999px;padding:2px 10px}
+.dex .note.top{margin-top:14px}
+.dex section.appendix{padding:26px 0 10px}
+
+/* ── 병종 페이지 */
+.dex .explain{padding:18px 0 4px}
+.dex .explain .rhead{margin-bottom:14px}
+.dex .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dex .grid2 .note{margin:0 0 12px}
+@media(max-width:760px){.dex .grid2{grid-template-columns:1fr;gap:0}}
+.dex table.concept{font-size:12.5px}
+.dex .explain .scrollx{margin-bottom:13px;background:#fff}
+.dex th.our{background:var(--amber)}
+.dex th.our span{font-weight:600;opacity:.8;font-size:10px}
+.dex td.mods{min-width:130px;font-variant-numeric:tabular-nums}
+.dex td.floor{min-width:110px}
+.dex .gdet{font-size:10.5px;color:var(--dim);font-weight:500;margin-top:2px;white-space:normal}
+.dex .ournm{font-size:10.5px;color:var(--amber);font-weight:700}
+.dex table.num td.pos{color:var(--ok);font-weight:800}
+.dex table.num td.neg{color:var(--warn);font-weight:800}
+.dex table.num td.zero{color:#b9b6ae}
+.dex .scrollx{max-width:100%}
+.dex .chead>div:nth-child(2){min-width:0}
+.dex .chead .nm{overflow-wrap:anywhere}
