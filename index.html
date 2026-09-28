@@ -9,6 +9,7 @@
 <body>
 
 <header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
  <div class="kick">하드 / 클래식 · 세오도라 → 레다 → 디트리히</div>
  <h1>파이어 엠블렘 만자천홍 하드 육성 공략집</h1>
  <p class="sub">앞 루트의 해금과 축복을 이어받으며, 두 개의 2부 본대를 키운다. 캐릭터 도감·병종표와 3중 검증을 거친 육성·진행·전투 공략을 한곳에 모았다.</p>
@@ -20,12 +21,34 @@
  <span class="pill">스포일러 포함</span>
  </div>
 </header>
-
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">종합 가이드</div>
+<a href="index.html" class="active" aria-current="page">개요</a>
+<a href="build_guide.html">육성</a>
+<a href="progression.html">진행</a>
+<a href="combat.html">전투</a>
+<a href="units.html">선물·마법</a>
+<a href="sources.html">출처·신뢰도</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
 <nav class="nav-bar">
- <div class="row"><a href="index.html" class="active">허브</a><a href="characters.html">도감</a><a href="classes.html">병종</a><a href="build_guide.html">육성</a><a href="progression.html">진행</a><a href="combat.html">전투</a><a href="units.html">선물·마법</a><a href="sources.html">출처·신뢰도</a></div>
  <div class="row sub"><span class="gl">이 페이지</span><a href="#guide">가이드 목차</a><a href="#journey">여정</a><a href="#routes">루트별 핵심</a><a href="#deadlines">기한</a><a href="#carry">이월 규칙</a><a href="#provisional">잠정 항목</a></div>
 </nav>
-
 <div class="container">
 
 <section id="guide">
@@ -240,6 +263,23 @@
  🟡/⚪ 항목은 발매 초기 자료라 바뀔 수 있다. 인게임 확인을 권장한다.
  <div class="credit">데이터: <a href="https://fefw.azaws.workers.dev/">fefw.azaws.workers.dev</a> (game8.jp 기반) + 우리 3중 검증 공략. 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS</div>
 </div></div>
-
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
 </body>
 </html>

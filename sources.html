@@ -9,17 +9,40 @@
 <body>
 
 <div class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
   <div class="hero-badge">3중 검증 · 팩트체크 보고서</div>
   <h1>출처와 신뢰도</h1>
   <p class="subtitle">파이어 엠블렘 만자천홍 — 공략의 근거가 된 주장 424건</p>
   <p class="asof">자료 기준일 2026-09-27</p>
 </div>
-
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">종합 가이드</div>
+<a href="index.html">개요</a>
+<a href="build_guide.html">육성</a>
+<a href="progression.html">진행</a>
+<a href="combat.html">전투</a>
+<a href="units.html">선물·마법</a>
+<a href="sources.html" class="active" aria-current="page">출처·신뢰도</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
 <nav class="nav-bar">
- <div class="row"><a href="index.html">허브</a><a href="characters.html">도감</a><a href="classes.html">병종</a><a href="build_guide.html">육성</a><a href="progression.html">진행</a><a href="combat.html">전투</a><a href="units.html">선물·마법</a><a href="sources.html" class="active">출처·신뢰도</a></div>
  <div class="row sub"><span class="gl">이 페이지</span><a href="#s0">0. 검증 방법과 독립성 규칙</a><a href="#s1">통합 주장 목록</a><a href="#s2">쟁점 목록</a><a href="#s3">기각된 주장</a><a href="#s4">한국어 ↔ 영어 ↔ 일본어 명칭 매핑</a><a href="#s5">출처 목록</a></div>
 </nav>
-
 <div class="container">
 <section>
   <h2>신뢰도 분포</h2>
@@ -92,6 +115,24 @@
 <div class="footer">
   자료 기준일 2026-09-27 · 발매 초기 자료라 🟡/⚪ 항목은 바뀔 수 있다. "최신 자료로 갱신해줘"로 다시 검증한다.
 </div>
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
 <script>
 // 다른 페이지에서 sources.html#C-012로 들어오면 접힌 표를 열고 해당 행을 강조한다
 function openClaim() {

@@ -9,5 +9,5 @@
 - 이전 판(디트리히 또는 레다 단일 시작 기준): `archive/r1_leda_or_dietrich/`
 
 ## 데이터·이미지
-- 캐릭터 도감·병종 페이지는 [fefw 만자천홍 육성 도감](https://fefw.azaws.workers.dev/) (game8.jp 기반) 데이터에 이 공략의 티어·선물·마법·기본치 정보를 합친 것이다. UI도 fefw를 참고했다.
-- 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS.
+- 도감(캐릭터·탈것·병종·위치·퀘스트·외전)은 [fefw 만자천홍 육성 도감](https://fefw.azaws.workers.dev/) (game8.jp 기반)과 [파이어엠블렘 만자천홍 도감 (turam.dev)](https://fire-emblem-fortunes-weave.turam.dev/ko/) 데이터에 이 공략의 티어·선물·마법·기본치 정보를 합친 것이다. 디자인은 fefw, 사이드바 레이아웃은 turam.dev를 참고했다.
+- 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS (일부 큰 초상화는 Fire Emblem Wiki 경유).

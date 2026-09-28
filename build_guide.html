@@ -16,17 +16,40 @@
 <body>
 
 <header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
  <span class="hero-badge">육성 가이드</span>
  <h1>빌드 가이드 — 하드 / 클래식 육성편 (3루트 이월판)</h1>
  <p class="subtitle">파이어 엠블렘 만자천홍 · 세오도라 → 레다 → 디트리히 1부, 두 본대의 2부, 3부 인과융합과 신장직까지</p>
  <p class="asof">자료 기준일 2026-09-24 · 하드 / 클래식</p>
 </header>
-
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">종합 가이드</div>
+<a href="index.html">개요</a>
+<a href="build_guide.html" class="active" aria-current="page">육성</a>
+<a href="progression.html">진행</a>
+<a href="combat.html">전투</a>
+<a href="units.html">선물·마법</a>
+<a href="sources.html">출처·신뢰도</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
 <nav class="nav-bar">
- <div class="row"><a href="index.html">허브</a><a href="characters.html">도감</a><a href="classes.html">병종</a><a href="build_guide.html" class="active">육성</a><a href="progression.html">진행</a><a href="combat.html">전투</a><a href="units.html">선물·마법</a><a href="sources.html">출처·신뢰도</a></div>
  <div class="row sub"><span class="gl">이 페이지</span><a href="#overview">개요</a><a href="#roadmap">0. 로드맵</a><a href="#principles">1. 육성 원칙</a><a href="#theodora">2. 세오도라</a><a href="#leda">3. 레다</a><a href="#dietrich">4. 디트리히</a><a href="#part2">5. 2부 편성</a><a href="#part3">6. 3부 통합</a><a href="#data">7. 스킬·장비</a><a href="#cautions">주의사항</a><a href="#tentative">8. 잠정 항목</a></div>
 </nav>
-
 <div class="container">
 <section id="overview">
 <h2>빌드 개요</h2>
@@ -1120,6 +1143,23 @@
  국내·해외 독립 조사 + 팩트체크의 3중 검증을 거친 자료입니다. 근거 배지를 누르면 <a href="sources.html">출처·신뢰도</a> 페이지의 해당 주장으로 이동합니다.<br>
  🟡/⚪ 항목은 인게임 확인 권장
 </div>
-
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
 </body>
 </html>

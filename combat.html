@@ -27,17 +27,40 @@ li .table-wrap { margin-top: .5rem; }
 <body>
 
 <header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
  <div class="hero-badge">전투 전략</div>
  <h1>전투 전략 — 파이어 엠블렘 만자천홍</h1>
  <p class="subtitle">하드 / 클래식 · 3루트 이월판 · 천각·가호 운용, 1부 세오도라 → 레다 → 디트리히 장별 공략, 2부 공통 맵(레다 → 디트리히), 3부 최종전</p>
  <p class="asof">자료 기준일 2026-09-24 · 하드 / 클래식</p>
 </header>
-
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">종합 가이드</div>
+<a href="index.html">개요</a>
+<a href="build_guide.html">육성</a>
+<a href="progression.html">진행</a>
+<a href="combat.html" class="active" aria-current="page">전투</a>
+<a href="units.html">선물·마법</a>
+<a href="sources.html">출처·신뢰도</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
 <nav class="nav-bar">
- <div class="row"><a href="index.html">허브</a><a href="characters.html">도감</a><a href="classes.html">병종</a><a href="build_guide.html">육성</a><a href="progression.html">진행</a><a href="combat.html" class="active">전투</a><a href="units.html">선물·마법</a><a href="sources.html">출처·신뢰도</a></div>
  <div class="row sub"><span class="gl">이 페이지</span><a href="#about">안내</a><a href="#journey">진행 순서</a><a href="#s0">0 시스템</a><a href="#s1">1 하드 원칙</a><a href="#s1_2">천각 T0~T9</a><a href="#s1_3">가호</a><a href="#s1_9">사망 방지</a><a href="#s2">2 유닛 운용</a><a href="#s3">3 세오도라</a><a href="#s4">4 레다</a><a href="#s5">5 디트리히</a><a href="#s6">6 2부 공통</a><a href="#s7">7 3부</a><a href="#s8">8 상황별 대응</a><a href="#s9">9 난관 요약</a><a href="#s10">10 체크리스트</a><a href="#s11">11 자료 공백</a></div>
 </nav>
-
 <div class="container">
 
 <section id="about">
@@ -757,6 +780,23 @@ li .table-wrap { margin-top: .5rem; }
  <p>3중 검증(국내·해외 독립 조사 → 팩트체크) 결과를 반영했습니다. 신뢰도 배지를 누르면 <a href="sources.html">출처·신뢰도</a> 페이지의 해당 주장으로 이동합니다.</p>
  <p>🟡/⚪ 항목은 인게임 확인 권장 · 원본: 04_combat_strategy.md</p>
 </div>
-
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
 </body>
 </html>

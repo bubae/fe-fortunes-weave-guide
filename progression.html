@@ -18,17 +18,40 @@
 <body>
 
 <header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
  <div class="hero-badge">진행 계획</div>
  <h1>진행 계획 — 파이어 엠블렘 만자천홍</h1>
  <p class="subtitle">하드 / 클래식 육성편 · 3루트 이월판 · 1부 세오도라 → 레다 → 디트리히 → 2부 레다 → 디트리히 → 세오도라 스킵 → 3부</p>
  <p class="asof">자료 기준일 2026-09-24 · 하드 / 클래식</p>
 </header>
-
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">종합 가이드</div>
+<a href="index.html">개요</a>
+<a href="build_guide.html">육성</a>
+<a href="progression.html" class="active" aria-current="page">진행</a>
+<a href="combat.html">전투</a>
+<a href="units.html">선물·마법</a>
+<a href="sources.html">출처·신뢰도</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
 <nav class="nav-bar">
- <div class="row"><a href="index.html">허브</a><a href="characters.html">도감</a><a href="classes.html">병종</a><a href="build_guide.html">육성</a><a href="progression.html" class="active">진행</a><a href="combat.html">전투</a><a href="units.html">선물·마법</a><a href="sources.html">출처·신뢰도</a></div>
  <div class="row sub"><span class="gl">이 페이지</span><a href="#s1">개요</a><a href="#deadlines">기한</a><a href="#s2">시작 30분</a><a href="#s3">세오도라 1부</a><a href="#s4">레다 1부</a><a href="#s5">디트리히 1부</a><a href="#s6">2부</a><a href="#s7">3부</a><a href="#s8">카이</a><a href="#s9">자원·마일스톤</a><a href="#s10">난관 구간</a><a href="#tips">진행 팁</a><a href="#provisional">잠정 항목</a></div>
 </nav>
-
 <div class="container">
 
 <section id="about">
@@ -1427,6 +1450,23 @@
  <p>3중 검증(국내·해외 독립 조사 → 팩트체크) 결과를 반영했습니다. 신뢰도 배지를 누르면 <a href="sources.html">출처·신뢰도</a> 페이지의 해당 주장으로 이동합니다.</p>
  <p>🟡/⚪ 항목은 인게임 확인 권장</p>
 </div>
-
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
 </body>
 </html>
