@@ -1,3 +1,4 @@
+/* font-scale 1.15 applied */
 /* ============================================================
    파이어 엠블렘 만자천홍 — 하드/클래식 육성 공략 공유 스타일
    시각 언어: fefw.azaws.workers.dev(만자천홍 육성 도감)
@@ -33,7 +34,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg); color: var(--ink);
   font-family: "Pretendard", "Pretendard Variable", "Apple SD Gothic Neo", "Segoe UI", system-ui, sans-serif;
-  font-size: 14px; line-height: 1.72; letter-spacing: -.011em;
+  font-size: 16px; line-height: 1.72; letter-spacing: -.011em;
   -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased;
   overflow-wrap: break-word;
 }
@@ -61,14 +62,14 @@ input[type=checkbox] { accent-color: var(--brand); width: 1rem; height: 1rem; ve
   padding: 30px max(22px, calc((100% - var(--maxw)) / 2 + 22px)) 24px;
 }
 .hero-badge, .hero .kick {
-  display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .14em;
+  display: block; font-size: 13px; font-weight: 700; letter-spacing: .14em;
   text-transform: uppercase; color: #8fc0cc; margin-bottom: 8px;
 }
-.hero h1 { font-size: 26px; font-weight: 800; letter-spacing: -.03em; line-height: 1.3; }
-.hero .subtitle, .hero .sub { margin: 9px 0 0; font-size: 13px; color: #c2d6dc; max-width: 78ch; }
+.hero h1 { font-size: 30px; font-weight: 800; letter-spacing: -.03em; line-height: 1.3; }
+.hero .subtitle, .hero .sub { margin: 9px 0 0; font-size: 15px; color: #c2d6dc; max-width: 78ch; }
 .hero .meta { margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .hero .asof, .hero .pill {
-  display: inline-block; font-size: 11.5px; font-weight: 700;
+  display: inline-block; font-size: 13px; font-weight: 700;
   background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
   border-radius: 999px; padding: 3px 11px; color: #e6f0f2; line-height: 1.5;
 }
@@ -91,19 +92,19 @@ input[type=checkbox] { accent-color: var(--brand); width: 1rem; height: 1rem; ve
 .nav-bar .row + .row { border-top: 1px solid var(--line); padding-top: 7px; padding-bottom: 7px; }
 .nav-bar a {
   flex-shrink: 0; white-space: nowrap;
-  font-size: 13px; font-weight: 700; color: var(--dim);
+  font-size: 15px; font-weight: 700; color: var(--dim);
   border: 1px solid var(--line); background: #fff;
   padding: 5px 13px; border-radius: 7px; transition: .13s;
 }
 .nav-bar a:hover { border-color: var(--brand-l); color: var(--brand); }
 .nav-bar a.active { background: var(--brand); border-color: var(--brand); color: #fff; }
 .nav-bar .row.sub a {
-  font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 6px;
+  font-size: 14px; font-weight: 600; padding: 3px 10px; border-radius: 6px;
   background: transparent; border-color: transparent;
 }
 .nav-bar .row.sub a:hover { background: #fff; border-color: var(--line); color: var(--brand); }
 .nav-bar .gl {
-  flex-shrink: 0; font-size: 11px; font-weight: 800; letter-spacing: .07em;
+  flex-shrink: 0; font-size: 12.5px; font-weight: 800; letter-spacing: .07em;
   color: var(--brand); margin: 0 3px 0 0;
 }
 
@@ -112,15 +113,15 @@ input[type=checkbox] { accent-color: var(--brand); width: 1rem; height: 1rem; ve
 section { padding: 14px 0 12px; }
 :root section, :root .card[id], :root .tip[id], :root h2[id], :root h3[id], :root h4[id], :root div[id], :root details[id], :root tr[id] { scroll-margin-top: 104px; }
 section > h2, .container > h2 {
-  font-size: 21px; font-weight: 800; letter-spacing: -.025em; line-height: 1.35;
+  font-size: 24px; font-weight: 800; letter-spacing: -.025em; line-height: 1.35;
   color: var(--brand-d);
   padding-bottom: 9px; border-bottom: 2px solid var(--brand); margin-bottom: 16px;
 }
 section > h3, .container > h3 {
-  font-size: 16px; font-weight: 800; letter-spacing: -.02em; color: var(--brand-d);
+  font-size: 18.5px; font-weight: 800; letter-spacing: -.02em; color: var(--brand-d);
   margin: 22px 0 10px;
 }
-h4 { font-size: 14px; font-weight: 800; color: var(--brand-d); margin: 14px 0 6px; letter-spacing: -.015em; }
+h4 { font-size: 16px; font-weight: 800; color: var(--brand-d); margin: 14px 0 6px; letter-spacing: -.015em; }
 h2 .badge, h3 .badge, h4 .badge { vertical-align: 2px; }
 
 /* --- 카드 (fefw .card + .rail) --- */
@@ -134,16 +135,16 @@ h2 .badge, h3 .badge, h4 .badge { vertical-align: 2px; }
 .card-green { --rail: var(--ok); }
 .card-red   { --rail: var(--crim); }
 .card-blue  { --rail: var(--brand-l); }
-.card h3 { font-size: 16px; font-weight: 800; letter-spacing: -.02em; color: var(--brand-d); margin-bottom: 8px; line-height: 1.4; }
+.card h3 { font-size: 18.5px; font-weight: 800; letter-spacing: -.02em; color: var(--brand-d); margin-bottom: 8px; line-height: 1.4; }
 .card h4 { margin: 14px 0 6px; }
 .card > h4:first-child { margin-top: 2px; }
-.card p, .card li { font-size: 13.5px; }
+.card p, .card li { font-size: 15.5px; }
 .card ul, .card ol { padding-left: 1.2rem; }
 
 /* --- 콜아웃 (fefw .note / .warn / .brn) --- */
 .highlight, .warning, .tip, .info {
   border: 1px solid; border-left-width: 3px; border-radius: 0 8px 8px 0;
-  padding: 11px 14px; margin: 12px 0; font-size: 13.5px;
+  padding: 11px 14px; margin: 12px 0; font-size: 15.5px;
 }
 .highlight { background: #faf6ea; border-color: #e0d5b0; border-left-color: var(--amber); }
 .highlight strong { color: #7a5a12; }
@@ -162,10 +163,10 @@ h2 .badge, h3 .badge, h4 .badge { vertical-align: 2px; }
   border: 1px solid var(--line); border-radius: 8px; background: var(--panel);
   margin: 12px 0; max-width: 100%;
 }
-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
 th, td { border-bottom: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
 thead th {
-  background: var(--brand); color: #fff; font-size: 11.5px; font-weight: 800;
+  background: var(--brand); color: #fff; font-size: 13px; font-weight: 800;
   letter-spacing: .02em; white-space: nowrap;
 }
 tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
@@ -175,7 +176,7 @@ td ul, td ol { padding-left: 1.1rem; }
 
 /* 우선순위 표기 → 작은 태그 */
 .tier-1, .tier-2, .tier-3, .tier-4 {
-  display: inline-block; font-size: 11px; font-weight: 800; line-height: 1.5;
+  display: inline-block; font-size: 12.5px; font-weight: 800; line-height: 1.5;
   padding: 1px 8px; border-radius: 5px; border: 1px solid; white-space: nowrap;
 }
 .tier-1 { color: #fff; background: var(--amber); border-color: var(--amber); }
@@ -191,29 +192,29 @@ td ul, td ol { padding-left: 1.1rem; }
   box-shadow: var(--sh); padding: 12px 12px 10px; text-align: center;
 }
 .stat-box .stat-value {
-  font-size: 24px; font-weight: 800; color: var(--amber); letter-spacing: -.03em;
+  font-size: 27.5px; font-weight: 800; color: var(--amber); letter-spacing: -.03em;
   line-height: 1.15; font-variant-numeric: tabular-nums;
 }
-.stat-box .stat-label { font-size: 11.5px; color: var(--dim); font-weight: 600; margin-top: 4px; line-height: 1.45; }
+.stat-box .stat-label { font-size: 13px; color: var(--dim); font-weight: 600; margin-top: 4px; line-height: 1.45; }
 
 /* --- 경로 (fefw .path + .chip) --- */
 .step-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 10px 0; }
 .step {
   background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--brand-l);
   border-radius: 0 7px 7px 0; padding: 5px 11px;
-  font-size: 12.5px; font-weight: 800; color: var(--brand-d); letter-spacing: -.01em;
+  font-size: 14.5px; font-weight: 800; color: var(--brand-d); letter-spacing: -.01em;
   line-height: 1.45; text-align: left;
 }
-.step small { display: block; font-size: 11px; font-weight: 500; color: var(--dim); margin-top: 1px; }
+.step small { display: block; font-size: 12.5px; font-weight: 500; color: var(--dim); margin-top: 1px; }
 .step.active { background: var(--brand); border-color: var(--brand); border-left-color: var(--amber); color: #fff; }
 .step.active small { color: #cfe0e5; }
 .step .badge { vertical-align: 1px; }
 .step small .badge { margin-top: 2px; }
-.step-arrow { color: #b9b6ae; font-size: 13px; font-weight: 700; }
+.step-arrow { color: #b9b6ae; font-size: 15px; font-weight: 700; }
 
 /* --- 배지 (fefw .jb / .tag) --- */
 .badge {
-  display: inline-block; font-size: 10.5px; font-weight: 800; line-height: 1.55;
+  display: inline-block; font-size: 12px; font-weight: 800; line-height: 1.55;
   padding: 1px 8px; border-radius: 5px; letter-spacing: .01em; white-space: nowrap;
   border: 1px solid transparent;
 }
@@ -237,7 +238,7 @@ td ul, td ol { padding-left: 1.1rem; }
 .char-icon {
   width: 46px; height: 46px; border-radius: 8px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 19px; font-weight: 800; color: #fff; background: var(--t0);
+  font-size: 22px; font-weight: 800; color: #fff; background: var(--t0);
   border: 1px solid rgba(0,0,0,.06);
 }
 .char-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 7px; display: block; }
@@ -245,8 +246,8 @@ td ul, td ol { padding-left: 1.1rem; }
 .char-icon.tier2 { background: var(--brand); }
 .char-icon.tier3 { background: var(--brand-l); }
 .char-icon.tier4 { background: var(--t0); }
-.char-name { font-size: 17px; font-weight: 800; letter-spacing: -.025em; color: var(--brand-d); line-height: 1.25; }
-.char-role { font-size: 12px; color: var(--dim); margin-top: 2px; line-height: 1.5; }
+.char-name { font-size: 19.5px; font-weight: 800; letter-spacing: -.025em; color: var(--brand-d); line-height: 1.25; }
+.char-role { font-size: 14px; color: var(--dim); margin-top: 2px; line-height: 1.5; }
 .char-role strong { color: var(--amber); }
 .char-card ul { margin-top: .5rem; }
 
@@ -264,7 +265,7 @@ details {
 }
 details > summary {
   cursor: pointer; list-style: none; padding: 11px 16px;
-  font-weight: 800; font-size: 14px; color: var(--brand-d); letter-spacing: -.015em;
+  font-weight: 800; font-size: 16px; color: var(--brand-d); letter-spacing: -.015em;
 }
 details > summary::-webkit-details-marker { display: none; }
 details > summary::before {
@@ -299,10 +300,10 @@ details > summary + :not(.detail-body) { margin-top: 12px; }
 }
 .tl-item.danger { border-left: 3px solid var(--warn); }
 .tl-item.danger::before { background: var(--warn); box-shadow: 0 0 0 1px var(--warn); }
-.tl-month { font-size: 11.5px; font-weight: 800; color: var(--brand-l); letter-spacing: .02em; }
+.tl-month { font-size: 13px; font-weight: 800; color: var(--brand-l); letter-spacing: .02em; }
 .tl-item.danger .tl-month { color: var(--warn); }
-.tl-title { font-size: 14.5px; font-weight: 800; color: var(--brand-d); letter-spacing: -.02em; margin: 1px 0 4px; line-height: 1.45; }
-.tl-basis, .tl-note { font-size: 12px; color: var(--dim); margin-top: 4px; }
+.tl-title { font-size: 16.5px; font-weight: 800; color: var(--brand-d); letter-spacing: -.02em; margin: 1px 0 4px; line-height: 1.45; }
+.tl-basis, .tl-note { font-size: 14px; color: var(--dim); margin-top: 4px; }
 
 /* --- 허브 (index) --- */
 .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 12px; margin: 12px 0; }
@@ -313,18 +314,18 @@ details > summary + :not(.detail-body) { margin-top: 12px; }
   padding: 15px 16px 14px; color: inherit; transition: .15s;
 }
 .hub-card:hover { color: inherit; border-color: var(--brand-l); box-shadow: inset 0 3px 0 var(--amber), var(--shadow-md); transform: translateY(-2px); }
-.hub-card .hub-icon { font-size: 22px; line-height: 1; }
-.hub-card .hub-title { font-size: 16px; font-weight: 800; color: var(--brand-d); letter-spacing: -.02em; }
-.hub-card .hub-desc { font-size: 12.5px; color: var(--dim); line-height: 1.6; }
-.hub-card .hub-go { margin-top: auto; padding-top: 4px; font-size: 12px; font-weight: 800; color: var(--brand-l); }
+.hub-card .hub-icon { font-size: 25.5px; line-height: 1; }
+.hub-card .hub-title { font-size: 18.5px; font-weight: 800; color: var(--brand-d); letter-spacing: -.02em; }
+.hub-card .hub-desc { font-size: 14.5px; color: var(--dim); line-height: 1.6; }
+.hub-card .hub-go { margin-top: auto; padding-top: 4px; font-size: 14px; font-weight: 800; color: var(--brand-l); }
 .hub-card:hover .hub-go { color: var(--amber); }
 .hub-feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; margin: 4px 0 14px; }
 .hub-card.hub-feature { padding: 18px 20px 16px; box-shadow: inset 0 4px 0 var(--amber), var(--sh); }
-.hub-card.hub-feature .hub-title { font-size: 19px; }
-.hub-card.hub-feature .hub-desc { font-size: 13px; color: var(--ink); }
+.hub-card.hub-feature .hub-title { font-size: 22px; }
+.hub-card.hub-feature .hub-desc { font-size: 15px; color: var(--ink); }
 .hub-card .hub-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
 .hub-tag {
-  font-size: 11px; font-weight: 700; padding: 1px 9px; border-radius: 5px;
+  font-size: 12.5px; font-weight: 700; padding: 1px 9px; border-radius: 5px;
   color: var(--info); background: #eff5f8; border: 1px solid #c5d8e0;
 }
 .hub-tag.new { color: #fff; background: var(--amber); border-color: var(--amber); }
@@ -337,13 +338,13 @@ details > summary + :not(.detail-body) { margin-top: 12px; }
 /* --- 범례 (fefw .legend) --- */
 .legend {
   display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center;
-  font-size: 12px; color: var(--dim); padding: 6px 0;
+  font-size: 14px; color: var(--dim); padding: 6px 0;
 }
-.legend b { color: var(--brand); font-size: 11px; font-weight: 800; letter-spacing: .07em; }
+.legend b { color: var(--brand); font-size: 12.5px; font-weight: 800; letter-spacing: .07em; }
 
 /* --- 신뢰도 배지 --- */
 .conf {
-  display: inline-block; font-size: 10.5px; font-weight: 800; line-height: 1.5;
+  display: inline-block; font-size: 12px; font-weight: 800; line-height: 1.5;
   padding: 0 7px; border-radius: 5px; margin-left: 3px; vertical-align: 1px;
   white-space: nowrap; border: 1px solid transparent;
 }
@@ -354,48 +355,48 @@ a.conf:hover { filter: brightness(.96); border-color: var(--amber); }
 .conf-single   { background: #faf6ea; color: #6b5a1f; border-color: #e0d5b0; }
 .conf-guess    { background: #f4f3ef; color: #6f7b83; border-color: #ddd9d2; }
 .conf-rejected { background: #fbeaec; color: var(--crim); border-color: #efc4ca; text-decoration: line-through; }
-.conf-mini { padding: 0 3px; margin-left: 2px; font-size: 10px; line-height: 1.4; border-radius: 4px; }
-.claim-id { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--dim); }
+.conf-mini { padding: 0 3px; margin-left: 2px; font-size: 11.5px; line-height: 1.4; border-radius: 4px; }
+.claim-id { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: var(--dim); }
 a.claim-id { border-bottom-style: dotted; }
 
 /* --- 꼬리말 (fefw footer) --- */
 .footer {
   margin-top: 30px; padding: 24px 22px 44px; border-top: 1px solid var(--line);
-  text-align: center; font-size: 12px; color: var(--dim); line-height: 1.7;
+  text-align: center; font-size: 14px; color: var(--dim); line-height: 1.7;
 }
 .footer .fx { max-width: 76ch; margin: 0 auto; }
-.footer .credit { margin-top: 8px; font-size: 11.5px; }
+.footer .credit { margin-top: 8px; font-size: 13px; }
 
 /* --- 모바일 (핸드폰) --- */
 @media (max-width: 640px) {
-  body { font-size: 13.5px; }
+  body { font-size: 15.5px; }
   .hero { padding: 20px 13px 16px; }
-  .hero h1 { font-size: 21px; }
-  .hero .subtitle, .hero .sub { font-size: 12.5px; }
+  .hero h1 { font-size: 24px; }
+  .hero .subtitle, .hero .sub { font-size: 14.5px; }
   .hero .meta { gap: 5px; }
-  .hero .asof, .hero .pill { font-size: 10.5px; padding: 2px 8px; }
+  .hero .asof, .hero .pill { font-size: 12px; padding: 2px 8px; }
   .nav-bar .row { padding: 6px 13px; gap: 4px; }
-  .nav-bar a { font-size: 12px; padding: 4px 9px; border-radius: 6px; }
-  .nav-bar .row.sub a { font-size: 11.5px; padding: 2px 7px; }
+  .nav-bar a { font-size: 14px; padding: 4px 9px; border-radius: 6px; }
+  .nav-bar .row.sub a { font-size: 13px; padding: 2px 7px; }
   .container { padding: 14px 13px 30px; }
   :root section, :root .card[id], :root div[id], :root h3[id], :root tr[id] { scroll-margin-top: 92px; }
-  section > h2, .container > h2 { font-size: 18px; }
-  section > h3, .container > h3 { font-size: 15px; }
+  section > h2, .container > h2 { font-size: 20.5px; }
+  section > h3, .container > h3 { font-size: 17px; }
   .card, .char-card { padding: 12px 13px 13px; }
-  .card p, .card li { font-size: 13px; }
-  .highlight, .warning, .tip, .info { padding: 9px 11px; font-size: 13px; }
+  .card p, .card li { font-size: 15px; }
+  .highlight, .warning, .tip, .info { padding: 9px 11px; font-size: 15px; }
   .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .stat-box .stat-value { font-size: 20px; }
-  .step { font-size: 12px; padding: 4px 9px; }
-  table { font-size: 11.5px; }
+  .stat-box .stat-value { font-size: 23px; }
+  .step { font-size: 14px; padding: 4px 9px; }
+  table { font-size: 13px; }
   th, td { padding: 6px 7px; }
-  details > summary { padding: 10px 12px; font-size: 13.5px; }
+  details > summary { padding: 10px 12px; font-size: 15.5px; }
   details > :not(summary) { margin-left: 12px; margin-right: 12px; }
   details > .detail-body { padding: 10px 12px 12px; }
-  .char-icon { width: 42px; height: 42px; font-size: 17px; }
-  .char-name { font-size: 15.5px; }
+  .char-icon { width: 42px; height: 42px; font-size: 19.5px; }
+  .char-name { font-size: 18px; }
   .hub-card.hub-feature { padding: 15px 15px 13px; }
-  .hub-card.hub-feature .hub-title { font-size: 17px; }
+  .hub-card.hub-feature .hub-title { font-size: 19.5px; }
 }
 
 /* ============================================================
@@ -419,18 +420,18 @@ a.claim-id { border-bottom-style: dotted; }
 }
 .side-nav .aside-title { padding: 2px 12px 14px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
 .side-nav .aside-title a {
-  border: 0; color: var(--brand-d); font-size: 16px; font-weight: 800; letter-spacing: -.02em;
+  border: 0; color: var(--brand-d); font-size: 18.5px; font-weight: 800; letter-spacing: -.02em;
 }
 .side-nav .aside-title a:hover { color: var(--amber); }
-.side-nav .aside-title small { display: block; font-size: 11px; color: var(--dim); line-height: 1.5; margin-top: 3px; }
+.side-nav .aside-title small { display: block; font-size: 12.5px; color: var(--dim); line-height: 1.5; margin-top: 3px; }
 .side-nav .nav-group { display: grid; gap: 2px; margin-top: 12px; }
 .side-nav .nav-group-title {
-  font-size: 11px; font-weight: 800; letter-spacing: .1em; color: var(--brand-l);
+  font-size: 12.5px; font-weight: 800; letter-spacing: .1em; color: var(--brand-l);
   padding: 4px 12px 5px;
 }
 .side-nav .nav-group a {
   display: block; border: 0; border-radius: 7px;
-  padding: 7px 12px; font-size: 13.5px; font-weight: 700; color: var(--ink); line-height: 1.45;
+  padding: 7px 12px; font-size: 15.5px; font-weight: 700; color: var(--ink); line-height: 1.45;
   transition: background .12s, color .12s;
 }
 .side-nav .nav-group a:hover { background: #fff; color: var(--brand); box-shadow: inset 0 0 0 1px var(--line); }
