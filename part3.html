@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3부 구세편 — 파이어 엠블렘 만자천홍 공략</title>
+<link rel="stylesheet" href="style.css?v=b457c51a">
+<style>
+  code { font-family: ui-monospace, monospace; font-size: .85em; background: var(--slate-100); padding: 0 .3rem; border-radius: 4px; }
+  .g-rows { display: grid; gap: .45rem; margin: .7rem 0; }
+  .g-row { display: grid; grid-template-columns: 5.5rem 1fr; gap: .7rem; align-items: start; }
+  .g-label { font-size: .82rem; font-weight: 700; padding: .2rem .45rem; border-radius: 5px; background: var(--slate-100); text-align: center; }
+  .g-val ul { margin: .3rem 0 0 1.1rem; }
+  ul.checklist { list-style: none; padding-left: .2rem; }
+  ul.checklist li { position: relative; padding-left: 1.6rem; margin-bottom: .35rem; }
+  ul.checklist li::before { content: ""; position: absolute; left: 0; top: .25em; width: 1em; height: 1em; border: 2px solid var(--slate-400, #94a3b8); border-radius: 3px; }
+  .guide h3 { margin-top: 1.4rem; }
+  .guide section > h2 { scroll-margin-top: 1rem; }
+  @media (max-width: 600px) { .g-row { grid-template-columns: 1fr; gap: .2rem; } .g-label { justify-self: start; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
+  <span class="hero-badge">3부</span>
+  <h1>3부 구세편</h1>
+  <p class="subtitle">네 루트의 동료를 인과융합으로 합치고, 신장직 8종과 25인 최종전으로 끝낸다.</p>
+</header>
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히 → 카이</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">공략 가이드</div>
+<a href="index.html">개요</a>
+<a href="theodora.html">세오도라 1부</a>
+<a href="leda.html">레다 1부</a>
+<a href="dietrich.html">디트리히 1부</a>
+<a href="part2.html">2부 전쟁편</a>
+<a href="kai.html">카이 1·2부</a>
+<a href="part3.html" class="active" aria-current="page">3부 구세편</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">팁</div>
+<a href="tips.html">육성 핵심 팁</a>
+<a href="tricks.html">꿀팁·트릭</a>
+<a href="pitfalls.html">함정·실수 방지</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">참고</div>
+<a href="units.html">선물·마법</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
+<nav class="nav-bar">
+  <div class="row sub"><span class="gl">이 페이지</span><a href="#한눈에">한눈에</a><a href="#진입-시점">진입 시점</a><a href="#인과융합-규칙">인과융합 규칙</a><a href="#진영별-루트-분업">진영별 루트 분업</a><a href="#융합-순서">융합 순서</a><a href="#파편-예산">파편 예산</a><a href="#출격-수와-편성">출격 수와 편성</a><a href="#신장직-8종">신장직 8종</a><a href="#증서-수급">증서 수급</a><a href="#어려운-전투">어려운 전투</a><a href="#체크리스트">체크리스트</a></div>
+</nav>
+<div class="container guide">
+<section id="한눈에">
+<h2>한눈에</h2>
+<div class="card g-rows"><div class="g-row"><span class="g-label">상태</span><div class="g-val">1부 4루트·2부 4루트(세오도라 2부는 스킵 가능)를 끝낸 뒤 들어간다. 모든 루트의 무기·아이템이 창고에 모인다.</div></div><div class="g-row"><span class="g-label">목표</span><div class="g-val">메인 버전으로 영입하고 보조 버전을 파편 300씩 융합해 스탯 최댓값을 만든다. 4구간에 신장직 8종을 8명에게 나눠 준다.</div></div><div class="g-row"><span class="g-label">핵심</span><div class="g-val"><ul><li>융합 순서는 탱커 → 물리 딜러 → 힐러 → 나머지, 매번 수동 세이브</li><li>탈것 유닛(피터르·미카엘라·양계·울턴드)은 카이판으로 영입한다</li><li>1~2구간에 시험 증서를 사 둔다</li></ul></div></div></div>
+</section>
+<section id="진입-시점">
+<h2>진입 시점</h2>
+<p><strong>카이 2부를 끝낸 뒤</strong> 운명의 문으로 들어간다. 진입하면 강제 세이브된다. 들어간 뒤에도 1·2부는 다시 할 수 있다.</p>
+<ul class="checklist"><li>레다·디트리히·카이 2부 클리어, 세오도라 2부 클리어 또는 스킵</li><li>아스완·타호니아 생존(2부 3장)</li><li>키릭·네이선 영입</li><li>진영장 외전 4개(베르트랑·타리문·오르헬, 아나톨리아)</li><li>파편 3,600 이상</li></ul>
+<div class="warning">⚠️ 2부를 클리어도 스킵도 하지 않은 루트의 유닛은 3부에 오지 않는다. 그 루트 2부 클리어 시점에 합류해 있던 동료만 나온다. 2부에서 죽은 유닛은 그 루트 버전으로 오지 않는다.</div>
+<h3 id="합류-일정">합류 일정</h3>
+<div class="table-wrap"><table><thead><tr><th>시점</th><th>합류·해금</th></tr></thead><tbody><tr><td>3부 시작</td><td>네 루트 로드·동료가 다그시온에 나타난다. 같은 캐릭터는 버전을 골라 영입한다. 창고에 전 루트 무기·아이템(루트별 2부 첫 클리어 당시 소지품)</td></tr><tr><td>1구간 다그다전</td><td>게스트: 레다·세오도라·아나톨리아 5턴, 오르헬·타리문 7턴</td></tr><tr><td><strong>1구간 「다그시온 해방」 클리어</strong></td><td><strong>방첨탑 「인과의 제단」 개방</strong>. 베르트랑·타리문 정식 합류</td></tr><tr><td>2구간</td><td>오르헬·아나톨리아 합류, 센트리온(서브퀘스트 「센트리온의 구원 요청」 뒤). <strong>열쇠 던전 5곳 개방</strong></td></tr><tr><td>3구간</td><td>신전 퀘스트: 소드 마스터(마스)·발키리움(주라)·보우 나이트(칼라)·하이 에피타프(스미르노스)</td></tr><tr><td><strong>4구간 시작</strong></td><td><strong>천관의 신전 개방 → 신장직 8종</strong></td></tr><tr><td>5구간</td><td>아스완·타호니아 합류. 죽음의 골짜기·헤카톤케일 요새 문(17명)</td></tr><tr><td>6구간</td><td>최종전 리라·발로르(25명)</td></tr></tbody></table></div>
+</section>
+<section id="인과융합-규칙">
+<h2>인과융합 규칙</h2>
+<div class="table-wrap"><table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>개방</td><td>1구간 「다그시온 해방」 클리어 뒤, 방첨탑 「인과의 제단」</td></tr><tr><td>비용</td><td><strong>1회 파편 300</strong>. 쓴 파편은 돌아오지 않는다</td></tr><tr><td>되돌리기</td><td><strong>불가</strong>. 장을 다시 해도 융합과 파편은 돌아오지 않는다 → 매번 수동 세이브</td></tr><tr><td>스탯</td><td>항목별 <strong>최댓값</strong></td></tr><tr><td>레벨</td><td><strong>높은 쪽</strong>. 레벨만 높고 스탯이 낮은 버전을 섞으면 남은 레벨업이 줄어든다</td></tr><tr><td>스킬·전투 기술</td><td><strong>합집합</strong></td></tr><tr><td>무기 랭크</td><td><strong>루트마다 다른 무기를 키운다</strong>. S가 필요한 무기는 한 버전에서 끝까지 올린다. 같은 무기를 두 버전에서 C까지만 올려 합치는 계획은 쓰지 않는다</td></tr><tr><td>탈것</td><td>영입 때 고른 버전이 타던 탈것만 따라온다. 다른 버전을 고르면 카이 루트 탈것이 사라진다</td></tr><tr><td>영입 뒤</td><td>3부에서 영입한 뒤에는 2부 데이터가 바뀌어도 반영되지 않는다</td></tr><tr><td>대상 아님</td><td>3부에서 처음 합류하는 캐릭터(진영장 4명과 부관, 이스마르·홍화 등 구세군)</td></tr><tr><td>로드</td><td>카이·디트리히·세오도라·레다는 <strong>자동·무료</strong>. 2부를 클리어·스킵할 때마다 자동 융합된다</td></tr></tbody></table></div>
+<div class="tip">💡 첫 융합 확인 화면에서 스탯·레벨·무기 랭크 예측을 보고 결정한다. 무기 랭크가 높은 쪽으로 갱신되는지, 합쳐지는지도 여기서 본다.</div>
+</section>
+<section id="진영별-루트-분업">
+<h2>진영별 루트 분업</h2>
+<p>영입이 빠른 <strong>메인 루트</strong>에서 제대로 키우고, 다른 루트에서는 <strong>다른 병종·다른 무기</strong>로 키워 융합한다. 카이판은 HP·힘·기술·수비 공급원이고, 속도·마방·무기 S는 레다·디트리히·세오도라판이 맡는다.</p>
+<p>표기: 병종(무기). <strong>굵게</strong> = 3부 영입 버전, 나머지 = 융합 재료.</p>
+<h3 id="융합하는-유닛">융합하는 유닛</h3>
+<div class="table-wrap"><table><thead><tr><th>유닛</th><th>세오도라판</th><th>레다판</th><th>디트리히판</th><th>카이판</th><th>융합</th><th>결과</th></tr></thead><tbody><tr><td><strong>에스메랄다</strong></td><td>—</td><td>가디언(창·백마)</td><td><strong>헤비 아머(도끼·중장)</strong></td><td>기갑 타조병(기마)</td><td>2회</td><td>HP·수비 + 속도 보강 → 디 이터널</td></tr><tr><td><strong>그자람</strong></td><td>—</td><td><strong>사도(검)</strong></td><td>스나이퍼(활)</td><td>전차병(기마)</td><td>2회</td><td>검 S + 활 + 기마, 물리 최댓값 → 더 캘러미티</td></tr><tr><td><strong>미카엘라</strong></td><td>—</td><td>워리어(도끼·격투)</td><td>레인저(활)</td><td><strong>전차병(활, 한혈마)</strong></td><td>2회</td><td>HP·힘·수 + 속·기 + 도끼·격투 → 보우 나이트</td></tr><tr><td><strong>무우</strong></td><td>—</td><td><strong>세스타스 › 워리어(격투)</strong></td><td>브리건드 › 워리어(도끼)</td><td>—</td><td>1회</td><td>격투 + 도끼 → 더 갓 핸드</td></tr><tr><td><strong>양계</strong></td><td>—</td><td>(선택) 리브로 예비</td><td>비숍(백마, 리브로 B)</td><td><strong>트루바두르(백마·기마)</strong></td><td>1회</td><td>백마 + 기마 → 발키리움 또는 와이즈맨</td></tr><tr><td><strong>리네</strong></td><td>비숍(리브로 B)</td><td>(선택)</td><td><strong>비숍(리브로)</strong></td><td>기갑 타조병 › 바딩거(창)</td><td>1~2회</td><td>리브로 + 창 랭크 → 회복 겸 창 탱커</td></tr><tr><td>소피아</td><td>비숍(리브로 B)</td><td><strong>비숍(리브로)</strong></td><td>(대안)</td><td>—</td><td>1회</td><td>같은 백마, 스탯 최댓값</td></tr><tr><td>키로이카</td><td>—</td><td><strong>스나이퍼(활)</strong></td><td>레인저(활, 속도)</td><td>—</td><td>1회</td><td>두 병종 최댓값</td></tr><tr><td>울턴드</td><td>바테스(흑마)</td><td>—</td><td>—</td><td><strong>칼라드리우스(흑마·기마)</strong></td><td>0~1회</td><td>마력·마방 + 흑마·기마. 힐러 아님</td></tr><tr><td>시로코</td><td>(선택) 바테스</td><td><strong>바테스(흑마)</strong></td><td>(선택) 바테스</td><td>—</td><td>0~1회</td><td>흑마 S → 디 아바타르</td></tr><tr><td>피아나</td><td>—</td><td><strong>비숍(근접 힐러)</strong></td><td>트루바두르</td><td>—</td><td>0~1회</td><td>리브로 없음. 벤치 후보</td></tr><tr><td>카타냐</td><td>(선택) 사도</td><td><strong>사도(검)</strong></td><td>(선택) 사도</td><td>—</td><td>0~1회</td><td>이득 작음</td></tr><tr><td>녹투라</td><td>워리어</td><td>—</td><td>(선택)</td><td><strong>전차병</strong></td><td>0~1회</td><td>벤치 후보</td></tr><tr><td>로레타·나타</td><td><strong>세오판</strong></td><td>(로레타 선택)</td><td>—</td><td>(나타 선택)</td><td>0~1회</td><td>이득 작음</td></tr></tbody></table></div>
+<h3 id="영입만-하는-유닛-단일-버전">영입만 하는 유닛 (단일 버전)</h3>
+<div class="table-wrap"><table><thead><tr><th>3부 영입 버전</th><th>유닛</th></tr></thead><tbody><tr><td>카이판</td><td>티아라(3부 무용수 후보), <strong>피터르(전차병, 한혈마)</strong>, 세테스, 마지데</td></tr><tr><td>레다판</td><td>올림피아, 버커니어, 자스민, 키릭·네이선(레다 2부)</td></tr><tr><td>디트판</td><td>파비오, 이오(로시난), 제스터·골라이어스(선택)</td></tr><tr><td>세오판</td><td>릴리안, 라이선더, 단테, 보나파르트·토비아스, 알렉산드라(부케팔라스)</td></tr></tbody></table></div>
+<div class="info">로드 4명은 자동이다: 카이(바딩거 → 더 캐벌리어), 레다(아처 → 무희 → 디 압사라스), 디트리히(사도 → 더 블레이드), 세오도라(가디언 → 홀리 랜서 → 더 트라이던트). 로드는 자기 2부를 직접 할수록 강하다.</div>
+</section>
+<section id="융합-순서">
+<h2>융합 순서</h2>
+<p>1구간 클리어 → 방첨탑 제단. 매번 <strong>수동 세이브 → 확인 화면 → 융합</strong>.</p>
+<div class="table-wrap"><table><thead><tr><th>순서</th><th>유닛</th><th>영입 버전</th><th>융합할 버전</th><th>파편</th></tr></thead><tbody><tr><td>1</td><td>에스메랄다(탱커)</td><td>디트판</td><td>레다판 + 카이판</td><td>600</td></tr><tr><td>2</td><td>그자람(물리)</td><td>레다판</td><td>디트판 + 카이판</td><td>600</td></tr><tr><td>3</td><td>미카엘라(물리)</td><td>카이판(한혈마)</td><td>레다판 + 디트판</td><td>600</td></tr><tr><td>4</td><td>무우(물리)</td><td>레다판</td><td>디트판</td><td>300</td></tr><tr><td>5</td><td>양계(힐러)</td><td>카이판(탈것)</td><td>디트판</td><td>300</td></tr><tr><td>6</td><td>리네(힐러)</td><td>디트판</td><td>카이판 (+권장 세오판)</td><td>300 (+300)</td></tr><tr><td>7</td><td>소피아(권장)</td><td>레다판</td><td>세오판</td><td>300</td></tr><tr><td>8</td><td>키로이카(권장)</td><td>레다판</td><td>디트판</td><td>300</td></tr><tr><td>후순위</td><td>시로코·피아나·울턴드·카타냐·녹투라·로레타·나타</td><td>위 표</td><td>각 0~1회</td><td>각 300</td></tr></tbody></table></div>
+<ul><li>신장직 후보(에스메랄다·그자람·무우)는 <strong>1~3구간에</strong> 먼저 융합한다. 4구간 신전에서 합격률 100%를 빨리 맞춘다.</li><li>보조 버전 레벨이 메인보다 높으면(그자람·리네·에스메랄다의 카이판) 그 융합은 마지막으로 미루거나 하지 않는다.</li></ul>
+</section>
+<section id="파편-예산">
+<h2>파편 예산</h2>
+<div class="table-wrap"><table><thead><tr><th>항목</th><th>금액</th></tr></thead><tbody><tr><td>수입: 1부 클리어 4회</td><td><strong>20,000</strong> (5,000 × 4)</td></tr><tr><td>수입: 위업·3부 위업</td><td>추가로 들어온다</td></tr><tr><td>1~3번째 루트 보상 15,000</td><td>구세의 축복(EXP → 가호 소비 감소 → 할인), 기능 경험치 +1(300 × 무기 수)</td></tr><tr><td><strong>카이 1부 보상 5,000</strong></td><td><strong>통째로 융합용으로 남긴다</strong></td></tr><tr><td>필수 융합 9회</td><td><strong>2,700</strong> (에스메랄다 2·그자람 2·미카엘라 2·무우 1·양계 1·리네 1)</td></tr><tr><td>권장 포함 12회</td><td><strong>3,600</strong> (+소피아·키로이카·리네 세오판)</td></tr><tr><td>최대 19회</td><td><strong>5,700</strong> (후순위 7회 포함. 초과분 700은 3부 위업 파편)</td></tr><tr><td>인연의 성궤</td><td>쓰지 않는다(같은 로드로 2부를 두 번 깨야 열린다)</td></tr></tbody></table></div>
+<div class="info">지출 우선순위는 구세의 축복 &gt; 인과융합 &gt; 인연의 성궤다. 파편은 환불되지 않는다.</div>
+</section>
+<section id="출격-수와-편성">
+<h2>출격 수와 편성</h2>
+<div class="table-wrap"><table><thead><tr><th>맵</th><th>출격</th></tr></thead><tbody><tr><td>월드맵 로스터</td><td><strong>5부대 × 8명</strong>(40명 규모). 시작 2부대 → 주요 전투마다 +1</td></tr><tr><td>일반 맵</td><td><strong>9명</strong></td></tr><tr><td>5구간 죽음의 골짜기·헤카톤케일 요새 문</td><td><strong>17명</strong></td></tr><tr><td>6구간 최종전</td><td><strong>25명</strong>, 진영 3개로 나뉜다</td></tr></tbody></table></div>
+<div class="info">부대 밖 유닛도 경험치를 받는다. 열쇠 던전과 17인 맵 전에 3~5부대 유닛도 최상급까지 올린다. 레벨 스케일링 설정은 켜지 않는다.</div>
+<h3 id="25인-최종전-진영-3개">25인 최종전 (진영 3개)</h3>
+<p>편성 규칙:</p>
+<ol><li>레다(노래)와 무용수 티아라(춤)는 <strong>다른 진영</strong>에 둔다.</li><li>진영마다 <strong>마방 탱커 1 + 힐러 2</strong>.</li><li>3부 병종에는 가디언 마방 보정이 없다. 마방은 융합 스탯으로 고른다.</li><li>전투력이 낮은 진영장·구세군은 빼고 육성 유닛을 넣는다. 로드 8명을 다 넣지 않아도 클리어된다.</li></ol>
+<div class="table-wrap"><table><thead><tr><th>진영</th><th>인원</th><th>구성</th><th>마방 탱커</th><th>힐러</th><th>버프</th></tr></thead><tbody><tr><td>A 돌파</td><td>9</td><td>디트리히 · 베르트랑 · 무우 · 그자람 · 에스메랄다 · 카타냐 · 소피아 · 시로코 · 티아라</td><td>에스메랄다</td><td>소피아(리브로) · 시로코(리커버·레스트)</td><td>티아라 춤</td></tr><tr><td>B 원거리·노래</td><td>8</td><td>레다 · 세오도라 · 오르헬 · 피터르 · 미카엘라 · 키로이카 · 올림피아 · 키릭</td><td>세오도라</td><td>올림피아(리브로) · 오르헬(리브로 C)</td><td>레다 노래·천녀의 노래</td></tr><tr><td>C 구세군</td><td>8</td><td>이스마르 · 카이 · 타리문 · 아나톨리아 · 홍화 · 리네 · 양계 · 피아나</td><td>리네</td><td>양계(리브로) · 피아나(리커버)</td><td>아우로라·구세의 빛</td></tr></tbody></table></div>
+<ul><li>벤치: 울턴드·네이선·센트리온·아스완·타호니아·토비아스·보나파르트·릴리안·이오·버커니어·파비오·녹투라·라이선더·트로이아.</li><li>보스와 맞붙는 진영이 정해지면 그 진영에 마방이 가장 높은 탱커를 둔다. A가 보스 진영이고 에스메랄다 마방이 세오도라보다 낮으면 둘을 맞바꾼다(레다·티아라 분리는 유지).</li><li>진영 배정은 배치 화면에서 확인한다.</li><li>레스트는 시로코뿐이다. B·C진영은 해독제를 챙긴다.</li></ul>
+<h3 id="9인-일반-맵-코어">9인 일반 맵 코어</h3>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>유닛 (버전)</th><th>역할</th><th>교대</th></tr></thead><tbody><tr><td>1</td><td>디트리히</td><td>주 딜러·보스</td><td>—</td></tr><tr><td>2</td><td>이스마르</td><td>구세의 빛(명부 무효)</td><td>카이</td></tr><tr><td>3</td><td>무우 (레다판)</td><td>격투 딜탱·워프</td><td>—</td></tr><tr><td>4</td><td>그자람 (레다판)</td><td>물리 딜러</td><td>카타냐</td></tr><tr><td>5</td><td>에스메랄다 (디트판)</td><td>전열 탱커</td><td>세오도라(마법 적이 많은 맵)</td></tr><tr><td>6</td><td>레다</td><td>춤·노래·버프</td><td>티아라(4구간 이후 무용수)</td></tr><tr><td>7</td><td>시로코 (레다판)</td><td>마법 딜러·레스트</td><td>울턴드</td></tr><tr><td>8</td><td>올림피아 (레다판)</td><td>리브로 1</td><td>소피아</td></tr><tr><td>9</td><td>양계 (카이판)</td><td>리브로 2·리커버</td><td>리네</td></tr></tbody></table></div>
+<ul><li>비병·명계 맵은 피터르·미카엘라(활)와 키로이카를 4·7번 자리에 넣는다.</li></ul>
+<h3 id="17인-맵-5구간">17인 맵 (5구간)</h3>
+<div class="table-wrap"><table><thead><tr><th>조</th><th>구성</th></tr></thead><tbody><tr><td>1조 디트리히</td><td>디트리히 · 베르트랑 · 무우 · 그자람 · 에스메랄다(탱커) · 티아라(무용수) · 소피아 · 시로코</td></tr><tr><td>2조 레다</td><td>레다 · 세오도라(마방 탱커) · 오르헬 · 카이 · 피터르 · 미카엘라 · 올림피아 · 양계</td></tr><tr><td>+1</td><td>이스마르(구세의 빛). 명부형 적이 없으면 리네</td></tr></tbody></table></div>
+<ul><li>두 조가 갈라져 진행할 때는 서로 워프 사거리(주위 5칸) 안에서 움직인다.</li></ul>
+<h3 id="월드맵-5부대">월드맵 5부대</h3>
+<div class="table-wrap"><table><thead><tr><th>부대</th><th>축</th><th>구성</th></tr></thead><tbody><tr><td>1</td><td>디트리히</td><td>디트리히 · 베르트랑 · 무우 · 그자람 · 에스메랄다 · 티아라 · 소피아 · 시로코</td></tr><tr><td>2</td><td>레다</td><td>레다 · 세오도라 · 오르헬 · 피터르 · 미카엘라 · 키로이카 · 올림피아 · 키릭</td></tr><tr><td>3</td><td>카이·구세군</td><td>카이 · 이스마르 · 타리문 · 아나톨리아 · 홍화 · 리네 · 양계 · 피아나</td></tr><tr><td>4</td><td>보충 A</td><td>카타냐 · 트로이아 · 센트리온 · 울턴드 · 이오 · 네이선 · 릴리안 · 토비아스</td></tr><tr><td>5</td><td>보충 B</td><td>아스완 · 타호니아 · 보나파르트 · 파비오 · 버커니어 · 녹투라 · 라이선더 · (DLC 2탄 동료)</td></tr></tbody></table></div>
+<ul><li>1~3부대가 최종전 A·B·C진영의 뼈대다(A = 1부대 + 카타냐). DLC 2탄 동료 아우로라·스미르노스·주라는 3부에 합류한다.</li></ul>
+</section>
+<section id="신장직-8종">
+<h2>신장직 8종</h2>
+<ul><li><strong>열쇠 5개로 8종 모두</strong> 얻는다. 천관의 신전에는 문 5개가 있고, 3개 방에 아이템이 2개씩 있다.</li><li>신전은 <strong>4구간 시작 시</strong> 열린다. 열쇠는 2구간부터 가는 던전 5곳의 상자에 있다: 모래 그림자 요새·아누섬·이교도의 동굴·쿠거 대삼림·거인의 발자국 요새.</li><li><strong>같은 신장직은 1명만</strong> 가진다. 시험관의 「자격 변환(반납)」으로 아이템을 돌려받아 다른 유닛에게 옮길 수 있다. 합격률 100%일 때만 응시한다.</li><li>마스터 스킬은 각 스탯 +10이다.</li></ul>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>신장직</th><th>방 / 아이템</th><th>요구 기술</th><th>대상</th><th>준비</th></tr></thead><tbody><tr><td>1</td><td>더 블레이드</td><td>왜형의 방 / 요도의 코등이</td><td>검 S</td><td><strong>디트리히</strong></td><td>사도 → 소드 마스터</td></tr><tr><td>2</td><td>디 압사라스</td><td>처녀의 방 / 무사의 목걸이</td><td>활 C + 검 A</td><td><strong>레다</strong></td><td>무희 → 섀도 시커. 응시 전에 무용수 자격을 반납해 목걸이를 티아라에게</td></tr><tr><td>3</td><td>더 캐벌리어</td><td>천랑의 방 / 신철의 안장</td><td>기마 A + 도끼·창·검 중 S</td><td><strong>카이</strong></td><td>바딩거 → 오리할디아(창 S)</td></tr><tr><td>4</td><td>더 트라이던트</td><td>추종자의 방 / 삼지창</td><td>창 S</td><td><strong>세오도라</strong></td><td>가디언 → 홀리 랜서</td></tr><tr><td>5</td><td>더 캘러미티</td><td>왜형의 방 / 어둠의 결정</td><td>활 S·검 S</td><td><strong>그자람</strong></td><td>레다판 검 S + 디트판 활 + 카이판 스탯</td></tr><tr><td>6</td><td>더 갓 핸드</td><td>추종자의 방 / 대제의 복대</td><td>백마 C + 격투 S</td><td><strong>무우</strong></td><td>레다판 격투 S, 백마</td></tr><tr><td>7</td><td>디 이터널</td><td>예언자의 방 / 심판의 천칭</td><td>격투·도끼·검 중 S</td><td><strong>에스메랄다</strong></td><td>디트판 헤비 아머 도끼 S</td></tr><tr><td>8</td><td>디 아바타르</td><td>예언자의 방 / 전생의 연화</td><td>백마 또는 흑마 S</td><td><strong>시로코</strong></td><td>레다판 바테스 흑마 S</td></tr></tbody></table></div>
+<ul><li>5·7·8번은 요구 무기가 "중 하나"인지 "모두"인지 <strong>시험 화면에서 확인</strong>한다. 그 전까지 두 무기를 함께 올린다.</li><li>피터르·올림피아·티아라는 신장직 없이 최상급에서 멈춘다. 배정은 자격 변환으로 언제든 바꿀 수 있다.</li></ul>
+<div class="warning">⚠️ 부여 능력치에는 상한 +10이 있다. 마스터 스킬(+10)을 단 유닛에게는 레다의 공격 노래가 더 오르지 않는다 → 열광의 노래는 신장직이 없는 딜러에게, 신장직 유닛이 몰린 쪽에는 냉광·멸명의 노래를 쓴다.</div>
+</section>
+<section id="증서-수급">
+<h2>증서 수급</h2>
+<div class="table-wrap"><table><thead><tr><th>시점</th><th>할 일</th></tr></thead><tbody><tr><td>각 1부</td><td>상급 증서는 1부에서 비싸다(3,000G). 꼭 필요한 전직만</td></tr><tr><td>2부</td><td>1장에 초급·중급·상급 5장씩, 장마다 상급 5장 리필. 레벨 끌어올리기 전에 벤치를 전직</td></tr><tr><td><strong>3부 1~2구간</strong></td><td><strong>마을을 재건하며 증서를 사 둔다.</strong> 2구간 이후에는 자재·시험 증서가 다시 채워지지 않는다</td></tr><tr><td>3부 1~3구간</td><td>융합 → 최상급 전직. 3~5부대 유닛도 최상급까지</td></tr></tbody></table></div>
+</section>
+<section id="어려운-전투">
+<h2>어려운 전투</h2>
+<h3 id="1구간-다그다전">1구간 다그다전</h3>
+<ol><li>게스트가 5턴(레다·세오도라·아나톨리아)·7턴(오르헬·타리문)에 온다. 첫 턴에 패배 조건 화면을 보고 게스트를 보호한다.</li><li>융합 직후에는 장 다시 시작을 피한다(파편이 돌아오지 않는다). 위기는 천각으로 넘긴다.</li></ol>
+<h3 id="열쇠-던전-5곳-2구간">열쇠 던전 5곳 (2구간~)</h3>
+<ol><li>적 레벨이 높다. 9인 코어 + 융합을 마친 신장직 후보로 간다.</li><li>상자만 챙기고 빠진다. 다섯 곳을 모두 돌아야 8종이 나온다.</li></ol>
+<h3 id="5구간-17인-맵">5구간 17인 맵</h3>
+<ol><li>조마다 로드 1 + 탱커 + 힐러 2 + 딜러를 독립으로 갖춘다(위 17인 표).</li><li>레다와 무용수 티아라는 다른 조에 둔다. 레다 노래와 티아라 춤을 같은 턴에 쓸 수 있다.</li><li>한쪽이 무너지면 다른 쪽이 워프로 구조할 수 있게 거리를 유지한다.</li></ol>
+<h3 id="최종전-리라-발로르">최종전 리라·발로르</h3>
+<p>최종 보스는 마법 공격이 강하다(마공 70 전후).</p>
+<ol><li>보스 사거리에 들어갈 유닛은 <strong>마방 우선</strong>. 후보: 세오도라, 리네(정령의 목소리: 적이 마법이면 명중·회피 +10), 레다·시로코, 융합으로 마방을 받은 에스메랄다.</li><li>전차병 출신 카이판(피터르·미카엘라)은 마방이 낮을 수 있다 → 융합 뒤 마방을 보고, 낮으면 보스 사거리에 넣지 않는다.</li><li>보스 공격 턴마다 아우로라 Lv2(마법 반감). Lv3(명부의 가호 무효)이 통하는지 첫 턴에 확인한다.</li><li>이스마르의 구세의 빛(주위 2칸 명부의 가호 무효)과 레다 멸명의 노래가 보스에 통하는지 첫 턴에 본다.</li><li>신장직 유닛과 디트리히로 단기 결전. 천녀의 노래(범위 재행동, 맵당 1회)는 보스 처치 턴에 쓴다.</li><li>명부형 로드 4명과 베르트랑·타리문은 최종전 전에 블레이즈 아츠 게이지를 확인한다.</li><li>아스완·타호니아는 후방 지원. 2부를 스킵한 루트 유닛은 전열에 넣기 전에 스탯을 본다.</li></ol>
+</section>
+<section id="체크리스트">
+<h2>체크리스트</h2>
+<ul class="checklist"><li>카이 2부까지 끝낸 뒤 운명의 문</li><li>버전 선택: 탈것 4명 카이판, 그자람·무우·소피아·키로이카 레다판, 에스메랄다·리네 디트판</li><li>1구간 클리어 → 제단 → 융합(매번 수동 세이브)</li><li>필수 융합 9회 완료(2,700)</li><li>1~2구간에 시험 증서 비축</li><li>2구간부터 열쇠 던전 5곳</li><li>신장직 후보 무기 랭크 맞추기(디트리히 검 S, 카이 기마 A + 창 S, 세오도라 창 S, 레다 검 A, 그자람·무우·에스메랄다·시로코)</li><li>4구간: 문 5개 → 8종 → 8명 응시(레다는 무용수 반납 먼저)</li><li>3~5부대 최상급 전직</li><li>아스완·타호니아 합류(5구간)</li><li>최종전 25명 3진영 편성, 마방 탱커·힐러 2 확인</li></ul>
+</section>
+</div><!-- /.container -->
+
+<div class="footer">파이어 엠블렘 만자천홍 하드 / 클래식 공략 가이드 · 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS</div>
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
+</body>
+</html>

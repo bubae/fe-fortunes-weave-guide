@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디트리히 1부 — 파이어 엠블렘 만자천홍 공략</title>
+<link rel="stylesheet" href="style.css?v=b457c51a">
+<style>
+  code { font-family: ui-monospace, monospace; font-size: .85em; background: var(--slate-100); padding: 0 .3rem; border-radius: 4px; }
+  .g-rows { display: grid; gap: .45rem; margin: .7rem 0; }
+  .g-row { display: grid; grid-template-columns: 5.5rem 1fr; gap: .7rem; align-items: start; }
+  .g-label { font-size: .82rem; font-weight: 700; padding: .2rem .45rem; border-radius: 5px; background: var(--slate-100); text-align: center; }
+  .g-val ul { margin: .3rem 0 0 1.1rem; }
+  ul.checklist { list-style: none; padding-left: .2rem; }
+  ul.checklist li { position: relative; padding-left: 1.6rem; margin-bottom: .35rem; }
+  ul.checklist li::before { content: ""; position: absolute; left: 0; top: .25em; width: 1em; height: 1em; border: 2px solid var(--slate-400, #94a3b8); border-radius: 3px; }
+  .guide h3 { margin-top: 1.4rem; }
+  .guide section > h2 { scroll-margin-top: 1rem; }
+  @media (max-width: 600px) { .g-row { grid-template-columns: 1fr; gap: .2rem; } .g-label { justify-self: start; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
+  <span class="hero-badge">루트 ③</span>
+  <h1>디트리히 1부</h1>
+  <p class="subtitle">세 번째 루트. 해금 병종을 모두 쓰고, 레다 본대와 다른 병종으로 2부 13인을 만든다</p>
+</header>
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히 → 카이</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">공략 가이드</div>
+<a href="index.html">개요</a>
+<a href="theodora.html">세오도라 1부</a>
+<a href="leda.html">레다 1부</a>
+<a href="dietrich.html" class="active" aria-current="page">디트리히 1부</a>
+<a href="part2.html">2부 전쟁편</a>
+<a href="kai.html">카이 1·2부</a>
+<a href="part3.html">3부 구세편</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">팁</div>
+<a href="tips.html">육성 핵심 팁</a>
+<a href="tricks.html">꿀팁·트릭</a>
+<a href="pitfalls.html">함정·실수 방지</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">참고</div>
+<a href="units.html">선물·마법</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
+<nav class="nav-bar">
+  <div class="row sub"><span class="gl">이 페이지</span><a href="#한눈에">한눈에</a><a href="#쓸-수-있는-병종">쓸 수 있는 병종</a><a href="#부대-편성">부대 편성</a><a href="#경험치-분배">경험치 분배</a><a href="#장별-진행">장별 진행</a><a href="#결투-대장장이">결투·대장장이</a><a href="#놓치면-안-되는-것">놓치면 안 되는 것</a><a href="#어려운-전투">어려운 전투</a><a href="#2부-13인-12장-종료-시-고정">2부 13인 (12장 종료 시 고정)</a><a href="#다음으로-넘어가기-전">다음으로 넘어가기 전</a></div>
+</nav>
+<div class="container guide">
+<section id="한눈에">
+<h2>한눈에</h2>
+<div class="card g-rows"><div class="g-row"><span class="g-label">상태</span><div class="g-val">세오도라·레다 1부를 마친 뒤. 축복 2단계(경험치 30%, 가호 할인 50%), 두 루트분 가호 레벨, 월드맵·공통 서브퀘스트를 이어받는다</div></div><div class="g-row"><span class="g-label">목표</span><div class="g-val">12장이 끝나기 전에 2부 13인을 전원 상급으로 만든다. 레다 본대와 겹치는 유닛은 다른 병종·다른 무기로 키운다</div></div></div>
+<ul><li><strong>핵심</strong><ol><li>디트리히는 깎기만 하고 막타는 2군에게 준다. 2군 주전은 디트리히보다 5레벨 이상 처지지 않게 한다</li><li>4장에 이오를 영입한다(5장 레버 담당). 9장은 페잔부터 들르고, 기한 있는 일은 9장 안에 끝낸다</li><li>대장장이를 연다. 이 루트에서만 새로 열린다</li></ol></li></ul>
+<div class="tip">💡 레다 1부 클리어 보상 파편 5,000을 위업록에서 직접 받고 축복 2단계를 산다. 경험치 최고 단계를 1장에서 켜고, 칼라 가호 소비 감소가 목록에 있으면 같이 올린다(최대면 하드 칼라 40 → 20).</div>
+<div class="warning">⚠️ 디트리히 루트는 횃대에서 <strong>1장부터 새로</strong> 시작한다. 예전에 조금 해 둔 디트리히 세이브를 이어 하면 이월이 적용되지 않는다.</div>
+</section>
+<section id="쓸-수-있는-병종">
+<h2>쓸 수 있는 병종</h2>
+<div class="table-wrap"><table><thead><tr><th>병종</th><th>이 루트에서</th><th>배정</th></tr></thead><tbody><tr><td>레인저</td><td>상급, 활 B 또는 검 B. 속도 +7·기술 +4</td><td>미카엘라, 키로이카</td></tr><tr><td>트루바두르</td><td>상급, 기마 D + 백마법 B 또는 흑마법 B</td><td>피아나(기동 근접 힐러)</td></tr><tr><td>가디언</td><td>상급, 창 B</td><td>이 루트 배정 없음(레다판 에스메랄다가 가디언)</td></tr><tr><td>드라군</td><td>상급, 비행 C + 도끼 B 또는 창 B</td><td>이오 선택지(기본은 바딩거)</td></tr><tr><td>카타프락트</td><td>상급, 중장 E+·기마 D + 도끼 B 또는 창 B. 성장 보정 합 25·속도 −10, 군단 불가</td><td>레벨업용으로 쓰지 않는다. 특정 맵에서 벽으로 갈아입힐 때만</td></tr><tr><td>대장장이</td><td>이 루트 중반에 해금(흑마법 D + 도끼 C)</td><td>해금만 해 둔다</td></tr><tr><td>무용수</td><td>해금돼 있어도 1부에서는 레다만 될 수 있다</td><td><strong>없음</strong>. 무용수 없이 짠다</td></tr></tbody></table></div>
+</section>
+<section id="부대-편성">
+<h2>부대 편성</h2>
+<div class="table-wrap"><table><thead><tr><th>유닛</th><th>합류 (장·명성)</th><th>역할</th><th>병종 경로</th><th>메모</th></tr></thead><tbody><tr><td><strong>디트리히</strong></td><td>1장 로드</td><td>주 딜러·보스·결투</td><td>투사 › 검사 › 사도</td><td>2군 막타 몰아주기의 중심</td></tr><tr><td><strong>에스메랄다</strong></td><td>2장 자동</td><td>전열 탱커</td><td>병사 › 중갑 보병 › 헤비 아머</td><td>레다판은 가디언. 전용 투척 무기를 2부까지 쥐여 둔다</td></tr><tr><td><strong>미카엘라</strong></td><td>4장 자동</td><td>궁수 1</td><td>사냥병 › 아처 › 레인저</td><td>레다판은 워리어</td></tr><tr><td><strong>양계</strong></td><td>4장 영입 튜토리얼</td><td>1번 힐러(리브로)</td><td>주술사 › 프리스트 › 비숍</td><td>백마법 B 최우선</td></tr><tr><td><strong>이오</strong></td><td>4장, 명성 3 / 지원 2 / 800G</td><td>5장 레버·기동</td><td>병사 › 경기병 › 바딩거</td><td>드라군은 선택</td></tr><tr><td>파비오</td><td>1장 자동</td><td>마법 딜러</td><td>주술사 › 샤먼 › 바테스</td><td>2부 5장 용 형태 담당</td></tr><tr><td>키로이카</td><td>6장, 명성 4 / 지원 1 / 성수 3</td><td>궁수 2</td><td>사냥병 › 아처 › 레인저</td><td>레다판은 스나이퍼</td></tr><tr><td>피아나</td><td>명성 7 / 지원 3 / 3,000G</td><td>근접 힐러(리커버·레스큐, 리브로 없음)</td><td>주술사 › 프리스트 › 트루바두르</td><td>레다판은 비숍. 기마 D가 부담이면 비숍</td></tr><tr><td>무우</td><td>명성 7 / 지원 3 / 구르마오사 3</td><td>딜탱</td><td>투사 › 브리건드 › 워리어</td><td>레다판은 중급 세스타스 경유. 이 버전이 도끼 랭크 담당</td></tr><tr><td>그자람</td><td>명성 8 / 지원 3</td><td>궁수 3</td><td>사냥병 › 아처 › 스나이퍼</td><td>레다판은 검사 › 사도</td></tr><tr><td><strong>리네</strong></td><td>명성 8 / 반짝반짝어 1</td><td>2번 리브로</td><td>주술사 › 프리스트 › 비숍</td><td>세오도라·카이판과 3버전 융합. 못 데려오면 소피아(명성 9)</td></tr><tr><td>골라이어스 / 시몬</td><td>명성 6 / 명성 7</td><td>2번 탱커·보험</td><td>중갑 계열 / 전열</td><td>둘 중 하나</td></tr><tr><td>시로코 / 카타냐</td><td>명성 8~9 / 명성 8</td><td>마법 2 / 속도 딜러</td><td>바테스 / 사도</td><td>시로코는 리커버·레스트 보조 힐러</td></tr><tr><td>울턴드</td><td>명성 5</td><td>초반 마법 하이브리드(엔젤·선더소드)</td><td>주술사 › 샤먼 › 바테스</td><td>힐러로 쓰지 않는다</td></tr><tr><td>녹투라·제스터</td><td>명성 6</td><td>예비</td><td>워리어 / 스나이퍼</td><td>제스터는 무용수 불가</td></tr><tr><td>티아라</td><td>명성 9 / 지원 3, 카이 외전 클리어</td><td>늦은 리브로 보강</td><td>—</td><td>리네·소피아 둘 다 안 될 때</td></tr><tr><td>게이츠</td><td>12장 진입(베르트랑 외전 9/17 조건)</td><td>벤치</td><td>—</td><td>디트리히 전용</td></tr></tbody></table></div>
+<h3 id="레다판과-다른-병종으로-키우는-이유">레다판과 다른 병종으로 키우는 이유</h3>
+<p>3부 인과융합은 같은 유닛의 루트별 버전을 합친다. 스탯·레벨은 항목별 높은 값, 스킬·전투 기술은 모두 이어받는다. 무기 랭크는 높은 쪽만 남을 수도 있으니 <strong>루트마다 다른 무기를 올려야</strong> 융합 이득이 생긴다.</p>
+<div class="table-wrap"><table><thead><tr><th>유닛</th><th>레다판</th><th>디트리히판</th><th>융합하면</th></tr></thead><tbody><tr><td>에스메랄다</td><td>가디언(창·백마법)</td><td>헤비 아머(도끼·중장)</td><td>세 계열 랭크(카이판 기갑 타조병까지)</td></tr><tr><td>미카엘라</td><td>워리어</td><td>레인저</td><td>도끼 + 활</td></tr><tr><td>키로이카</td><td>스나이퍼</td><td>레인저</td><td>상급 병종 스킬 두 종</td></tr><tr><td>그자람</td><td>사도(검)</td><td>스나이퍼(활)</td><td>검 + 활. 3부 기본 버전은 레다판</td></tr><tr><td>무우</td><td>세스타스 경유 워리어(격투)</td><td>워리어(도끼)</td><td>격투 + 도끼</td></tr><tr><td>피아나</td><td>비숍</td><td>트루바두르</td><td>백마법 + 기마</td></tr></tbody></table></div>
+<div class="warning">⚠️ 같은 무기를 두 루트에서 C까지만 올리고 멈추는 계획은 짜지 않는다.</div>
+<h3 id="영입-순서">영입 순서</h3>
+<div class="table-wrap"><table><thead><tr><th>명성</th><th>영입</th><th>조건</th></tr></thead><tbody><tr><td>1·2·4장</td><td>파비오, 에스메랄다, 미카엘라, 양계</td><td>자동·튜토리얼</td></tr><tr><td>3 (4장)</td><td><strong>이오</strong></td><td>800G. 5장 전에 반드시</td></tr><tr><td>4 (6장)</td><td>키로이카</td><td>성수 3</td></tr><tr><td>5</td><td>울턴드</td><td>선택</td></tr><tr><td>6</td><td>골라이어스 / 녹투라 / 제스터</td><td>거대 고기 3 / — / 전투 퀘스트 3회</td></tr><tr><td>7</td><td><strong>피아나</strong>, 무우, 시몬</td><td>3,000G / 구르마오사 3(메실리나 행상인 1개 4,000G) / —</td></tr><tr><td>8</td><td>그자람, <strong>리네</strong>, 카타냐</td><td>리네 반짝반짝어 1</td></tr><tr><td>9</td><td>소피아, 시로코, 티아라</td><td>티아라는 카이 외전 클리어</td></tr><tr><td>12장 진입</td><td>게이츠</td><td>베르트랑 외전</td></tr></tbody></table></div>
+<ul><li>지원은 식사로 미리 채워 두고 <strong>명성이 되는 날 영입</strong>한다. 이 루트는 명성이 느리다(이월로 약 1장 빨라진다).</li><li>선물: 이오 새끼고양이 조각상, 피아나 소립 커피, 무우 구운 과자, 그자람 어린 고슈. 나머지는 <a href="units.html">선물·마법</a>.</li><li>늦게 들어온 유닛(피아나·무우·그자람·리네)은 합류한 주에 시험 화면에서 경로 병종을 <strong>X 버튼</strong>으로 보고, ▲가 뜨고 합격률 100%면 응시한다.</li></ul>
+</section>
+<section id="경험치-분배">
+<h2>경험치 분배</h2>
+<div class="table-wrap"><table><thead><tr><th>규칙</th><th>언제</th><th>방법</th></tr></thead><tbody><tr><td><strong>막타 몰아주기</strong></td><td>항상</td><td>디트리히는 빈사로 만들고 2군이 처치한다. 디트리히는 보스·거점·결투만</td></tr><tr><td><strong>레벨 격차 점검</strong></td><td>매 장 끝</td><td>2군 주전 8명이 디트리히 −5 이내인가 본다</td></tr><tr><td><strong>축복 경험치 최고 단계</strong></td><td>1장부터</td><td>켜 둔다</td></tr><tr><td>칼날울림 훈련</td><td>격차를 넘었을 때</td><td>디트리히 + 2군 5명으로 칼날울림 교전. 디트리히는 방패만</td></tr><tr><td>고레벨 던전 퀵배틀</td><td>격차를 넘었을 때</td><td>대기 멤버도 경험치를 받는다</td></tr><tr><td>늦은 영입 보정</td><td>무우·그자람·리네 합류 직후</td><td>그 주에 막타·회복 경험치를 몰아준다</td></tr><tr><td>2부 레벨 끌어올리기</td><td>2부 1장 준비</td><td>기대는 하되 이것에 기대어 1부 육성을 미루지 않는다</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>구간</th><th>1순위</th><th>2순위</th></tr></thead><tbody><tr><td>1~3장</td><td>에스메랄다, 파비오</td><td>—</td></tr><tr><td>4~5장</td><td>양계(회복), 이오</td><td>미카엘라</td></tr><tr><td>6~8장</td><td>키로이카, 미카엘라, 양계</td><td>파비오, 이오</td></tr><tr><td>9~10장</td><td>피아나, 그자람</td><td>키로이카</td></tr><tr><td>11~12장</td><td>무우·그자람·리네</td><td>예비 3~4명</td></tr></tbody></table></div>
+</section>
+<section id="장별-진행">
+<h2>장별 진행</h2>
+<h3 id="1장">1장</h3>
+<ul class="checklist"><li>가호 재설정(아우로라 중심), 축복 경험치 최고 단계 켜기</li><li>식사로 지원 쌓기 시작: 이오 → 피아나 → 무우·그자람·리네</li></ul>
+<ul><li>파비오 합류. 파비오에게 막타를 준다.</li></ul>
+<h3 id="2장">2장</h3>
+<ul class="checklist"><li>에스메랄다 합류</li></ul>
+<ul><li>패배 조건은 <strong>디트리히 또는 에스메랄다 전투 불능</strong>이다. 에스메랄다를 적 사거리가 겹치는 곳에 세우지 않는다.</li></ul>
+<h3 id="3장">3장</h3>
+<ul><li>기본 로테이션. 파비오·에스메랄다 막타.</li></ul>
+<h3 id="4장">4장</h3>
+<ul class="checklist"><li>미카엘라 합류, 양계 영입 튜토리얼</li><li><strong>이오 영입</strong>(명성 3 / 지원 2 / 800G)</li><li>DLC 1호(검): 다그시온 안내판 서브퀘스트 → 디트리히</li></ul>
+<ul><li>자유행동·칼날울림·신전 봉사가 열린다. 칼날울림 적이 떨어뜨리는 마향석으로 전투 기술을 강화한다. 같은 자리 반복은 효과 범위가 줄어드니 장소를 바꾼다.</li></ul>
+<h3 id="5장">5장</h3>
+<ul class="checklist"><li>양계에게 회복 경험치를 몰아 백마법 B → 리브로</li><li>결투 도전장 시작(다그시온 수배업자, 보고해야 다음 도전장이 열린다)</li></ul>
+<div class="card g-rows"><div class="g-row"><span class="g-label">한니발전</span><div class="g-val">10턴 안에 레버를 전부 조작한다. 이오·양계를 왼쪽으로 보낸다. <a href="#한니발전-5장">공략</a></div></div></div>
+<ul><li>투기장 훈련·자격시험·현상수배가 열린다. 파비오 관련 선택지(5·8·10장)는 고른 답을 적어 둔다.</li></ul>
+<h3 id="6장">6장</h3>
+<ul class="checklist"><li>키로이카 영입(명성 4 / 성수 3)</li><li>대장장이 준비: 스미르노스 신전에서 전투 기술 10회 이상 강화 → 접수처</li></ul>
+<ul><li>탐색·교환소·대장간이 열린다. 이 루트는 초반 활 유닛이 적다.</li></ul>
+<h3 id="7장">7장</h3>
+<ul class="checklist"><li>중급 전직(Lv20 + 명성 4): 디트리히 검사, 에스메랄다 중갑 보병, 양계 프리스트, 미카엘라·키로이카 아처</li><li>피아나 영입(명성 7이 되는 날)</li></ul>
+<ul><li>비전 전수가 열린다.</li></ul>
+<h3 id="8장">8장</h3>
+<ul class="checklist"><li>무우·시몬 영입(명성 7)</li><li>일·이라 결투 가능(명성 6, 디오네 요새)</li></ul>
+<div class="card g-rows"><div class="g-row"><span class="g-label">케투스전</span><div class="g-val">증원을 계속 부른다. 궁수를 증원 방향에 둔다. <a href="#케투스전-8장">공략</a></div></div></div>
+<ul><li>레벨 격차 점검. 넘으면 다음 자유행동을 칼날울림·퀵배틀에 쓴다.</li></ul>
+<h3 id="9장-자유행동-160턴">9장 (자유행동 160턴)</h3>
+<ul class="checklist"><li>장 시작 전 수동 세이브</li><li><strong>페잔부터 들른다</strong>. 들르지 않으면 턴을 크게 잃고, 턴이 다 떨어지면 장을 처음부터 해야 한다</li><li>산책 전에 목적지를 확인한다. 목적지를 못 찾으면 장을 처음부터 해야 한다</li><li>다 미나 무기(검·도끼·활)를 주력에게</li><li>기한 있는 일(외전·결투·준비)을 <strong>이 장 안에</strong> 끝낸다. 10장은 5일뿐이다</li></ul>
+<div class="table-wrap"><table><thead><tr><th>날짜</th><th>할 일</th><th>우선</th></tr></thead><tbody><tr><td>9/2~9/8 (전투 9/8)</td><td>레다 외전(버커니어 조건)</td><td>권장</td></tr><tr><td>9/3~, 9/8 전 수주</td><td>세오도라 외전 「용사상의 행방」</td><td>권장</td></tr><tr><td>9/16 저녁까지</td><td>다그시온 귀환</td><td>베르트랑 외전을 할 때</td></tr><tr><td><strong>9/17 하루</strong></td><td>베르트랑 외전(게이츠 조건)</td><td>선택</td></tr><tr><td>9/17~9/19</td><td>타리문 외전 1차(놓치면 10/1~10/10)</td><td>선택</td></tr><tr><td>9장 중</td><td>일·이라 결투</td><td>중간</td></tr></tbody></table></div>
+<ul><li>외전이 몰리는 9월 중순에는 장기 원정을 가지 않는다. 9/8~9/16 사이에 짧게 한 번 파밍한다.</li></ul>
+<h3 id="10장-자유행동-20턴-5일">10장 (자유행동 20턴, 5일)</h3>
+<ul class="checklist"><li>안나 외전 9/29~10/5, 타리문 외전 2차 10/1~10/10 수주(10/12 클리어) — 선택</li></ul>
+<ul><li>9장에서 준비를 끝내지 않았으면 여기서는 시간이 없다.</li></ul>
+<h3 id="11장">11장</h3>
+<ul class="checklist"><li><strong>상급 전직</strong>(Lv35 + 명성 8): 에스메랄다 헤비 아머, 미카엘라·키로이카 레인저, 그자람 스나이퍼, 이오 바딩거, 양계 비숍, 피아나 트루바두르</li><li>그자람·리네 영입(명성 8) → 바로 경험치 보정</li><li>아나톨리아 외전 10/5~10/14 수주, <strong>10/17 클리어</strong>(레다 루트에서 못 했으면 필수)</li><li>카이 외전 10/16~10/22, 오르헬 외전 10/18~10/25 수주(10/27 클리어) — 선택</li><li>키릭 퀘스트 「죽은 여동생의 장신구」 목록 확인 후 완료(2부 키릭 보험)</li></ul>
+<ul><li>명성이 모자라면 일·이라 결투(명성 150)와 외전으로 채운다.</li></ul>
+<div class="card g-rows"><div class="g-row"><span class="g-label">가시 바닥</span><div class="g-val">피해와 내구 감소. <a href="#가시-바닥-11장">공략</a></div></div></div>
+<h3 id="12장-출격-9명">12장 (출격 9명)</h3>
+<ul class="checklist"><li>진입 시 게이츠 합류(베르트랑 외전을 했을 때)</li><li>아래 <a href="#2부-13인-12장-종료-시-고정">2부 13인</a>을 전원 상급으로</li><li>결투 처리 여부를 11/24 기준으로 정리</li><li>클리어 → 위업록에서 파편 5,000 수령 → 축복 3단계 확인</li></ul>
+<ul><li><strong>마르스 2연전</strong>. <a href="#마르스-2연전-12장">공략</a></li><li>12장 시작 때 명성이 8 미만이면 늦은 영입 대신 예비(녹투라·골라이어스·시몬)를 주전으로 올린다.</li></ul>
+<div class="table-wrap"><table><thead><tr><th>12장 출격 9명 예시</th><th>이유</th></tr></thead><tbody><tr><td>디트리히, 에스메랄다, 양계, 피아나</td><td>로드·탱커·힐러 2</td></tr><tr><td>파비오, 미카엘라, 키로이카</td><td>마법 1, 궁수 2</td></tr><tr><td>이오, 무우</td><td>기동, 딜탱</td></tr><tr><td>교대: 그자람, 리네, 골라이어스/시몬</td><td>리브로가 하나 더 필요하면 리네</td></tr></tbody></table></div>
+</section>
+<section id="결투-대장장이">
+<h2>결투·대장장이</h2>
+<div class="table-wrap"><table><thead><tr><th>대상</th><th>보상</th><th>이 루트에서</th></tr></thead><tbody><tr><td>일·이라 결투(명성 6, 디오네 요새)</td><td>비전 윈드피어스, 10,000G, 명성 150</td><td><strong>중간</strong>. 가디언은 이미 있다. 느린 명성 보충용. 11/24까지(늦어도 12장 전)</td></tr><tr><td>오우코 결투(명성 10)</td><td>비전 기술·골드·명성</td><td><strong>낮음</strong>. 레다 루트에서 레인저를 못 열었으면 <strong>높음</strong></td></tr><tr><td>대장장이</td><td>대장장이 병종</td><td><strong>중간</strong>. 이 루트에서만 새로 열린다</td></tr></tbody></table></div>
+<ul><li>결투는 디트리히 혼자 치르는 1:1이다. 지면 게임 오버(재시도)이고 영구 이탈은 아니다.</li></ul>
+<p>결투 준비 체크리스트</p>
+<ul class="checklist"><li>결투 직전 수동 세이브(세이브는 1개뿐이고 그 시점으로 덮어쓴다)</li><li>디트리히 레벨이 그 장 적 평균 +3 이상</li><li>블레이즈 아츠 게이지 50% 미만, HP 가득</li><li>주력 검 + 전투 기술 1~2회분 내구</li><li>1턴에 무빙 섀도우로 회피 지형을 잡고, 들어오는 적을 반격으로 받는다</li><li>가호를 쓸 수 있으면 필살형에 주라, 다타형에 아우로라</li></ul>
+</section>
+<section id="놓치면-안-되는-것">
+<h2>놓치면 안 되는 것</h2>
+<div class="table-wrap"><table><thead><tr><th>날짜/장</th><th>할 일</th><th>놓치면</th></tr></thead><tbody><tr><td>2장</td><td>에스메랄다 보호</td><td>게임 오버</td></tr><tr><td>4장</td><td>이오 영입</td><td>5장 레버 10턴이 매우 어려워진다</td></tr><tr><td>9장 시작</td><td>페잔 먼저</td><td>턴을 크게 잃고 장을 처음부터 할 수도 있다</td></tr><tr><td>9/17</td><td>베르트랑 외전(하루)</td><td>게이츠를 못 얻는다(벤치라 손실 작음)</td></tr><tr><td>9장 안</td><td>기한 있는 일 정리</td><td>10장은 5일뿐</td></tr><tr><td>10/17</td><td>아나톨리아 외전 클리어(레다에서 못 했을 때)</td><td>3부 2구간 아나톨리아 합류 실패</td></tr><tr><td>11장</td><td>키릭 퀘스트</td><td>디트리히 2부 키릭 보험이 사라진다</td></tr><tr><td>11/24</td><td>결투 마감</td><td>일·이라 보상(명성 150) 소실</td></tr><tr><td>12장 종료 전</td><td>13인 상급·영입 완료</td><td>2부 부대가 그대로 고정된다. 3부에 데려갈 유닛도 여기까지 영입</td></tr></tbody></table></div>
+</section>
+<section id="어려운-전투">
+<h2>어려운 전투</h2>
+<h3 id="한니발전-5장">한니발전 (5장)</h3>
+<ol><li>1턴에 맵 전체를 보고 레버까지 걸리는 턴 수를 거꾸로 계산한다.</li><li>이오(기병)와 양계를 왼쪽 레버로 보낸다. 본대(디트리히·에스메랄다·미카엘라·파비오)는 반대쪽·중앙을 맡는다.</li><li>레버 경로의 적은 본대가 먼저 끌어낸다. 이오가 레버 위에서 반격받을 자리면 에스메랄다를 옆 칸에 둔다.</li><li>7턴에 레버가 절반 이하면 천각으로 경로를 다시 짠다.</li><li>마지막 레버가 1~2칸 모자라면 칼라 Lv3(이동 +2). 보스는 디트리히 무빙 섀도우로 직행한다.</li></ol>
+<ul><li>예산: 칼라 1회 + 천각 2회분 백사를 남겨 둔다.</li></ul>
+<h3 id="케투스전-8장">케투스전 (8장)</h3>
+<ol><li>미카엘라·키로이카를 증원이 나오는 방향에 둔다. 비병이면 활이 3배다.</li><li>보스 근처는 이동 시 큰 피해를 주는 기믹이 있다. 보스 인접 칸으로 움직이기 전마다 범위를 확인하고, 적 페이즈에 아우로라를 켠다.</li><li>증원이 계속 나오므로 정리에 턴을 쓰지 말고 디트리히 무빙 섀도우로 보스를 빨리 잡는다.</li></ol>
+<h3 id="가시-바닥-11장">가시 바닥 (11장)</h3>
+<ol><li>경로를 가시 밖으로 우회한다.</li><li>비전 기술 무기는 가시 위에서 쓰지 않는다(내구 감소).</li><li>지나가야 하면 양계·리네(리브로)와 피아나(근접 리커버)가 매 턴 회복한다. 트루바두르 피아나는 우회 경로에서 사거리를 맞추기 쉽다.</li></ol>
+<h3 id="마르스-2연전-12장">마르스 2연전 (12장)</h3>
+<ol><li>1전을 디트리히 블레이즈 아츠 게이지 50% 미만, HP 가득으로 끝낸다.</li><li>2전 사이 회복 기회는 인게임에서 확인한다. 없다고 보고 1전부터 아우로라 예산을 남긴다.</li><li>이 장이 끝나면 2부 부대가 고정되므로 백사 15를 비상금으로 둔다.</li></ol>
+<h3 id="세오도라-외전-용사상의-행방-9장">세오도라 외전 「용사상의 행방」 (9장)</h3>
+<ol><li>장치 3개를 밟으면 이긴다. <strong>세오도라 또는 디트리히가 쓰러지면 패배</strong>다. 디트리히도 무빙 섀도우로 튀어 나가지 않는다.</li><li>시야가 좁다. 전진하는 턴에 크레르 Lv1(시야 +5).</li><li>골렘은 매우 강하다. 싸우지 말고 장치까지 우회하고, 장치를 막은 골렘만 유인해 비킨다.</li></ol>
+<h3 id="베르트랑-외전-9-17">베르트랑 외전 (9/17)</h3>
+<ol><li>거인 4체를 쓰러뜨린다. 먹이를 준 거인은 다음 자기 턴까지 공격이 안 통하고 아군을 노리지 않는다.</li><li>먹이는 턴의 마지막 행동으로, 이번 턴에 치지 않을 거인에게 준다.</li></ol>
+</section>
+<section id="2부-13인-12장-종료-시-고정">
+<h2>2부 13인 (12장 종료 시 고정)</h2>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>유닛</th><th>2부 병종</th><th>역할</th></tr></thead><tbody><tr><td>1</td><td>디트리히</td><td>사도</td><td>주 딜러·보스</td></tr><tr><td>2</td><td>에스메랄다</td><td>헤비 아머</td><td>전열 탱커</td></tr><tr><td>3</td><td>골라이어스 또는 시몬</td><td>중갑 / 전열</td><td>2번 탱커·보험</td></tr><tr><td>4</td><td>양계</td><td>비숍</td><td>1번 리브로</td></tr><tr><td>5</td><td>피아나</td><td>트루바두르(안 되면 비숍)</td><td>근접 기동 힐러</td></tr><tr><td>6</td><td>파비오</td><td>바테스</td><td>마법 딜러</td></tr><tr><td>7</td><td>미카엘라</td><td>레인저</td><td>궁수 1</td></tr><tr><td>8</td><td>키로이카</td><td>레인저</td><td>궁수 2</td></tr><tr><td>9</td><td>그자람</td><td>스나이퍼</td><td>궁수 3</td></tr><tr><td>10</td><td>무우</td><td>워리어</td><td>딜탱</td></tr><tr><td>11</td><td>이오</td><td>바딩거</td><td>기동</td></tr><tr><td>12</td><td>시로코 또는 카타냐</td><td>바테스 / 사도</td><td>마법 2 또는 속도 딜러</td></tr><tr><td>13</td><td>리네(없으면 소피아)</td><td>비숍</td><td>2번 리브로</td></tr></tbody></table></div>
+<ul><li>원거리 회복 2명(양계 + 리네)을 꼭 넣는다. 리브로 없는 힐러만으로는 중반 이후를 버티기 어렵다.</li><li>2부 2장에서 키릭이 들어오면 12번 슬롯과 바꾼다.</li><li>2부 출격은 13명이고 빈칸은 게스트가 채운다. 2부 4·5장이 특히 어려우니 4장 전까지 13명 전원 상급을 마친다.</li><li>예비 2~3명도 중급 이상으로 만들어 둔다(2부 사망 대체용).</li></ul>
+</section>
+<section id="다음으로-넘어가기-전">
+<h2>다음으로 넘어가기 전</h2>
+<ul class="checklist"><li>13인 전원 상급, 장비 최종 세팅(2부에서는 장비 중인 아이템만 쓴다)</li><li>3부에 데려갈 유닛 영입 완료</li><li>2군 레벨 격차 −5 이내</li><li>대장장이 해금</li><li>아나톨리아 외전(레다·디트리히 중 한 루트에서) 완료</li><li>키릭 퀘스트 완료</li><li>파편 5,000 수령 → 축복 3단계(경험치 50% 등) 구매</li><li>다음은 <a href="part2.html">2부 전쟁편</a>: 레다 2부부터 시작한다</li></ul>
+</section>
+</div><!-- /.container -->
+
+<div class="footer">파이어 엠블렘 만자천홍 하드 / 클래식 공략 가이드 · 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS</div>
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
+</body>
+</html>

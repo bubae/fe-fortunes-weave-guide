@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2부 전쟁편 — 파이어 엠블렘 만자천홍 공략</title>
+<link rel="stylesheet" href="style.css?v=b457c51a">
+<style>
+  code { font-family: ui-monospace, monospace; font-size: .85em; background: var(--slate-100); padding: 0 .3rem; border-radius: 4px; }
+  .g-rows { display: grid; gap: .45rem; margin: .7rem 0; }
+  .g-row { display: grid; grid-template-columns: 5.5rem 1fr; gap: .7rem; align-items: start; }
+  .g-label { font-size: .82rem; font-weight: 700; padding: .2rem .45rem; border-radius: 5px; background: var(--slate-100); text-align: center; }
+  .g-val ul { margin: .3rem 0 0 1.1rem; }
+  ul.checklist { list-style: none; padding-left: .2rem; }
+  ul.checklist li { position: relative; padding-left: 1.6rem; margin-bottom: .35rem; }
+  ul.checklist li::before { content: ""; position: absolute; left: 0; top: .25em; width: 1em; height: 1em; border: 2px solid var(--slate-400, #94a3b8); border-radius: 3px; }
+  .guide h3 { margin-top: 1.4rem; }
+  .guide section > h2 { scroll-margin-top: 1rem; }
+  @media (max-width: 600px) { .g-row { grid-template-columns: 1fr; gap: .2rem; } .g-label { justify-self: start; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
+  <span class="hero-badge">2부</span>
+  <h1>2부 전쟁편</h1>
+  <p class="subtitle">레다 2부 → 디트리히 2부 → 세오도라 2부(스킵 또는 직접). 같은 맵 6장을 로드별로 치른다</p>
+</header>
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히 → 카이</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">공략 가이드</div>
+<a href="index.html">개요</a>
+<a href="theodora.html">세오도라 1부</a>
+<a href="leda.html">레다 1부</a>
+<a href="dietrich.html">디트리히 1부</a>
+<a href="part2.html" class="active" aria-current="page">2부 전쟁편</a>
+<a href="kai.html">카이 1·2부</a>
+<a href="part3.html">3부 구세편</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">팁</div>
+<a href="tips.html">육성 핵심 팁</a>
+<a href="tricks.html">꿀팁·트릭</a>
+<a href="pitfalls.html">함정·실수 방지</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">참고</div>
+<a href="units.html">선물·마법</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
+<nav class="nav-bar">
+  <div class="row sub"><span class="gl">이 페이지</span><a href="#한눈에">한눈에</a><a href="#진행-순서">진행 순서</a><a href="#2부-공통-규칙">2부 공통 규칙</a><a href="#장별-공략">장별 공략</a><a href="#로드별-편성과-메모">로드별 편성과 메모</a><a href="#키릭-네이선">키릭·네이선</a><a href="#아스완-타호니아-생존">아스완·타호니아 생존</a><a href="#사망이-났을-때">사망이 났을 때</a><a href="#놓치면-안-되는-것">놓치면 안 되는 것</a><a href="#3부를-위한-2부-마무리">3부를 위한 2부 마무리</a></div>
+</nav>
+<div class="container guide">
+<section id="한눈에">
+<h2>한눈에</h2>
+<div class="card g-rows"><div class="g-row"><span class="g-label">상태</span><div class="g-val">세오도라·레다·디트리히 1부를 모두 마친 뒤. 축복 3단계(경험치 50% 등)와 세 루트분 가호를 안고 들어간다</div></div><div class="g-row"><span class="g-label">목표</span><div class="g-val">레다·디트리히 2부를 직접 클리어하고, 세오도라 2부는 최소한 스킵한다. 사망자 없이 끝내 세 진영을 3부로 데려간다</div></div></div>
+<ul><li><strong>핵심</strong><ol><li>키릭은 2장에서 격파해 영입하고, 3장 네이선은 <strong>키릭으로 막타</strong>를 친다</li><li>아스완·타호니아를 3장에서 살린다(3부 5구간 합류 조건). 4장부터도 계속 살린다</li><li>6장은 라일라전 → 탈출전 2연전이다. <strong>두 전투 사이에 「장 다시 하기」를 누르지 않는다</strong></li></ol></li></ul>
+<div class="info">카이 2부는 카이 1부 뒤에 한다. <a href="kai.html">카이 1·2부</a>에서 다룬다.</div>
+</section>
+<section id="진행-순서">
+<h2>진행 순서</h2>
+<div class="table-wrap"><table><thead><tr><th>순서</th><th>루트</th><th>방식</th><th>이유</th></tr></thead><tbody><tr><td>1</td><td><strong>레다 2부</strong></td><td>직접</td><td>첫 2부는 스킵할 수 없다. 키릭·네이선 첫 기회</td></tr><tr><td>2</td><td><strong>디트리히 2부</strong></td><td>직접</td><td>인과융합용 스탯을 쌓는다. 로드 디트리히도 2부 데이터로 자동 융합된다</td></tr><tr><td>3</td><td>세오도라 2부</td><td>스킵 또는 직접</td><td>스킵해도 3부에 반입된다. 로드 세오도라를 3부 주력으로 쓰려면 직접</td></tr><tr><td>다음</td><td><a href="kai.html">카이 1부</a></td><td>—</td><td>3부 문은 카이 2부까지 끝낸 뒤 연다</td></tr></tbody></table></div>
+</section>
+<section id="2부-공통-규칙">
+<h2>2부 공통 규칙</h2>
+<div class="table-wrap"><table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>진입</td><td>투쟁의 방첨탑에서 1부를 클리어한 로드를 고른다. 모두 6장</td></tr><tr><td>부대</td><td>그 로드의 <strong>1부 12장 종료 시점</strong> 부대 그대로</td></tr><tr><td>출격</td><td>로드 측 <strong>13명(세오도라 루트 14명)</strong> + 다른 진영 게스트. 2장부터 칸이 15개로 보이고 빈칸은 게스트(보나파르트·토비아스·게이츠·제스터 등)가 자동으로 채운다 → 13명을 억지로 채워 키우지 않는다</td></tr><tr><td>게스트</td><td>세오도라는 항상 게스트로 나온다. 레다 2부는 백발귀·세오도라</td></tr><tr><td>시험 증서</td><td><strong>1장에 들어가면 초급·중급·상급 증서를 5장씩</strong> 받는다. 상급 증서는 장마다 5장으로 다시 찬다</td></tr><tr><td>자동 레벨업</td><td>영입만 해 둔 유닛을 권장 레벨까지 자동으로 올려 준다(기술 레벨은 따로 훈련). 값이 일정하지 않으니 이것만 믿지 않는다</td></tr><tr><td>군행동</td><td>준비 단계에서 장마다 1회: 레벨 끌어올리기 / 기능 훈련 / 봉사활동(가호) 중 하나. 끌어올리기 전에 벤치를 전직한다</td></tr><tr><td>영입</td><td>신규 영입 불가. 예외는 <strong>키릭(2장)·네이선(3장)</strong>, 레다·디트리히 2부에서만</td></tr><tr><td>아이템</td><td>장비 중인 아이템만 쓴다. 나머지는 3부에서 돌아온다. 3부 인벤토리는 루트별 2부 <strong>첫</strong> 클리어(스킵 포함) 때 소지품</td></tr><tr><td>백사</td><td>장마다 다시 찬다. 장 단위로 천각 비상금 10 + 아우로라를 쓴다</td></tr><tr><td>스킵</td><td>2부를 한 번 직접 클리어하면 열린다. 그 루트 유닛 전원 <strong>레벨 +5</strong>만 주고 장비·보상 무기는 없다</td></tr><tr><td>3부 반입</td><td>그 로드의 2부를 <strong>클리어하거나 스킵</strong>하면 로드와 동료가 3부에 온다. 스킵도 반입된다. 클리어·스킵할 때마다 같은 루트끼리 자동 무료 융합</td></tr><tr><td>사망</td><td>2부에서 죽은 유닛은 그 루트 버전으로 3부에 오지 않는다</td></tr><tr><td>1부로 돌아가기</td><td>2부 중에도 방첨탑에서 1부로 갈 수 있다. 단 2부 부대는 바뀌지 않는다</td></tr></tbody></table></div>
+<div class="tip">💡 증서는 아끼지 않는다. 장마다 상급 전직을 끝내고, 남은 증서로 경로상 상급 병종을 X 버튼으로 보고 ▲ + 합격률 100%인 것만 응시한다. 합격률 100%가 아니면 응시하지 않는다(실패하면 증서를 잃는다).</div>
+</section>
+<section id="장별-공략">
+<h2>장별 공략</h2>
+<div class="table-wrap"><table><thead><tr><th>장</th><th>이름</th><th>할 일</th><th>주의</th></tr></thead><tbody><tr><td>준비</td><td>—</td><td>증서로 상급 전직 마무리 → 레벨 끌어올리기</td><td>끌어올리기 전에 벤치 전직</td></tr><tr><td>1장</td><td>클리티우스 평원</td><td>13인 편성 확인</td><td>키릭이 보이면 승리 조건부터 확인. 격파가 승리 조건이 아니면 공격하지 않는다</td></tr><tr><td><strong>2장</strong></td><td>아그리스 요새</td><td><strong>키릭 격파 → 합류</strong></td><td>포대 한 방, 아이템을 들고 도주하는 적</td></tr><tr><td><strong>3장</strong></td><td>소금길 너머</td><td><strong>키릭으로 네이선 막타</strong>, 아스완·타호니아 생존</td><td>일정 구간에 들어가면 길크리스가 맵 전체에 불 타일</td></tr><tr><td><strong>4장</strong></td><td>다그시온 강습</td><td>전원 상급으로 진입</td><td>전투 코끼리, 후방 증원, 썬더스톰, 다리 전투</td></tr><tr><td><strong>5장</strong></td><td>신제 다그다</td><td>2페이즈 보스</td><td>인간형 격파 → 배치 그대로 용 형태. 용은 마법이 잘 통한다</td></tr><tr><td><strong>6장</strong></td><td>명계의 화신</td><td>라일라전 → 탈출전</td><td>두 전투 사이 「장 다시 하기」 금지</td></tr></tbody></table></div>
+<ul><li>포대와 증원은 무한이 아니다. 증원부터 정리하고 진군한다.</li><li>레다 2부에서 트리거 칸·증원 턴·포대 위치·실드 재생량·탈출 경로를 적어 두면 디트리히·카이 2부는 아는 맵이 된다.</li></ul>
+<h3 id="1장-클리티우스-평원">1장 클리티우스 평원</h3>
+<ul class="checklist"><li>증서 5장씩 받기, 상급 전직 마무리</li><li>키릭이 보이면 승리 조건 확인 후 건드리지 않는다</li></ul>
+<ul><li>무난한 맵이다. 이 장에서 편성과 게스트 배치를 익힌다.</li></ul>
+<h3 id="2장-아그리스-요새">2장 아그리스 요새</h3>
+<ul class="checklist"><li>키릭을 격파해 영입한다(1부 「죽은 여동생의 장신구」를 끝낸 루트만)</li></ul>
+<ul><li>포대 사거리를 하나씩 확인하고 포대 담당부터 처리한다. 사거리 안에서 턴을 끝내지 않는다.</li><li>도주하는 적은 기동 유닛 1명(레다 본대 카타냐 / 디트리히 본대 이오)을 도주 경로 쪽에 둔다. 쫓다가 본대와 떨어지지 않는다.</li><li>키릭을 얻은 뒤 3장까지 키릭 HP·장비를 최우선으로 챙긴다.</li></ul>
+<h3 id="3장-소금길-너머">3장 소금길 너머</h3>
+<ul class="checklist"><li>아스완·타호니아를 본대 뒤·힐러 옆에 붙인다</li><li>불 트리거 칸에 들어가기 전에 증원 정리·진형 정비, 전원 HP 가득</li><li>트리거 턴에 아우로라</li><li>네이선은 키릭으로 막타(아래 순서)</li></ul>
+<ul><li>불 위에서 턴을 끝내지 않는다. 퇴로가 막히면 칼라(Lv1 회피 +50 / Lv3 이동 +2).</li></ul>
+<p>네이선 막타 순서</p>
+<ol><li>네이선 사거리 안에는 반격으로 네이선을 죽일 수 없는 유닛만 세운다. 적 페이즈 반격 처치도 다른 유닛 막타가 된다.</li><li>다른 유닛으로 네이선 HP를 키릭 1회 공격(추격 포함) 피해 이하로 깎는다. 전투 예측에 처치 표시가 안 나오는지 본다.</li><li>키릭으로 공격한다. 명중률이 100%가 아니면 백사 5 이상 남은 턴에만 시도하고, 빗나가면 천각.</li><li>네이선은 힘·기술이 높다. 키릭이 공격하는 턴에 아우로라를 켠다.</li></ol>
+<h3 id="4장-다그시온-강습">4장 다그시온 강습</h3>
+<ul class="checklist"><li>4장 전까지 13명 전원 상급, 레벨 격차 재점검</li></ul>
+<ul><li>코끼리병은 딜이 잘 안 박힌다. 창과 마법으로 친다. 디트리히 2부에서는 <strong>에스메랄다 전용 투척 무기</strong>를 장비 칸에 둔다.</li><li>후방 증원에 대비해 후위(힐러·궁수) 뒤에 예비 탱커 1명을 둔다(레다 본대 미카엘라·버커니어 / 디트리히 본대 골라이어스·시몬).</li><li>다리 입구에 1번 탱커, 뒤에서 궁수·마법. 썬더스톰에 대비해 한 칸씩 띄워 선다.</li></ul>
+<h3 id="5장-신제-다그다">5장 신제 다그다</h3>
+<ol><li>발리스타 사정권에서 시작한다. 1턴에 사거리 밖으로 빠지거나 발리스타 담당부터 잡고, 아우로라를 켠다.</li><li>인간형은 속박을 건다. 로드를 혼자 두지 말고 힐러가 닿는 자리에 둔다.</li><li>인간형을 잡기 전 턴에 전원 HP를 채우고 진형을 정비한다. 막타는 그 턴의 마지막 행동으로 친다(배치 그대로 2페이즈가 바로 시작된다).</li><li>용 형태는 마방이 수비보다 낮다. 마법 딜러를 몰아준다: <strong>레다 본대 = 시로코·올림피아 / 디트리히 본대 = 파비오 + 시로코·카타냐(선더소드)</strong>. 스미르노스(마법 명중·사거리)도 쓴다.</li></ol>
+<ul><li>외전을 안 깬 진영장은 이 장에 적으로 나온다. 베르트랑·타리문·오르헬·아나톨리아 외전을 1부에서 끝냈는지 확인한다.</li></ul>
+<h3 id="6장-명계의-화신-라일라전-탈출전">6장 명계의 화신 (라일라전 → 탈출전)</h3>
+<p>전반 라일라전</p>
+<ol><li>라일라는 매 턴 실드 2칸을 다시 채우고 HP를 회복한다.</li><li>실드를 깨는 턴과 HP를 깎는 턴을 나누지 않는다. 실드 담당(다타·원거리)과 HP 딜러를 모두 닿게 배치한 뒤 <strong>같은 턴에</strong> 몰아친다. 롱보우 저격으로 실드를 깨고 베르트랑이 마무리하는 방법도 쓴다.</li><li>아우로라가 매우 유용하다. 이 장 백사는 아우로라(전반)와 칼라(후반 이동 보험)에 쓴다.</li></ol>
+<p>두 전투 사이</p>
+<ul><li>⚠️ 메뉴에서 <strong>「장 다시 하기」를 누르지 않는다</strong>. 누르면 라일라전부터 다시 한다.</li><li>HP·게이지·내구를 확인하고 넘어간다.</li></ul>
+<p>후반 탈출전</p>
+<ol><li><strong>로드만 남쪽 목적지에 도착하면 클리어</strong>다. 전원 퇴각이 아니다.</li><li>가운데 부활의 돌을 단 적은 건드리지 않는다. 개별 범위를 켜고 <strong>벽을 따라</strong> 범위 밖 경로로 돈다.</li><li>적은 시야에 들어오지 않으면 움직이지 않는다. 한 번에 넓게 드러내지 말고 한 칸씩 전진한다.</li><li>거점은 흰 까마귀의 횃대만 쓸 수 있다.</li><li>본대는 로드 호위 진형(탱커 앞, 힐러 옆)으로 따라간다. 로드가 1~2칸 모자라면 칼라 Lv3(이동 +2) 또는 워프로 보낸다.</li><li>사고가 나면 천각으로 해결한다.</li></ol>
+<ul><li>레다 2부에서는 멸명의 노래(명마 유효)로 중앙을 뚫는 방법도 있다.</li></ul>
+</section>
+<section id="로드별-편성과-메모">
+<h2>로드별 편성과 메모</h2>
+<h3 id="레다-2부-첫-2부">레다 2부 (첫 2부)</h3>
+<ul class="checklist"><li>아우로라 2단계 이상(가호 할인 50%면 거의 매 턴 쓸 수 있다)</li><li>2장 키릭, 3장 네이선(이 순서의 첫 기회)</li><li>5장 용 형태는 올림피아·시로코</li><li>칼라의 활 저격은 수리하며 쓴다</li></ul>
+<ul><li>천녀의 노래는 1부에서 「신상품 4」를 끝냈을 때만 쓸 수 있다. 놓쳤으면 13번 슬롯에 딜러를 하나 더 넣는다.</li><li>클리어하면 이후 2부 스킵이 열리고, 레다 진영이 3부에 반입된다.</li></ul>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>유닛</th><th>2부 병종</th><th>역할</th></tr></thead><tbody><tr><td>1</td><td>레다</td><td>무희</td><td>춤·천녀의 노래·버프 노래·저격</td></tr><tr><td>2</td><td>무우</td><td>워리어(세스타스 경유)</td><td>주 딜탱</td></tr><tr><td>3</td><td>시로코</td><td>바테스</td><td>마법·선더소드, 보조 힐러</td></tr><tr><td>4</td><td>올림피아</td><td>비숍</td><td>1번 리브로, 5장 마법</td></tr><tr><td>5</td><td>그자람</td><td>사도</td><td>검 딜러</td></tr><tr><td>6</td><td>에스메랄다</td><td>가디언</td><td>전열 탱커</td></tr><tr><td>7</td><td>버커니어</td><td>헤비 아머</td><td>2번 탱커</td></tr><tr><td>8</td><td>피아나</td><td>비숍</td><td>근접 힐러</td></tr><tr><td>9</td><td>소피아</td><td>비숍</td><td>2번 리브로</td></tr><tr><td>10</td><td>키로이카</td><td>스나이퍼</td><td>궁수(대 비병)</td></tr><tr><td>11</td><td>카타냐</td><td>사도</td><td>선더소드·속도 딜러</td></tr><tr><td>12</td><td>미카엘라</td><td>워리어</td><td>딜탱·교대 탱커</td></tr><tr><td>13</td><td>시몬 / 이오 / 리네</td><td>—</td><td>교대 슬롯 → 2장부터 키릭</td></tr></tbody></table></div>
+<h3 id="디트리히-2부-직접">디트리히 2부 (직접)</h3>
+<ul class="checklist"><li>스킵하지 않는다(융합용 스탯, 로드 자동 융합)</li><li>4장 전 1~13번 전원 상급. 이 순서에서는 4·5장이 가장 어렵다</li><li>4장 에스메랄다 투척 무기</li><li>5장 용 형태는 파비오 + 시로코·카타냐</li><li>레다 2부에서 키릭·네이선을 못 얻었으면 <strong>여기서 반드시</strong> 얻는다</li></ul>
+<ul><li>궁수 3명이라 비병·원거리 처리는 레다 본대보다 쉽고, 마법이 적어 5장 용 형태는 더 어렵다.</li><li>두 루트 모두에서 키릭·네이선을 영입하면 3부에서 융합할 버전이 2개가 된다.</li></ul>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>유닛</th><th>2부 병종</th><th>역할</th></tr></thead><tbody><tr><td>1</td><td>디트리히</td><td>사도</td><td>주 딜러·보스</td></tr><tr><td>2</td><td>에스메랄다</td><td>헤비 아머</td><td>전열 탱커</td></tr><tr><td>3</td><td>골라이어스 / 시몬</td><td>중갑 / 전열</td><td>2번 탱커</td></tr><tr><td>4</td><td>양계</td><td>비숍</td><td>1번 리브로</td></tr><tr><td>5</td><td>피아나</td><td>트루바두르</td><td>근접 기동 힐러</td></tr><tr><td>6</td><td>파비오</td><td>바테스</td><td>마법 딜러</td></tr><tr><td>7</td><td>미카엘라</td><td>레인저</td><td>궁수 1</td></tr><tr><td>8</td><td>키로이카</td><td>레인저</td><td>궁수 2</td></tr><tr><td>9</td><td>그자람</td><td>스나이퍼</td><td>궁수 3</td></tr><tr><td>10</td><td>무우</td><td>워리어</td><td>딜탱</td></tr><tr><td>11</td><td>이오</td><td>바딩거</td><td>기동</td></tr><tr><td>12</td><td>시로코 / 카타냐</td><td>바테스 / 사도</td><td>마법 2·속도 딜러 → 키릭이 오면 교대</td></tr><tr><td>13</td><td>리네(없으면 소피아)</td><td>비숍</td><td>2번 리브로</td></tr></tbody></table></div>
+<h3 id="세오도라-2부-스킵-또는-직접">세오도라 2부 (스킵 또는 직접)</h3>
+<div class="table-wrap"><table><thead><tr><th>방식</th><th>얻는 것</th><th>이럴 때</th></tr></thead><tbody><tr><td><strong>스킵</strong></td><td>세오도라 진영 전원 레벨 +5, 3부 반입·자동 융합</td><td>기본. 시간이 없을 때</td></tr><tr><td>직접</td><td>로드 세오도라 데이터가 좋아진다(로드는 자기 2부 데이터로만 자동 융합). 출격 14명</td><td>3부에서 세오도라를 신장직 더 트라이던트 주력으로 쓸 때</td></tr></tbody></table></div>
+<ul class="checklist"><li>플레이도 스킵도 안 한 루트의 유닛은 3부에서 쓸 수 없다. <strong>최소한 스킵은 반드시</strong> 한다</li><li>스킵하면 레벨만 높고 스탯이 낮은 버전이 생긴다. 융합은 레벨도 높은 쪽을 따르니, 세오도라판을 보조로 쓸 소피아·리네가 메인 버전보다 레벨이 높아지지 않았는지 3부 영입 화면에서 본다</li></ul>
+<ul><li>세오도라 루트에는 키릭 퀘스트가 없어 키릭·네이선이 오지 않는다.</li></ul>
+<div class="table-wrap"><table><thead><tr><th>세오도라 부대 (1부 12장 그대로)</th><th>역할</th></tr></thead><tbody><tr><td>세오도라</td><td>로드·전열 탱커(가디언)</td></tr><tr><td>토비아스, 녹투라</td><td>물리 딜러(워리어)</td></tr><tr><td>보나파르트, 단테</td><td>마법 딜러 + 근접 힐러</td></tr><tr><td>소피아, 리네</td><td>리브로 2명</td></tr><tr><td>릴리안</td><td>궁수</td></tr><tr><td>라이선더</td><td>기동(바딩거)</td></tr><tr><td>로레타, 나타</td><td>검 딜러(사도)</td></tr><tr><td>선택 3명: 울턴드·시로코·알렉산드라·시몬·카타냐 중</td><td>14번째 칸까지</td></tr></tbody></table></div>
+</section>
+<section id="키릭-네이선">
+<h2>키릭·네이선</h2>
+<div class="table-wrap"><table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>조건</td><td>1부 퀘스트 「죽은 여동생의 장신구」 완료. 레다·디트리히 루트에만 나온다</td></tr><tr><td>키릭</td><td>2부 <strong>2장</strong>에서 격파하면 합류. 속도 60 검 딜러(성장률 45/50/15/60/50/35/20/30/35)</td></tr><tr><td>네이선</td><td>2부 <strong>3장</strong>에서 <strong>키릭이 막타</strong>를 쳐야 합류. 다른 유닛이 치면 죽는다. 힘·기술 60 탱키 딜러(55/60/15/25/60/45/15/25/30)</td></tr><tr><td>기회</td><td>레다 2부가 1순위, 디트리히 2부가 보험</td></tr><tr><td>카이 2부</td><td>키릭 퀘스트가 없는 루트라 절차가 없다</td></tr></tbody></table></div>
+</section>
+<section id="아스완-타호니아-생존">
+<h2>아스완·타호니아 생존</h2>
+<ul><li>2부 게스트다. 2부를 살아서 넘기면 3부 5구간에 합류한다. 성장률이 낮아(270·320) 보호 대상이다.</li><li>판정 장은 <strong>3장</strong>(불 타일 확산 + 양측 증원)이다. 4~6장도 계속 살린다.</li><li>레다·디트리히·카이 2부 <strong>모든 판에서</strong> 살린다.</li></ul>
+<ul class="checklist"><li>3장 불 트리거 전에 두 사람을 본대 뒤·힐러 옆으로</li><li>트리거 턴 아우로라</li><li>쓰러지면 즉시 천각, 백사가 없으면 장 다시 시작</li></ul>
+</section>
+<section id="사망이-났을-때">
+<h2>사망이 났을 때</h2>
+<ol><li>즉시 천각(백사 5).</li><li>백사가 모자라면 그 장을 다시 시작한다. 지원·위업록·파편은 유지된다. <strong>6장 두 전투 사이에서는 누르지 않는다.</strong></li><li>영구 이탈을 받아들이면 예비 유닛으로 메운다. 그 유닛의 이 루트 버전은 3부에 오지 않는다. 다른 루트 버전이 있으면 손실은 작다.</li><li>아스완·타호니아, 네이선전 전의 키릭은 무조건 되감는다.</li></ol>
+</section>
+<section id="놓치면-안-되는-것">
+<h2>놓치면 안 되는 것</h2>
+<div class="table-wrap"><table><thead><tr><th>장</th><th>할 일</th><th>놓치면</th></tr></thead><tbody><tr><td>2장</td><td>키릭 격파</td><td>네이선도 못 얻는다</td></tr><tr><td>3장</td><td>네이선 키릭 막타</td><td>네이선 사망</td></tr><tr><td>3장</td><td>아스완·타호니아 생존</td><td>3부 5구간 합류 실패</td></tr><tr><td>5장 전</td><td>진영장 외전 4개(1부)</td><td>미클리어 진영장이 적으로 나온다</td></tr><tr><td>6장 중간</td><td>「장 다시 하기」 금지</td><td>라일라전부터 다시</td></tr><tr><td>세오도라 2부</td><td>최소 스킵</td><td>세오도라 진영을 3부에서 못 쓴다</td></tr></tbody></table></div>
+</section>
+<section id="3부를-위한-2부-마무리">
+<h2>3부를 위한 2부 마무리</h2>
+<ul class="checklist"><li>레다 2부 클리어</li><li>디트리히 2부 클리어</li><li>세오도라 2부 스킵 또는 클리어</li><li>키릭·네이선 영입(레다 또는 디트리히 2부)</li><li>아스완·타호니아 생존</li><li>진영장 외전 4개: 베르트랑·타리문·오르헬(세오도라 루트), 아나톨리아(레다 또는 디트리히 루트)</li><li>위업록 파편 수령, 축복 정리. 카이 1부 초반에는 경험치 축복을 끄거나 낮출 준비</li><li><strong>운명의 문(3부)은 아직 열지 않는다</strong>. 카이 1·2부를 먼저 끝낸다. 3부 진입 때 강제 세이브가 걸리고 세이브는 1개뿐이다</li><li>횃대에서 <a href="kai.html">카이 1부</a>를 1장부터 시작한다. 그다음은 <a href="part3.html">3부 구세편</a></li></ul>
+</section>
+</div><!-- /.container -->
+
+<div class="footer">파이어 엠블렘 만자천홍 하드 / 클래식 공략 가이드 · 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS</div>
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
+</body>
+</html>
