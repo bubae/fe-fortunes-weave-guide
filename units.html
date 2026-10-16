@@ -6,10 +6,10 @@
 <title>유닛 부록 — 선물·지원·마법</title>
 <link rel="stylesheet" href="style.css?v=b457c51a">
 <style>
- code { font-family: ui-monospace, monospace; font-size: .85em; background: var(--slate-100); padding: 0 .3rem; border-radius: 4px; }
- h3 .badge { vertical-align: middle; font-size: .75rem; }
- section ol, section ul { padding-left: 1.3rem; }
- section li { margin-bottom: .35rem; }
+  code { font-family: ui-monospace, monospace; font-size: .85em; background: var(--slate-100); padding: 0 .3rem; border-radius: 4px; }
+  h3 .badge { vertical-align: middle; font-size: .75rem; }
+  section ol, section ul { padding-left: 1.3rem; }
+  section li { margin-bottom: .35rem; }
 </style>
 </head>
 <body>
@@ -17,13 +17,13 @@
 <button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
  <span class="hero-badge">유닛 부록</span>
  <h1>선물·지원 · 마법 — 필수·권장 27명</h1>
- <p class="subtitle">세오도라 → 레다 → 디트리히 루트별 영입 준비(식사 루프)·선물·습득 마법·힐러 배치</p>
- <p class="asof">자료 기준일 2026-09-25 (4차 검증) · 하드 / 클래식</p>
+ <p class="subtitle">세오도라 → 레다 → 디트리히 루트별 영입 준비(식사 루프)·선물·습득 마법·힐러 배치 + 4루트 영입표·탈것 성장률</p>
+ <p class="asof">자료 기준일 2026-10-16 (6차 갱신 반영) · 하드 / 클래식</p>
 </header>
 <div class="shell">
 <!-- side-nav:start -->
 <aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
-<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히</small></div>
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히 → 카이</small></div>
 <nav class="nav-group">
 <div class="nav-group-title">종합 가이드</div>
 <a href="index.html">개요</a>
@@ -45,9 +45,6 @@
 </aside>
 <!-- side-nav:end -->
 <main class="shell-main" id="main">
-<nav class="nav-bar">
- <div class="row sub"><span class="gl">이 페이지</span><a href="#r-세오도라">세오도라</a><a href="#r-레다">레다</a><a href="#r-디트리히">디트리히</a><a href="#magic">마법</a></div>
-</nav>
 <div class="container">
 <section id="about">
 <h2>이 부록에 대해</h2>
@@ -58,9 +55,11 @@
 <span class="step-arrow">→</span>
 <div class="step"><span class="badge badge-gold">디트리히</span><br><small>1부 세 번째</small></div>
 <span class="step-arrow">→</span>
-<div class="step"><span class="badge badge-slate">2부 레다 → 디트리히</span><br><small>세오도라 2부 스킵 → 3부</small></div>
+<div class="step"><span class="badge badge-slate">2부 레다 → 디트리히</span><br><small>세오도라 2부 스킵 또는 직접</small></div>
+<span class="step-arrow">→</span>
+<div class="step"><span class="badge badge-slate">카이 1부 → 2부</span><br><small>네 번째 루트 → 3부</small></div>
 </div>
-<ul><li><strong>자료 기준일</strong>: 2026-09-28 (5차 검증 반영, 육성 경로 통합)</li><li><strong>진행 순서</strong>: 1부 세오도라 → 1부 레다 → 1부 디트리히 → 2부 레다 → 2부 디트리히 → 세오도라 2부 스킵 → 3부</li><li><strong>범위</strong>: <code>02_build_guide.md</code> 표 2-2·3-3·4-3의 <strong>필수·권장 유닛 27명</strong>(4차 개정 기준. 리네는 세오도라·디트리히 권장, 미카엘라는 레다 권장). 4차에서 선택·벤치로 내려간 <strong>울턴드</strong>는 비고로만 다룬다</li><li><strong>전제(사용자 결정)</strong>: 스카우트 지원은 <strong>여관 식사 반복 → 장 다시 하기 루프</strong>로 채운다(02 "4차 변경 요약"과 같음)</li></ul>
+<ul><li><strong>자료 기준일</strong>: 2026-10-16 (6차 갱신 반영)</li><li><strong>진행 순서</strong>: 1부 세오도라 → 1부 레다 → 1부 디트리히 → 2부 레다 → 2부 디트리히 → (세오도라 2부 스킵 또는 직접) → 1부 카이 → 2부 카이 → 3부 (<code>00_input.md</code> 개정 3)</li><li><strong>범위</strong>: <code>02_build_guide.md</code> 표 2-2·3-3·4-3의 <strong>필수·권장 유닛 27명</strong>(4차 개정 기준. 리네는 세오도라·디트리히 권장, 미카엘라는 레다 권장). 4차에서 선택·벤치로 내려간 <strong>울턴드</strong>는 비고로만 다룬다. 6차: 자스민은 무용수 담당이 사라져 선택으로 내려갔다(1부 무용수는 레다만 <a class="conf conf-multi conf-mini" href="sources.html#C-451" title="근거 보기">🔵</a>). <strong>카이 루트 유닛(티아라·피터르 등)의 선물·마법은 아직 정리하지 않았다</strong> — 영입 조건은 7절, 탈것은 8절</li><li><strong>전제(사용자 결정)</strong>: 스카우트 지원은 <strong>여관 식사 반복 → 장 다시 하기 루프</strong>로 채운다(02 "4차 변경 요약"과 같음)</li></ul>
 <div class="legend"><span class="conf conf-verified">✅ 확정</span> <span class="conf conf-multi">🔵 복수 출처</span> <span class="conf conf-single">🟡 단일 출처</span> <span class="conf conf-guess">⚪ 추정</span> — 배지를 누르면 <a href="sources.html">출처·신뢰도</a> 페이지의 근거로 이동한다</div>
 
 </section>
@@ -130,7 +129,7 @@
 <tr><td>카타냐 (4/16)</td><td><span class="tier-2">권장</span></td><td>커피·그림(그림 🔵 수준). 희귀 아이템(청록 반짝이 아이콘)은 🟡 수준</td><td>소립 커피 100G. 지원 1</td><td><a class="conf conf-verified conf-mini" href="sources.html#C-339" title="근거 보기">✅</a></td></tr>
 <tr><td>키로이카 (3/31)</td><td><span class="tier-2">권장</span></td><td>커피·패션(요란한 팔찌·동방 귀걸이). 꽃은 Polygon 단독 🟡 (쟁점 39)</td><td>커피 구운 과자 30G ⚪. 지원 1이라 첫 선물 + 식사로 충분</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-340" title="근거 보기">🔵</a></td></tr>
 <tr><td>소피아</td><td><span class="tier-2">권장</span> (2번 리브로)</td><td>2-1 참고</td><td>가룸 50G</td><td><a class="conf conf-verified conf-mini" href="sources.html#C-324" title="근거 보기">✅</a></td></tr>
-<tr><td>자스민</td><td><span class="tier-2">권장</span> (무용수)</td><td>요리(가룸)·보드게임. GameWith는 "조사 중"</td><td>가룸 50G. <strong>지원 2</strong> 대상</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-341" title="근거 보기">🔵</a></td></tr>
+<tr><td>자스민</td><td><span class="tier-3">선택</span> (6차 강등: 1부 무용수는 레다만)</td><td>요리(가룸)·보드게임. GameWith는 "조사 중"</td><td>가룸 50G. <strong>지원 2</strong> 대상</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-341" title="근거 보기">🔵</a></td></tr>
 <tr><td>미카엘라 (7/14)</td><td><span class="tier-2">권장</span></td><td>커피. 발효 음료(숙성 홍소·경쾌한 소슈)도 매우 좋아함(🔵 수준)</td><td><strong>대립 커피 100G</strong> (메가에라) / 커피 구운 과자 30G</td><td><a class="conf conf-verified conf-mini" href="sources.html#C-343" title="근거 보기">✅</a></td></tr>
 </tbody></table></div>
 <h3 id="r-디트리히">2-3. 디트리히 루트 (1부 세 번째) <span class="badge badge-gold">디트리히</span></h3>
@@ -153,7 +152,7 @@
 </section>
 <section id="magic">
 <h2>3. 마법 메커니즘</h2>
-<ul><li><strong>랭크별 개인 목록</strong>: 마법은 유닛별 고정 습득표로 배운다. 흑마법·백마법 기술 랭크가 오르면 자동 습득하고, 배우는 마법과 랭크는 유닛마다 다르다 <a class="conf conf-verified conf-mini" href="sources.html#C-347" title="근거 보기">✅</a>. 랭크는 D~A 외에 <strong>S</strong>가 있고 S에서 배우는 마법이 있다(피아나 S 레스큐, 단테 S 썬더스톰). D+·C+ 중간 단계는 마법이 아니라 명중 +3 기술 스킬이다 <a class="conf conf-multi conf-mini" href="sources.html#C-348" title="근거 보기">🔵</a>.</li><li><strong>병종이 허용해야 사용</strong>: 배웠어도 현재 병종의 사용 가능 기술에 흑마술/백마술이 있어야 쓸 수 있다 <a class="conf conf-verified conf-mini" href="sources.html#C-349" title="근거 보기">✅</a>.</li><li><strong>습득 후 유지</strong>: 한 번 배운 마법은 전직해도 사라지지 않는다 <a class="conf conf-single conf-mini" href="sources.html#C-350" title="근거 보기">🟡</a>. 리브로를 다 쓰면 목록에서 빠진 것처럼 보인다.</li><li><strong>일회용 서적(아카이브)</strong>: 캐릭터와 상관없이 마법을 배운다. 대부분 암흑 계열(아카이브Γ → 데스Γ, B → 슬라임B, T → 다크 스파이크T, Θ → 반시Θ, Z → 웜Z). 반달 상회 교환·던전·보물상자(데스Γ: 아디티의 동굴, 아카이브B: 포트나 신전 근처). <strong>트론·백마법(리브로 등)을 가르치는 책은 보고되지 않았다</strong> <a class="conf conf-multi conf-mini" href="sources.html#C-351" title="근거 보기">🔵</a>. 1부에서 쓰지 않은 마법서는 2부로 넘어갈 때 사라진다 → 1부 안에서 쓴다 <a class="conf conf-single conf-mini" href="sources.html#C-352" title="근거 보기">🟡</a>.</li><li><strong>사용 횟수 회복</strong>: 전투 뒤 회복되지 않고 <strong>여관 숙박</strong>에서 전부 회복된다. 식사·테르마에·던전 휴식 포인트에서도 회복된다 <a class="conf conf-verified conf-mini" href="sources.html#C-353" title="근거 보기">✅</a> → 하드 공략은 <strong>장 사이 숙박 1회</strong>로 관리한다. 같은 마법 횟수가 사이트마다 2배 차이 나니 <strong>작은 값을 기본값</strong>으로 계획한다(리브로 5, 리커버 5, 라이브 10, 엔젤 3 등) <a class="conf conf-single conf-mini" href="sources.html#C-354" title="근거 보기">🟡</a>.</li><li><strong>횟수·회복 보너스 병종</strong>: 백마술의 탐구(프리스트·비숍 등) = 백마법 횟수 ×2, 흑마술의 탐구(샤먼·바테스·대장장이 등) = 흑마법 ×2, 백마술의 극치 = ×3 <a class="conf conf-single conf-mini" href="sources.html#C-355" title="근거 보기">🟡</a> → 리브로 담당은 <strong>프리스트 → 비숍</strong>. 마법 회복량 보너스: 프리스트 +5, 트루바두르 +5, 비숍 +10, 가디언 +10, 와이즈맨 +15, 디 아바타르 +20 <a class="conf conf-single conf-mini" href="sources.html#C-356" title="근거 보기">🟡</a>.</li><li><strong>가디언 = 백마법 병종</strong>: 리브로 사용 가능 병종 14종에 가디언이 들어 있다 <a class="conf conf-multi conf-mini" href="sources.html#C-357" title="근거 보기">🔵</a> (GameWith 표는 "흑마술" → 쟁점 35). 에스메랄다·미카엘라 가디언에게 레스트·라이아를 맡기기 전에 <strong>병종 변경 화면의 사용 가능 기술</strong>을 확인한다.</li><li><strong>랭크 올리기</strong>: 투기장 마법병 훈련(흑마·백마·지휘, 1회 2명, 의욕 1 + 150G, 주말 반값), 전투 사용, 여관 おまかせ稼ぎ "훈련", 지남서(백마법 지침서), 구세의 축복 기능 경험치 +1 <a class="conf conf-multi conf-mini" href="sources.html#C-358" title="근거 보기">🔵</a>. "백마법 지침서를 사막 북쪽 마을에서 장마다 8개 판다"는 단일 제보(🟡 수준).</li><li><strong>날씨</strong>: 비 오는 날 파이어가 약해지고 암흑마법은 영향을 받지 않는다는 체감 <a class="conf conf-single conf-mini" href="sources.html#C-368" title="근거 보기">🟡</a>.</li></ul>
+<ul><li><strong>랭크별 개인 목록</strong>: 마법은 유닛별 고정 습득표로 배운다. 흑마법·백마법 기술 랭크가 오르면 자동 습득하고, 배우는 마법과 랭크는 유닛마다 다르다 <a class="conf conf-verified conf-mini" href="sources.html#C-347" title="근거 보기">✅</a>. 랭크는 D~A 외에 <strong>S</strong>가 있고 S에서 배우는 마법이 있다(피아나 S 레스큐, 단테 S 썬더스톰). D+·C+ 중간 단계는 마법이 아니라 명중 +3 기술 스킬이다 <a class="conf conf-multi conf-mini" href="sources.html#C-348" title="근거 보기">🔵</a>.</li><li><strong>병종이 허용해야 사용</strong>: 배웠어도 현재 병종의 사용 가능 기술에 흑마술/백마술이 있어야 쓸 수 있다 <a class="conf conf-verified conf-mini" href="sources.html#C-349" title="근거 보기">✅</a>.</li><li><strong>습득 후 유지</strong>: 한 번 배운 마법은 전직해도 사라지지 않는다 <a class="conf conf-single conf-mini" href="sources.html#C-350" title="근거 보기">🟡</a>. 리브로를 다 쓰면 목록에서 빠진 것처럼 보인다.</li><li><strong>일회용 서적(아카이브)</strong>: 캐릭터와 상관없이 마법을 배운다. 대부분 암흑 계열(아카이브Γ → 데스Γ, B → 슬라임B, T → 다크 스파이크T, Θ → 반시Θ, Z → 웜Z). 반달 상회 교환·던전·보물상자(데스Γ: 아디티의 동굴, 아카이브B: 포트나 신전 근처). <strong>트론·백마법(리브로 등)을 가르치는 책은 보고되지 않았다</strong> <a class="conf conf-multi conf-mini" href="sources.html#C-351" title="근거 보기">🔵</a>. 1부에서 쓰지 않은 마법서는 2부로 넘어갈 때 사라진다 → 1부 안에서 쓴다 <a class="conf conf-single conf-mini" href="sources.html#C-352" title="근거 보기">🟡</a>.</li><li><strong>사용 횟수 회복</strong>: 전투 뒤 회복되지 않고 <strong>여관 숙박</strong>에서 전부 회복된다. 식사·테르마에·던전 휴식 포인트에서도 회복된다 <a class="conf conf-verified conf-mini" href="sources.html#C-353" title="근거 보기">✅</a> → 하드 공략은 <strong>장 사이 숙박 1회</strong>로 관리한다. 같은 마법 횟수가 사이트마다 2배 차이 나니 <strong>작은 값을 기본값</strong>으로 계획한다(리브로 5, 리커버 5, 라이브 10, 엔젤 3 등) <a class="conf conf-single conf-mini" href="sources.html#C-354" title="근거 보기">🟡</a>.</li><li><strong>횟수·회복 보너스 병종</strong>: 백마술의 탐구(프리스트·비숍 등) = 백마법 횟수 ×2, 흑마술의 탐구(샤먼·바테스·대장장이 등) = 흑마법 ×2, 백마술의 극치 = ×3 <a class="conf conf-single conf-mini" href="sources.html#C-355" title="근거 보기">🟡</a> → 리브로 담당은 <strong>프리스트 → 비숍</strong>. 마법 회복량 보너스: 프리스트 +5, 트루바두르 +5, 비숍 +10, 가디언 +10, 와이즈맨 +15, 디 아바타르 +20 <a class="conf conf-single conf-mini" href="sources.html#C-356" title="근거 보기">🟡</a>.</li><li><strong>가디언 = 백마법 병종</strong>: 리브로 사용 가능 병종 14종에 가디언이 들어 있다 <a class="conf conf-multi conf-mini" href="sources.html#C-357" title="근거 보기">🔵</a> (GameWith 표는 "흑마술" → 쟁점 35). 레다판 에스메랄다(가디언)에게 레스트·라이아를 맡기기 전에 <strong>병종 변경 화면의 사용 가능 기술</strong>을 확인한다. 레다판 미카엘라는 통합 경로상 <strong>워리어</strong>(02 3-4)라 백마법 병종이 아니다. 3부에는 가디언으로 남는 유닛이 없다(에스메랄다 디트판·세오도라 홀리 랜서, 02 6-2).</li><li><strong>랭크 올리기</strong>: 투기장 마법병 훈련(흑마·백마·지휘, 1회 2명, 의욕 1 + 150G, 주말 반값), 전투 사용, 여관 おまかせ稼ぎ "훈련", 지남서(백마법 지침서), 구세의 축복 기능 경험치 +1 <a class="conf conf-multi conf-mini" href="sources.html#C-358" title="근거 보기">🔵</a>. "백마법 지침서를 사막 북쪽 마을에서 장마다 8개 판다"는 단일 제보(🟡 수준).</li><li><strong>날씨</strong>: 비 오는 날 파이어가 약해지고 암흑마법은 영향을 받지 않는다는 체감 <a class="conf conf-single conf-mini" href="sources.html#C-368" title="근거 보기">🟡</a>.</li></ul>
 <h3>3-1. 주요 마법 효과</h3>
 <div class="table-wrap"><table>
 <thead><tr><th>마법</th><th>계열</th><th>효과</th><th>근거</th></tr></thead><tbody>
@@ -194,7 +193,7 @@
 <h3 id="m-레다">4-2. 레다 루트 <span class="badge badge-green">레다</span></h3>
 <div class="table-wrap"><table>
 <thead><tr><th>유닛</th><th>티어</th><th>흑마법 (랭크: 마법)</th><th>백마법 (랭크: 마법)</th><th>비고</th></tr></thead><tbody>
-<tr><td><strong>레다</strong></td><td><span class="tier-1">필수</span></td><td>D 파이어 · (C 블리자드 · B 볼가논 · A 아이스 블레이드 — 시트 단독)</td><td>D 라이브 · (C 리자이어 · B 엔젤 · A 리커버 · S 리저브 — 시트 단독)</td><td><a class="conf conf-single conf-mini" href="sources.html#C-385" title="근거 보기">🟡</a>. 버프 운용이라 실전 영향 작음</td></tr>
+<tr><td><strong>레다</strong></td><td><span class="tier-1">필수</span></td><td>D 파이어 · (C 블리자드 · B 볼가논 · A 아이스 블레이드 — 시트 단독)</td><td>D 라이브 · (C 리자이어 · B 엔젤 · A 리커버 · S 리저브 — 시트 단독)</td><td><a class="conf conf-single conf-mini" href="sources.html#C-385" title="근거 보기">🟡</a>. 버프·춤 운용이라 실전 영향 작음. 블레이즈 아츠 노래: 열광(힘·마력)·냉광(수비·마방) <strong>+4, 강화판 +7</strong>(1부 공연 퀘스트로 습득) <a class="conf conf-multi conf-mini" href="sources.html#C-447" title="근거 보기">🔵</a>, 천녀의 노래(범위 재행동) <a class="conf conf-verified conf-mini" href="sources.html#C-449" title="근거 보기">✅</a>. 9장 퀘스트 뒤 <strong>무용수(1부 유일)</strong> <a class="conf conf-multi conf-mini" href="sources.html#C-451" title="근거 보기">🔵</a></td></tr>
 <tr><td><strong>무우</strong></td><td><span class="tier-1">필수</span></td><td>D 윈드 · (C 파이어 · B 셰이버 · A 볼가논 — 🟡 수준)</td><td>D 라이브 · C 리자이어 · (B 리제네라 🟡 수준) · <strong>A 워프</strong></td><td><a class="conf conf-multi conf-mini" href="sources.html#C-382" title="근거 보기">🔵</a>. 백마법 병종(배틀 몽크 등)일 때만 사용</td></tr>
 <tr><td><strong>시로코</strong></td><td><span class="tier-1">필수</span></td><td>D 윈드 · C 썬더 · B 셰이버 · <strong>A 트론</strong> · S 엑스칼리버</td><td>D 라이브 · <strong>리커버 / 레스트 (C/B 순서 쟁점 34)</strong> · A 리저브 · <strong>S 워프</strong></td><td><a class="conf conf-verified conf-mini" href="sources.html#C-378" title="근거 보기">✅</a>. 워프 S·엑스칼리버 S 랭크는 시트 단독. 보조 힐러 겸 마법 딜러</td></tr>
 <tr><td><strong>올림피아</strong></td><td><span class="tier-1">필수</span></td><td>D 썬더 · C 블리자드 · <strong>트론(B 또는 A, 쟁점 30)</strong> · 아이스 블레이드 · S 썬더스톰(🟡 수준)</td><td>D 라이브 · 리자이어 · C 이머지스 · <strong>B 리브로</strong> · A 사일런스 · S 버서크</td><td><a class="conf conf-verified conf-mini" href="sources.html#C-369" title="근거 보기">✅</a> <a class="conf conf-multi conf-mini" href="sources.html#C-377" title="근거 보기">🔵</a>. <strong>리커버 없음</strong>. 호승심 × 리자이어 필살</td></tr>
@@ -205,8 +204,8 @@
 <tr><td>카타냐</td><td><span class="tier-2">권장</span></td><td>D 윈드 · (C 썬더 · B 셰이버 · A 트론 · S 엑스칼리버)</td><td>D 라이브 · (C 엔젤 · B 리브로 · A 워프)</td><td><a class="conf conf-single conf-mini" href="sources.html#C-371" title="근거 보기">🟡</a>. 괄호는 시트 단독. <strong>리브로 담당으로 두지 않는다</strong></td></tr>
 <tr><td>키로이카</td><td><span class="tier-2">권장</span></td><td>D 썬더 · (C 블리자드 · B 트론 — 시트 단독)</td><td>D 라이아 · (C 리자이어 · B 토치 — 시트 단독)</td><td><a class="conf conf-single conf-mini" href="sources.html#C-387" title="근거 보기">🟡</a>. 궁수 운용</td></tr>
 <tr><td>소피아</td><td><span class="tier-2">권장</span></td><td>4-1 참고</td><td>D 라이브 · C 리자이어 · <strong>B 리브로</strong> · <strong>A 리커버</strong></td><td><a class="conf conf-verified conf-mini" href="sources.html#C-376" title="근거 보기">✅</a></td></tr>
-<tr><td>자스민</td><td><span class="tier-2">권장</span></td><td>자료 없음</td><td>자료 없음</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-388" title="근거 보기">🔵</a> (두 자료 모두 빈칸). 무용수라 무관</td></tr>
-<tr><td>미카엘라</td><td><span class="tier-2">권장</span></td><td>D 윈드</td><td>D 라이아</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-388" title="근거 보기">🔵</a>. C 이후 ⚪. 가디언 2호면 라이아 사용 가능성(쟁점 35)</td></tr>
+<tr><td>자스민</td><td><span class="tier-3">선택</span></td><td>자료 없음</td><td>자료 없음</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-388" title="근거 보기">🔵</a> (두 자료 모두 빈칸). 물리 운용(헤비 아머)</td></tr>
+<tr><td>미카엘라</td><td><span class="tier-2">권장</span></td><td>D 윈드</td><td>D 라이아</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-388" title="근거 보기">🔵</a>. C 이후 ⚪. 이 루트는 <strong>워리어</strong>(물리 딜탱, 02 3-4)라 마법은 맡기지 않는다</td></tr>
 </tbody></table></div>
 <p><strong>레다 루트 역할 마법 보유자</strong>: 리브로 = 올림피아·소피아 / 리커버 = 피아나(B)·시로코(C/B)·소피아(A) / 레스트 = 시로코·에스메랄다 / 워프 = 무우(A 🔵)·시로코(S) / 레스큐 = 피아나(S) / 엔젤 = 피아나(C) → 11장 명마전 공격 백마법 요원.</p>
 <h3 id="m-디트리히">4-3. 디트리히 루트 <span class="badge badge-gold">디트리히</span></h3>
@@ -234,6 +233,7 @@
 <tr><td>세오도라</td><td><strong>소피아</strong> (5장, 명성 2 / 지원 1) — 리브로 B·라이브 3칸 <a class="conf conf-verified conf-mini" href="sources.html#C-376" title="근거 보기">✅</a></td><td><strong>리네</strong> (명성 6 + 반짝반짝어 1, 7~8장) — 리브로 B <a class="conf conf-verified conf-mini" href="sources.html#C-369" title="근거 보기">✅</a></td><td><strong>보나파르트</strong> (자동, B 리커버·C 토치) <a class="conf conf-verified conf-mini" href="sources.html#C-380" title="근거 보기">✅</a> 또는 <strong>단테</strong> (B 리커버·A 트론, 8,000G) <a class="conf conf-verified conf-mini" href="sources.html#C-381" title="근거 보기">✅</a>. 선택: 시로코(리커버·레스트) <a class="conf conf-verified conf-mini" href="sources.html#C-378" title="근거 보기">✅</a></td><td>울턴드는 힐러로 쓰지 않는다 <a class="conf conf-verified conf-mini" href="sources.html#C-374" title="근거 보기">✅</a>. 리네 합류 전까지 원거리 회복은 소피아 1명</td></tr>
 <tr><td>레다</td><td><strong>올림피아</strong> (3장 자동) — 리브로 B <a class="conf conf-multi conf-mini" href="sources.html#C-377" title="근거 보기">🔵</a>, 경로 비숍</td><td><strong>소피아</strong> (명성 7) <a class="conf conf-verified conf-mini" href="sources.html#C-376" title="근거 보기">✅</a>. 올림피아를 딜러로 쓰면 소피아가 1번</td><td><strong>피아나</strong> (B 리커버·S 레스큐·C 엔젤, 광휘) <a class="conf conf-multi conf-mini" href="sources.html#C-373" title="근거 보기">🔵</a> / <strong>시로코</strong> (리커버·레스트·A 리저브) <a class="conf conf-verified conf-mini" href="sources.html#C-378" title="근거 보기">✅</a> / 에스메랄다 레스트 <a class="conf conf-verified conf-mini" href="sources.html#C-383" title="근거 보기">✅</a></td><td>11장 명마전 = <strong>리브로 2명(올림피아·소피아) + 피아나 또는 시로코</strong>. 리브로 예비 = 리네·양계 <a class="conf conf-verified conf-mini" href="sources.html#C-369" title="근거 보기">✅</a></td></tr>
 <tr><td>디트리히</td><td><strong>양계</strong> (4장 튜토리얼) — 리브로 B·A 리커버 <a class="conf conf-verified conf-mini" href="sources.html#C-379" title="근거 보기">✅</a></td><td><strong>리네 또는 소피아</strong> (명성 8~9, 소피아 9 <a class="conf conf-multi conf-mini" href="sources.html#C-122" title="근거 보기">🔵</a>) <a class="conf conf-verified conf-mini" href="sources.html#C-369" title="근거 보기">✅</a></td><td><strong>피아나</strong> 트루바두르 기동 근접 힐러 <a class="conf conf-verified conf-mini" href="sources.html#C-372" title="근거 보기">✅</a> / <strong>파비오</strong> B 리커버 <a class="conf conf-verified conf-mini" href="sources.html#C-384" title="근거 보기">✅</a></td><td>늦은 보강 후보 티아라(리브로 C, 명성 9 / 지원 3 — 조건 🟡) <a class="conf conf-verified conf-mini" href="sources.html#C-389" title="근거 보기">✅</a>. 울턴드는 초반 마법 하이브리드로만</td></tr>
+<tr><td>카이 (6차)</td><td><strong>티아라</strong> (1장 자동) — <strong>리브로 C</strong>(가장 이른 리브로) <a class="conf conf-verified conf-mini" href="sources.html#C-389" title="근거 보기">✅</a></td><td><strong>양계</strong> (명성 3 / 지원 2) — 리브로 B <a class="conf conf-verified conf-mini" href="sources.html#C-379" title="근거 보기">✅</a>, 경로 트루바두르</td><td>리네(명성 6, 이 루트는 창 기병으로 키운다)</td><td>울턴드는 힐러 불가 <a class="conf conf-verified conf-mini" href="sources.html#C-374" title="근거 보기">✅</a>. 3부에서 티아라는 무용수 후보 <a class="conf conf-multi conf-mini" href="sources.html#C-455" title="근거 보기">🔵</a></td></tr>
 </tbody></table></div>
 </section>
 <section id="disputes">
@@ -246,7 +246,7 @@
 <tr><td>32</td><td>피아나 트론</td><td><strong>미확인</strong> (댓글 1건)</td><td>피아나를 트론 딜러로 계획하지 않는다</td></tr>
 <tr><td>33</td><td>세오도라·카타냐 리브로</td><td><strong>🟡 불확정</strong> <a class="conf conf-single conf-mini" href="sources.html#C-370" title="근거 보기">🟡</a> — 확정 6명은 여러 계열 일치, 이 둘은 시트 한 계열</td><td>리브로 담당으로 두지 않는다. 세오도라는 백마법 B 도달 시 확인하는 보너스</td></tr>
 <tr><td>34</td><td>시로코 리커버·레스트 순서: C 레스트 → B 리커버(시트) vs C 리커버 → B 레스트(game8)</td><td><strong>미해결</strong> <a class="conf conf-verified conf-mini" href="sources.html#C-378" title="근거 보기">✅</a> (둘 다 보유는 확정)</td><td>백마법 B까지 올리면 둘 다 쓴다</td></tr>
-<tr><td>35</td><td>가디언의 마법 계열: 흑(GameWith 표) vs 백(game8·cass07)</td><td><strong>백마법</strong> <a class="conf conf-multi conf-mini" href="sources.html#C-357" title="근거 보기">🔵</a> (GameWith 칸 기각)</td><td>에스메랄다·미카엘라 가디언은 <strong>병종 변경 화면의 사용 가능 기술</strong>부터 확인</td></tr>
+<tr><td>35</td><td>가디언의 마법 계열: 흑(GameWith 표) vs 백(game8·cass07)</td><td><strong>백마법</strong> <a class="conf conf-multi conf-mini" href="sources.html#C-357" title="근거 보기">🔵</a> (GameWith 칸 기각)</td><td>레다판 에스메랄다 가디언은 <strong>병종 변경 화면의 사용 가능 기술</strong>부터 확인(레다판 미카엘라는 워리어라 해당 없음)</td></tr>
 <tr><td>36</td><td>기술 랭크 S의 존재</td><td><strong>S 있음</strong> <a class="conf conf-multi conf-mini" href="sources.html#C-348" title="근거 보기">🔵</a></td><td>피아나 S 레스큐 등은 계획에 넣되 늦다</td></tr>
 <tr><td>37</td><td>선물 반응 폭: 5단계·최애 2배(GameSpot) vs 체감 차이 작음(국내)</td><td><strong>모순이 아닐 수 있다</strong> <a class="conf conf-multi conf-mini" href="sources.html#C-293" title="근거 보기">🔵</a> <a class="conf conf-single conf-mini" href="sources.html#C-292" title="근거 보기">🟡</a></td><td>선물은 인연 열기 + 주 1회 보조, 지원의 주력은 식사(루프)</td></tr>
 <tr><td>38</td><td>라이선더 흑마법 D·C 순서</td><td>🟡 수준 <a class="conf conf-multi conf-mini" href="sources.html#C-388" title="근거 보기">🔵</a></td><td>물리 운용이라 무관</td></tr>
@@ -255,9 +255,130 @@
 <h3>6-1. 잠정 항목 (🟡/⚪만 근거)</h3>
 <ul><li><span class="badge badge-red">잠정</span> 생일 날짜 전부 <a class="conf conf-single conf-mini" href="sources.html#C-295" title="근거 보기">🟡</a> — 인게임 달력으로 확인.</li><li><span class="badge badge-red">잠정</span> 선물 판매처(가격은 <a class="conf conf-multi conf-mini" href="sources.html#C-313" title="근거 보기">🔵</a>) — 월드맵 ZR 미리 보기로 확인.</li><li><span class="badge badge-red">잠정</span> 리네 선물 취향 ⚪ — 영입 전 "인물 정보"에서 확인 <a class="conf conf-single conf-mini" href="sources.html#C-297" title="근거 보기">🟡</a>.</li><li><span class="badge badge-red">잠정</span> 다른 로드를 식사 게스트로 부르는 선행 적립의 조건 <a class="conf conf-multi conf-mini" href="sources.html#C-310" title="근거 보기">🔵</a> (조건 미확인).</li><li><span class="badge badge-red">잠정</span> 첫 선물이 지원에 반영되지 않는다 <a class="conf conf-single conf-mini" href="sources.html#C-291" title="근거 보기">🟡</a> — 결론(가장 싼 선물)은 손해가 없어 그대로 쓴다.</li><li><span class="badge badge-red">잠정</span> 마법 횟수 값(작은 값 기준) <a class="conf conf-single conf-mini" href="sources.html#C-354" title="근거 보기">🟡</a>과 비숍 횟수 ×2 <a class="conf conf-single conf-mini" href="sources.html#C-355" title="근거 보기">🟡</a>.</li><li><span class="badge badge-red">잠정</span> 로레타 C 레스트·버커니어 A 레스큐·키로이카 B 트론 등 시트 단독 칸 <a class="conf conf-single conf-mini" href="sources.html#C-387" title="근거 보기">🟡</a>.</li><li><span class="badge badge-red">잠정</span> 레다 C 이후 마법 <a class="conf conf-single conf-mini" href="sources.html#C-385" title="근거 보기">🟡</a>.</li><li>레다·피아나의 음식 가림은 🟡 수준 — 식사 화면 표시(<a class="conf conf-verified conf-mini" href="sources.html#C-301" title="근거 보기">✅</a>)를 우선한다.</li></ul>
 </section>
+<section id="recruit">
+<h2>7. 4루트 영입표 (카이 열 포함, 6차)</h2>
+<ul><li>근거: cass07 <code>recruit.html</code>(9/30)과 game8 계열(turam 9/26)이 46명 전 칸에서 일치한다 <a class="conf conf-multi conf-mini" href="sources.html#C-493" title="근거 보기">🔵</a>. 숫자는 <code>명성/지원</code>, <code>-</code>는 그 루트에서 영입 불가, <code>자동</code>은 스토리 합류, <code>1/0</code>·<code>1/1</code>은 사실상 자동이다. 비고 칸의 아이템 수량 등은 🟡 수준.</li><li>레다 루트 리네는 <strong>명성 8 확정</strong> <a class="conf conf-verified conf-mini" href="sources.html#C-250" title="근거 보기">✅</a>. 3부에서만 합류하는 진영장 4명·부관·구세군은 표에 없다(인과융합 대상 아님 <a class="conf conf-multi conf-mini" href="sources.html#C-479" title="근거 보기">🔵</a>). 1부에서 영입하지 않은 다른 진영 동료는 3부에 나오지 않는다는 보고 <a class="conf conf-guess conf-mini" href="sources.html#C-494" title="근거 보기">⚪</a>.</li><li>카이 루트 이른 영입: 자동 = 티아라·피터르·울턴드·그자람, 양계 3/2, 녹투라 4/1, 미카엘라 5/3, 마지데 5/2, 리네·세테스 6/3 <a class="conf conf-multi conf-mini" href="sources.html#C-493" title="근거 보기">🔵</a>. 명성 7 이상에 늦게 들어온 유닛은 탈것 효과가 작다 <a class="conf conf-single conf-mini" href="sources.html#C-528" title="근거 보기">🟡</a>.</li></ul>
+<div class="table-wrap"><table>
+<thead><tr><th>캐릭터</th><th>세오도라</th><th>레다</th><th>디트리히</th><th>카이</th><th>비고</th></tr></thead><tbody>
+<tr><td>티아라</td><td>10/3</td><td>8/3</td><td>9/3</td><td>자동</td><td>카이 외전 클리어</td></tr>
+<tr><td>피터르</td><td>7/3</td><td>10/3</td><td>8/3</td><td>자동</td><td></td></tr>
+<tr><td>울턴드</td><td>6/3</td><td>8/3</td><td>5/3</td><td>자동</td><td></td></tr>
+<tr><td>파비오</td><td>-</td><td>9/3</td><td>자동</td><td>-</td><td>디트리히 외전, 12장</td></tr>
+<tr><td>에스메랄다</td><td>9/3</td><td>6/3</td><td>자동</td><td>7/2</td><td></td></tr>
+<tr><td>미카엘라</td><td>8/3</td><td>6/3</td><td>자동</td><td>5/3</td><td>3000G</td></tr>
+<tr><td>릴리안</td><td>자동</td><td>7/2</td><td>8/2</td><td>8/2</td><td>5000G</td></tr>
+<tr><td>라이선더</td><td>자동</td><td>7/3</td><td>6/3</td><td>8/3</td><td>철의 창 5</td></tr>
+<tr><td>버커니어</td><td>8/3</td><td>자동</td><td>8/3</td><td>-</td><td>레다 외전</td></tr>
+<tr><td>시로코</td><td>5/1</td><td>자동</td><td>9/3</td><td>9/3</td><td></td></tr>
+<tr><td>올림피아</td><td>9/3</td><td>자동</td><td>6/3</td><td>8/3</td><td>퀘스트 3회</td></tr>
+<tr><td>무우</td><td>9/3</td><td>자동</td><td>7/3</td><td>9/3</td><td></td></tr>
+<tr><td>게이츠</td><td>-</td><td>-</td><td>10/3</td><td>-</td><td>베르트랑 외전</td></tr>
+<tr><td>제스터</td><td>9/3</td><td>10/3</td><td>6/3</td><td>10/3</td><td></td></tr>
+<tr><td>골라이어스</td><td>9/3</td><td>10/3</td><td>6/3</td><td>7/3</td><td>거대고기 3</td></tr>
+<tr><td>단테</td><td>6/3</td><td>10/3</td><td>8/2</td><td>10/3</td><td>8000G</td></tr>
+<tr><td>디에고</td><td>8/2</td><td>8/3</td><td>9/3</td><td>10/3</td><td>오르헬 외전</td></tr>
+<tr><td>로레타</td><td>5/3</td><td>5/3</td><td>9/3</td><td>7/3</td><td>철의 검 3</td></tr>
+<tr><td>세테스</td><td>6/3</td><td>10/3</td><td>-</td><td>6/3</td><td></td></tr>
+<tr><td>리네</td><td>6/3</td><td>8/3</td><td>8/3</td><td>6/3</td><td>반짝반짝어 1</td></tr>
+<tr><td>우술라</td><td>9/3</td><td>-</td><td>7/3</td><td>10/3</td><td>타리문 외전</td></tr>
+<tr><td>루루디아</td><td>7/3</td><td>7/3</td><td>9/3</td><td>9/3</td><td></td></tr>
+<tr><td>시몬</td><td>7/3</td><td>6/3</td><td>7/3</td><td>8/3</td><td></td></tr>
+<tr><td>피아나</td><td>9/3</td><td>5/3</td><td>7/3</td><td>8/3</td><td>3000G</td></tr>
+<tr><td>사란</td><td>-</td><td>8/3</td><td>10/3</td><td>-</td><td>아나톨리아 외전</td></tr>
+<tr><td>나타</td><td>6/2</td><td>9/3</td><td>10/3</td><td>6/3</td><td>모래고기 3</td></tr>
+<tr><td>대도</td><td>5/2</td><td>5/2</td><td>10/3</td><td>7/3</td><td></td></tr>
+<tr><td>하르빈</td><td>7/3</td><td>7/3</td><td>9/3</td><td>9/3</td><td>대추야자 10</td></tr>
+<tr><td>그자람</td><td>8/3</td><td>3/1</td><td>8/3</td><td>1/1</td><td></td></tr>
+<tr><td>이오</td><td>10/3</td><td>6/1</td><td>3/2</td><td>10/3</td><td></td></tr>
+<tr><td>카타냐</td><td>7/3</td><td>3/1</td><td>8/1</td><td>10/3</td><td></td></tr>
+<tr><td>누디누</td><td>5/3</td><td>10/3</td><td>5/2</td><td>6/1</td><td>세오·레다 철도끼 3 / 카이·디트 청동도끼 2</td></tr>
+<tr><td>밴디츠</td><td>8/1</td><td>7/3</td><td>7/2</td><td>9/3</td><td></td></tr>
+<tr><td>알렉산드라</td><td>6/1</td><td>10/3</td><td>8/3</td><td>7/2</td><td></td></tr>
+<tr><td>양계</td><td>9/3</td><td>8/3</td><td>1/1</td><td>3/2</td><td></td></tr>
+<tr><td>녹투라</td><td>3/1</td><td>8/3</td><td>6/1</td><td>4/1</td><td></td></tr>
+<tr><td>소피아</td><td>1/1</td><td>7/3</td><td>9/3</td><td>9/3</td><td></td></tr>
+<tr><td>페페</td><td>7/2</td><td>-</td><td>8/3</td><td>9/1</td><td>베르트랑 외전</td></tr>
+<tr><td>자코네</td><td>4/1</td><td>5/2</td><td>7/3</td><td>8/3</td><td></td></tr>
+<tr><td>마지데</td><td>8/3</td><td>9/3</td><td>8/3</td><td>5/2</td><td></td></tr>
+<tr><td>키로이카</td><td>10/3</td><td>4/1</td><td>4/1</td><td>8/3</td><td>성수 3 (카이·세오 8)</td></tr>
+<tr><td>자스민</td><td>8/3</td><td>4/2</td><td>9/3</td><td>8/1</td><td></td></tr>
+<tr><td>누조</td><td>6/1</td><td>9/3</td><td>9/1</td><td>6/2</td><td>철의 활 3 (디트 2)</td></tr>
+<tr><td>이니오니</td><td>9/1</td><td>7/1</td><td>8/3</td><td>8/3</td><td></td></tr>
+<tr><td>보나파르트·토비아스</td><td>자동</td><td>-</td><td>-</td><td>-</td><td>세오도라 전용</td></tr>
+</tbody></table></div>
+<p><strong>우리 계획과 3부 영입 버전</strong> (<code>02_build_guide.md</code> 6-2와 같다)</p>
+<div class="table-wrap"><table>
+<thead><tr><th>유닛</th><th>세오도라</th><th>레다</th><th>디트리히</th><th>카이</th><th>우리 계획 영입</th><th>3부 영입 버전</th><th>수동 융합(×300)</th></tr></thead><tbody>
+<tr><td>티아라</td><td>10/3</td><td>8/3</td><td>9/3</td><td>자동</td><td>카</td><td>카이판</td><td>0 · 3부 무용수 후보</td></tr>
+<tr><td>피터르</td><td>7/3</td><td>10/3</td><td>8/3</td><td>자동</td><td>카</td><td>카이판(탈것)</td><td>0 · 전차병</td></tr>
+<tr><td>울턴드</td><td>6/3</td><td>8/3</td><td>5/3</td><td>자동</td><td>카(+세 선택)</td><td>카이판(탈것)</td><td>0~1 · 후순위</td></tr>
+<tr><td>파비오</td><td>-</td><td>9/3</td><td>자동</td><td>-</td><td>디</td><td>디트판</td><td>0</td></tr>
+<tr><td>에스메랄다</td><td>9/3</td><td>6/3</td><td>자동</td><td>7/2</td><td>레·디·카</td><td>디트판</td><td>2</td></tr>
+<tr><td>미카엘라</td><td>8/3</td><td>6/3</td><td>자동</td><td>5/3</td><td>레·디·카</td><td>카이판(탈것)</td><td>2</td></tr>
+<tr><td>릴리안</td><td>자동</td><td>7/2</td><td>8/2</td><td>8/2</td><td>세</td><td>세오판</td><td>0</td></tr>
+<tr><td>라이선더</td><td>자동</td><td>7/3</td><td>6/3</td><td>8/3</td><td>세</td><td>세오판</td><td>0</td></tr>
+<tr><td>버커니어</td><td>8/3</td><td>자동</td><td>8/3</td><td>-</td><td>레</td><td>레다판</td><td>0 · 벤치 후보</td></tr>
+<tr><td>시로코</td><td>5/1</td><td>자동</td><td>9/3</td><td>9/3</td><td>레(+세·디 선택)</td><td>레다판</td><td>0~1</td></tr>
+<tr><td>올림피아</td><td>9/3</td><td>자동</td><td>6/3</td><td>8/3</td><td>레</td><td>레다판</td><td>0</td></tr>
+<tr><td>무우</td><td>9/3</td><td>자동</td><td>7/3</td><td>9/3</td><td>레·디</td><td>레다판</td><td>1</td></tr>
+<tr><td>게이츠</td><td>-</td><td>-</td><td>10/3</td><td>-</td><td>(디 벤치)</td><td>—</td><td>0 · 디트리히 전용</td></tr>
+<tr><td>제스터</td><td>9/3</td><td>10/3</td><td>6/3</td><td>10/3</td><td>(디 선택)</td><td>디트판</td><td>0</td></tr>
+<tr><td>골라이어스</td><td>9/3</td><td>10/3</td><td>6/3</td><td>7/3</td><td>(디 선택)</td><td>디트판</td><td>0</td></tr>
+<tr><td>단테</td><td>6/3</td><td>10/3</td><td>8/2</td><td>10/3</td><td>세</td><td>세오판</td><td>0</td></tr>
+<tr><td>디에고</td><td>8/2</td><td>8/3</td><td>9/3</td><td>10/3</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>로레타</td><td>5/3</td><td>5/3</td><td>9/3</td><td>7/3</td><td>세(+레 선택)</td><td>세오판</td><td>0~1</td></tr>
+<tr><td>세테스</td><td>6/3</td><td>10/3</td><td>-</td><td>6/3</td><td>(카 선택)</td><td>카이판</td><td>0</td></tr>
+<tr><td>리네</td><td>6/3</td><td>8/3</td><td>8/3</td><td>6/3</td><td>세·디·카</td><td>디트판</td><td>1~2</td></tr>
+<tr><td>우술라</td><td>9/3</td><td>-</td><td>7/3</td><td>10/3</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>루루디아</td><td>7/3</td><td>7/3</td><td>9/3</td><td>9/3</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>시몬</td><td>7/3</td><td>6/3</td><td>7/3</td><td>8/3</td><td>(세·레·디 선택)</td><td>—</td><td>— · 보험</td></tr>
+<tr><td>피아나</td><td>9/3</td><td>5/3</td><td>7/3</td><td>8/3</td><td>레·디</td><td>레다판</td><td>0~1 · 후순위</td></tr>
+<tr><td>사란</td><td>-</td><td>8/3</td><td>10/3</td><td>-</td><td>—</td><td>—</td><td>— · 1부 미영입이면 3부에 없다</td></tr>
+<tr><td>나타</td><td>6/2</td><td>9/3</td><td>10/3</td><td>6/3</td><td>세(+카 선택)</td><td>세오판</td><td>0~1</td></tr>
+<tr><td>대도</td><td>5/2</td><td>5/2</td><td>10/3</td><td>7/3</td><td>(세 선택)</td><td>—</td><td>—</td></tr>
+<tr><td>하르빈</td><td>7/3</td><td>7/3</td><td>9/3</td><td>9/3</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>그자람</td><td>8/3</td><td>3/1</td><td>8/3</td><td>1/1</td><td>레·디·카</td><td>레다판</td><td>2</td></tr>
+<tr><td>이오</td><td>10/3</td><td>6/1</td><td>3/2</td><td>10/3</td><td>디(+레 선택)</td><td>디트판(로시난)</td><td>0</td></tr>
+<tr><td>카타냐</td><td>7/3</td><td>3/1</td><td>8/1</td><td>10/3</td><td>레(+세·디 선택)</td><td>레다판</td><td>0~1</td></tr>
+<tr><td>누디누</td><td>5/3</td><td>10/3</td><td>5/2</td><td>6/1</td><td>(세·카 선택)</td><td>—</td><td>—</td></tr>
+<tr><td>밴디츠</td><td>8/1</td><td>7/3</td><td>7/2</td><td>9/3</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>알렉산드라</td><td>6/1</td><td>10/3</td><td>8/3</td><td>7/2</td><td>(세 선택)</td><td>세오판(부케팔라스)</td><td>0</td></tr>
+<tr><td>양계</td><td>9/3</td><td>8/3</td><td>1/1</td><td>3/2</td><td>디·카(+레 선택)</td><td>카이판(탈것)</td><td>1</td></tr>
+<tr><td>녹투라</td><td>3/1</td><td>8/3</td><td>6/1</td><td>4/1</td><td>세·카</td><td>카이판</td><td>0~1 · 후순위</td></tr>
+<tr><td>소피아</td><td>1/1</td><td>7/3</td><td>9/3</td><td>9/3</td><td>세·레(+디 대안)</td><td>레다판</td><td>1</td></tr>
+<tr><td>페페</td><td>7/2</td><td>-</td><td>8/3</td><td>9/1</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>자코네</td><td>4/1</td><td>5/2</td><td>7/3</td><td>8/3</td><td>(세 벤치)</td><td>—</td><td>—</td></tr>
+<tr><td>마지데</td><td>8/3</td><td>9/3</td><td>8/3</td><td>5/2</td><td>(카 선택)</td><td>카이판</td><td>0</td></tr>
+<tr><td>키로이카</td><td>10/3</td><td>4/1</td><td>4/1</td><td>8/3</td><td>레·디</td><td>레다판</td><td>1</td></tr>
+<tr><td>자스민</td><td>8/3</td><td>4/2</td><td>9/3</td><td>8/1</td><td>(레 선택)</td><td>레다판</td><td>0</td></tr>
+<tr><td>누조</td><td>6/1</td><td>9/3</td><td>9/1</td><td>6/2</td><td>(세·카 선택)</td><td>—</td><td>—</td></tr>
+<tr><td>이니오니</td><td>9/1</td><td>7/1</td><td>8/3</td><td>8/3</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>보나파르트·토비아스</td><td>자동</td><td>-</td><td>-</td><td>-</td><td>세</td><td>세오판</td><td>0 · 세오도라 전용</td></tr>
+</tbody></table></div>
+</section>
+<section id="mounts">
+<h2>8. 탈것 성장률 보너스 (6차, 카이 루트)</h2>
+<ul><li>탈것 보너스는 성장률에 붙고 <strong>친밀도에 비례해 5레벨에서 최대</strong>다 <a class="conf conf-multi conf-mini" href="sources.html#C-515" title="근거 보기">🔵</a>. <strong>전차병일 때만 2배</strong>, 다른 기마 병종은 1배다 <a class="conf conf-multi conf-mini" href="sources.html#C-513" title="근거 보기">🔵</a>. 탈것 포획은 카이 루트 1부 5장부터 <a class="conf conf-verified conf-mini" href="sources.html#C-518" title="근거 보기">✅</a>. 먹이는 하루 1회, 친밀도를 올린 장은 다시 하지 않는다 <a class="conf conf-single conf-mini" href="sources.html#C-516" title="근거 보기">🟡</a>. 성장률 상세(상태 → 정보 전환 → X)의 "부여" 칸으로 확인한다 <a class="conf conf-single conf-mini" href="sources.html#C-520" title="근거 보기">🟡</a>.</li><li><strong>한혈마만 🔵</strong>(cass07 ×2 = 일본 note 값 일치), 나머지는 cass07 단독 <a class="conf conf-single conf-mini" href="sources.html#C-514" title="근거 보기">🟡</a>. 빨간 깃 개체는 쟁점 50 <a class="conf conf-single conf-mini" href="sources.html#C-532" title="근거 보기">🟡</a>.</li></ul>
+<div class="table-wrap"><table>
+<thead><tr><th>탈것</th><th>친밀도 5, 1배 (HP/힘/마/속/기/수/마방/행/매 중 해당 칸)</th><th>전차병 2배</th><th>등급</th></tr></thead><tbody>
+<tr><td><strong>한혈마</strong></td><td>HP5 힘5 기5 수10 (합 25)</td><td>HP10 힘10 기10 수20</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-514" title="근거 보기">🔵</a></td></tr>
+<tr><td>야생마</td><td>HP5 속5 기5 수5 마방5</td><td>HP10 속10 기10 수10 마방10</td><td><a class="conf conf-single conf-mini" href="sources.html#C-514" title="근거 보기">🟡</a></td></tr>
+<tr><td>흑마</td><td>HP5 힘5 속10 기5</td><td>HP10 힘10 속20 기10</td><td><a class="conf conf-single conf-mini" href="sources.html#C-514" title="근거 보기">🟡</a></td></tr>
+<tr><td>모노케로스</td><td>HP5 속5 기5 마방10</td><td>HP10 속10 기10 마방20</td><td><a class="conf conf-single conf-mini" href="sources.html#C-514" title="근거 보기">🟡</a></td></tr>
+<tr><td>로시난(이오 고유)</td><td>HP5 속5 기5 수10 마방5 (합 30)</td><td>—</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-519" title="근거 보기">🔵</a> (다른 루트에서도 보정)</td></tr>
+<tr><td>부케팔라스(알렉산드라 고유)</td><td>힘5 속15 마방10 (합 30)</td><td>—</td><td><a class="conf conf-multi conf-mini" href="sources.html#C-519" title="근거 보기">🔵</a></td></tr>
+<tr><td>메가니우스</td><td>힘5 기5 수15</td><td>—</td><td><a class="conf conf-single conf-mini" href="sources.html#C-514" title="근거 보기">🟡</a></td></tr>
+<tr><td>빨간 깃의 오르니우스</td><td>힘15 기5 수5 (커뮤니티는 "힘15·속10")</td><td>—</td><td><a class="conf conf-single conf-mini" href="sources.html#C-532" title="근거 보기">🟡</a></td></tr>
+<tr><td>마지니우스 / 검은 깃의 마지니우스</td><td>마15 기10 / 마10 속10 기5</td><td>—</td><td><a class="conf conf-single conf-mini" href="sources.html#C-514" title="근거 보기">🟡</a></td></tr>
+<tr><td>하얀 깃의 오르니우스 / 야생 오르니우스</td><td>속5 기5 마방15 / 속10 기15</td><td>—</td><td><a class="conf conf-single conf-mini" href="sources.html#C-514" title="근거 보기">🟡</a></td></tr>
+<tr><td>레드 바우 / 블랙 바우</td><td>힘15 기10 / 힘10 속15</td><td>—</td><td><a class="conf conf-single conf-mini" href="sources.html#C-514" title="근거 보기">🟡</a></td></tr>
+<tr><td>전투 코끼리</td><td>HP·힘·기·수·행 각 5</td><td>—</td><td><a class="conf conf-single conf-mini" href="sources.html#C-514" title="근거 보기">🟡</a></td></tr>
+</tbody></table></div>
+<ul><li>"전차병 2배" 칸은 말 계열만 적었다. 전차병이 탈 수 있는 동물 종류(말 외)는 확인되지 않았다 <span class="conf conf-guess">⚪ 추정</span>. 전차병 병종 보정·전차병의 길과 합친 성장률은 <code>02_build_guide.md</code> 5-9.</li></ul>
+</section>
 </div>
 <div class="footer">
- 파이어 엠블렘 만자천홍 하드 / 클래식 육성 가이드 · 유닛 부록 · 자료 기준일 2026-09-25 (4차 검증)<br>
+ 파이어 엠블렘 만자천홍 하드 / 클래식 육성 가이드 · 유닛 부록 · 자료 기준일 2026-10-16 (6차 갱신 반영)<br>
  국내·해외 독립 조사 + 팩트체크의 3중 검증을 거친 자료입니다. 근거 배지를 누르면 <a href="sources.html">출처·신뢰도</a> 페이지의 해당 주장으로 이동합니다.<br>
  🟡/⚪ 항목은 인게임 확인 권장
 </div>
