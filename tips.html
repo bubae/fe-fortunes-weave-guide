@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>육성 핵심 팁 — 파이어 엠블렘 만자천홍 공략</title>
+<link rel="stylesheet" href="style.css?v=b457c51a">
+<style>
+  code { font-family: ui-monospace, monospace; font-size: .85em; background: var(--slate-100); padding: 0 .3rem; border-radius: 4px; }
+  .g-rows { display: grid; gap: .45rem; margin: .7rem 0; }
+  .g-row { display: grid; grid-template-columns: 5.5rem 1fr; gap: .7rem; align-items: start; }
+  .g-label { font-size: .82rem; font-weight: 700; padding: .2rem .45rem; border-radius: 5px; background: var(--slate-100); text-align: center; }
+  .g-val ul { margin: .3rem 0 0 1.1rem; }
+  ul.checklist { list-style: none; padding-left: .2rem; }
+  ul.checklist li { position: relative; padding-left: 1.6rem; margin-bottom: .35rem; }
+  ul.checklist li::before { content: ""; position: absolute; left: 0; top: .25em; width: 1em; height: 1em; border: 2px solid var(--slate-400, #94a3b8); border-radius: 3px; }
+  .guide h3 { margin-top: 1.4rem; }
+  .guide section > h2 { scroll-margin-top: 1rem; }
+  @media (max-width: 600px) { .g-row { grid-template-columns: 1fr; gap: .2rem; } .g-label { justify-self: start; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
+  <span class="hero-badge">팁</span>
+  <h1>육성 핵심 팁</h1>
+  <p class="subtitle">어느 루트에서나 쓰는 육성 기본기. 영입·지원·병종·경험치·2부 준비</p>
+</header>
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히 → 카이</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">공략 가이드</div>
+<a href="index.html">개요</a>
+<a href="theodora.html">세오도라 1부</a>
+<a href="leda.html">레다 1부</a>
+<a href="dietrich.html">디트리히 1부</a>
+<a href="part2.html">2부 전쟁편</a>
+<a href="kai.html">카이 1·2부</a>
+<a href="part3.html">3부 구세편</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">팁</div>
+<a href="tips.html" class="active" aria-current="page">육성 핵심 팁</a>
+<a href="tricks.html">꿀팁·트릭</a>
+<a href="pitfalls.html">함정·실수 방지</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">참고</div>
+<a href="units.html">선물·마법</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
+<nav class="nav-bar">
+  <div class="row sub"><span class="gl">이 페이지</span><a href="#영입과-지원">영입과 지원</a><a href="#레벨업과-병종">레벨업과 병종</a><a href="#2부-준비">2부 준비</a></div>
+</nav>
+<div class="container guide">
+<section><p>하드 클래식에서 유닛을 키울 때 매 루트 반복해서 쓰는 기본 팁만 모았다. 장별로 언제 할지는 루트 페이지를 보고, 여기서는 왜·어떻게 하는지를 본다. 더 깊게 파고드는 요령은 <a href="tricks.html">꿀팁·트릭</a>, 되돌릴 수 없는 실수는 <a href="pitfalls.html">함정·실수 방지</a>에 있다.</p>
+<div class="tip">💡 <strong>띵작</strong>(레벨업 결과를 미리 보고 시험으로 나쁜 결과를 건너뛰는 작업)은 하드에서 하지 않아도 클리어할 수 있다. 이 페이지 팁만으로 충분하다. 하고 싶다면 <a href="tricks.html#띵작-성장-순번-밀기">꿀팁·트릭 — 띵작</a>을 본다.</div></section>
+<section id="영입과-지원">
+<h2>영입과 지원</h2>
+<h3 id="빨리-영입하기-쓸-유닛은-조건이-차는-즉시-데려온다">빨리 영입하기 — 쓸 유닛은 조건이 차는 즉시 데려온다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">대상</span><div class="g-val">2부·3부까지 쓸 스카우트 유닛 전원</div></div><div class="g-row"><span class="g-label">방법</span><div class="g-val">명성·지원 조건이 차는 장에 바로 영입한다. 출격 칸이 없어도 먼저 데려오고, 레벨은 여관 개별 행동이나 던전으로 따라잡게 한다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">영입 전에는 유닛이 루트 진행에 맞춰 혼자 레벨이 오르는데, 이 자동 성장은 평균보다 낮다(능력치마다 최대 4 정도 손해). 일찍 데려와 직접 레벨업할수록 이 손해가 줄어든다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val"><ul><li>명성 8~10에 영입하는 유닛은 마법사·힐러 정도만 주력으로 쓸 만하다. 실전 기준선은 명성 6~7이다.</li><li>늦게 영입한 유닛은 합류한 그 주에 <a href="#병종-기본치-약점-능력치를-최저-보장값까지-끌어올린다">병종 기본치</a>로 약점을 메운다.</li></ul></div></div></div>
+<h3 id="지원도-루프-식사로-지원을-올리고-장을-다시-해-돈을-되돌린다">지원도 루프 — 식사로 지원을 올리고 장을 다시 해 돈을 되돌린다</h3>
+<ol><li>영입할 인물에게 가장 싼 선물을 1회 준다(이래야 식사에 부를 수 있다).</li><li>다그시온 여관에서 로드 + 대상 2명으로 식사한다. 메뉴마다 주 1회라 주 3끼, 일요일은 반값이다.</li><li>개별 행동으로 다음 주(일요일 초기화)로 넘겨 2를 반복한다.</li><li>지원이 차면 시스템 메뉴 「장 다시 하기」로 장 시작으로 돌아간다.</li></ol>
+<div class="card g-rows"><div class="g-row"><span class="g-label">효과</span><div class="g-val">지원값은 남고 골드·아이템·명성은 장 시작으로 돌아간다. 영입 조건을 비용 없이 채운다.</div></div><div class="g-row"><span class="g-label">시점</span><div class="g-val">명성이 곧 차는 대상부터 넣는다. 식사 레벨은 명성에 따라 오르므로 명성이 낮을 때는 효율이 떨어진다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val"><ul><li>장 다시 하기는 장 첫 장면(튜토리얼 포함)부터 다시 시작한다. 튜토리얼이 긴 장은 피하고 다음 장에서 돌린다.</li><li>기한 있는 외전·퀘스트를 끝내기 전에만 쓴다. 카이 루트는 탈것 친밀도가 초기화되니 첫 먹이 전까지만 쓴다.</li><li>스카우트 조건의 지원은 <strong>그 루트 로드와 대상</strong>의 쌍이다. 식사에 "지금 로드 + 다음 루트 로드 + 대상"을 넣으면 다음 루트 몫을 미리 쌓을 수 있다.</li></ul></div></div></div>
+</section>
+<section id="레벨업과-병종">
+<h2>레벨업과 병종</h2>
+<h3 id="레벨업-직전-병종-변경-같은-레벨업이라도-병종에-따라-오르는-능력치가-달라진다">레벨업 직전 병종 변경 — 같은 레벨업이라도 병종에 따라 오르는 능력치가 달라진다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">레벨업이 가까운 유닛을 이미 합격한 병종 중 <strong>올리고 싶은 능력치 성장률이 높은 병종</strong>으로 바꾼 뒤 레벨업시킨다. 해금한 병종끼리는 무료로 바꾼다. 병종별 성장률은 <a href="classes.html">병종 도감</a>에서 본다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">레벨업 결과는 유닛마다 정해진 순서대로 나오지만, 그 순서의 각 칸은 "능력치별 기준선"에 가깝다. 성장률이 기준선을 넘으면 오른다. 그래서 같은 칸에서도 성장률을 올리면 안 오르던 능력치가 오른다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val"><ul><li>기준선이 아주 높은 칸은 어떤 병종으로 바꿔도 그 능력치가 오르지 않는다.</li><li>성장률이 내려간 능력치는 원래 오르던 칸에서도 빠질 수 있다. 득실을 보고 바꾼다.</li><li>다음 레벨업 결과를 미리 보려면 <a href="tricks.html#미래시-여관에서-앞으로의-레벨업을-미리-본다">미래시</a>를 쓴다.</li></ul></div></div></div>
+<h3 id="병종-기본치-약점-능력치를-최저-보장값까지-끌어올린다">병종 기본치 — 약점 능력치를 최저 보장값까지 끌어올린다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">시험 화면에서 병종을 고르고 <strong>X 버튼</strong>으로 ▲ 표시와 기본치를 본다. ▲가 뜨고 합격률 100%면 응시한다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">합격하는 순간 기본 능력치가 그 병종 기본치보다 낮으면 기본치까지 <strong>영구히</strong> 오른다. 다른 병종으로 돌아가도 내려가지 않는다. 예: 중갑 보병 수비 기본치 10.</div></div><div class="g-row"><span class="g-label">대상</span><div class="g-val">늦게 영입한 유닛, 한 능력치가 유난히 낮은 유닛(힐러 수비 등)</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val"><ul><li>병종을 바꿀 때 수치가 내려가 보이는 것은 그 병종의 능력 보정이 빠져서다. 기본치 효과와는 별개다.</li><li>정상적으로 키운 유닛은 이미 기본치를 넘은 경우가 많아 효과가 작다.</li><li>2부에서 남는 증서로 하기 좋다(<a href="#2부-증서-다-쓰기-장마다-5장으로-채워지니-남기면-손해다">2부 증서</a>).</li></ul></div></div></div>
+<h3 id="경험치-축복-사는-것은-먼저-켜는-시점은-관리한다">경험치 축복 — 사는 것은 먼저, 켜는 시점은 관리한다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">첫 루트에서 파편 500이 모이면 <strong>획득 경험치 +10%</strong>를 먼저 산다. 다음 루트부터는 켜고 끄며 쓴다.</div></div><div class="g-row"><span class="g-label">시점</span><div class="g-val"><ul><li>끄는 때: 새 루트 초반 초급·중급 전직이 열리기 전, 카이 루트 탈것 친밀도 작업 전</li><li>켜는 때: 전직 목표 레벨에 맞춰 경험치가 필요해졌을 때</li><li>목표 레벨에 닿으면 전투 수를 줄인다. 레벨은 내릴 수 없다.</li></ul></div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">성장률이 낮은 기본 병종에서 레벨을 낭비하지 않는다. 3부 융합 때 "레벨만 높고 능력치는 낮은" 버전이 생기지 않는다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">레벨이 명성보다 빨리 오르면 중급(명성 4)·상급(명성 8) 시험을 못 보는 구간이 생긴다. 레벨이 앞서면 끈다.</div></div></div>
+<h3 id="투기장-훈련-그-무기-랭크가-높은-스승과-짝짓는다">투기장 훈련 — 그 무기 랭크가 높은 스승과 짝짓는다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">키울 유닛 + 같은 무기 랭크가 더 높은 유닛을 한 조로 넣는다. 훈련은 주 1회, 1회 최대 2명이다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">상대(스승)의 랭크가 높을수록 받는 기술 경험치가 많다. 시험 요구 기술을 빨리 채운다.</div></div><div class="g-row"><span class="g-label">시점</span><div class="g-val">투기장 훈련은 토·일 반값, 식사는 일요일 반값이다. 시설은 6:00~23:59에 연다. 토요일에 다그시온으로 돌아와 훈련 → 일요일에 훈련·식사를 하고 떠나면 반값을 두 번 쓴다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">스승은 받는 경험치가 적다. 둘 다 키워야 하는 유닛이면 비슷한 랭크끼리 묶는다.</div></div></div>
+<h3 id="시험-증서-수급-상급-증서는-장마다-사는-곳을-모두-돈다">시험 증서 수급 — 상급 증서는 장마다 사는 곳을 모두 돈다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val"><ul><li>가격: 초급 300G / 중급 500G / 상급 3,000G</li><li>다그시온 판매원은 명성 8부터 상급을 <strong>장마다 1장</strong> 판다. 재고는 다음 장에 채워진다.</li><li>메가이라 시장은 상급 시험이 열리기 <strong>전에도</strong> 상급 증서를 판다.</li><li>판매원 재고가 떨어지면 다른 마을 상점 재고를 본다.</li></ul></div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">상급 전직이 몰리는 1부 후반에 증서가 모자라지 않는다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">증서는 응시하는 순간 소모되고 자동 저장된다. 합격률 100%일 때만 쓴다.</div></div></div>
+<h3 id="탈것-친밀도-먼저-레벨보다-친밀도-5를-먼저-채운다">탈것 친밀도 먼저 — 레벨보다 친밀도 5를 먼저 채운다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">대상</span><div class="g-val">카이 루트 탈것 유닛, 다른 루트의 알렉산드라(부케팔라스)·이오(로시난)</div></div><div class="g-row"><span class="g-label">방법</span><div class="g-val">탈것을 잡으면 레벨을 올리기 전에 먹이로 친밀도 5를 만든다. 먹이는 하루(0시 기준) 1회라 여관에서 쉬며 날짜를 넘긴다. 알렉산드라·이오는 카이 루트 밖에서는 먹이를 못 줘 전투로만 친밀도를 올린다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">탈것 성장률 보너스는 친밀도에 비례해 5에서 최대다(일반 탈것 합 +25, 고유마 합 +30). 전차병일 때는 이 보너스가 2배다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">친밀도가 낮은 채 오른 레벨만큼 보너스를 놓친다. 친밀도를 올리기 시작한 뒤에는 그 장을 다시 하지 않는다. 자세한 순서는 <a href="kai.html">카이 1·2부</a>.</div></div></div>
+<h3 id="몰아주기와-분업-핵심-인원에-집중하고-루트마다-다르게-키운다">몰아주기와 분업 — 핵심 인원에 집중하고, 루트마다 다르게 키운다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val"><ul><li>전원을 고르게 키우지 않는다. 역할이 분명한 핵심 인원에 경험치·증서·장비를 몰아준다. 기술은 시작 무기 계열 위주로 정한다.</li><li>여러 루트에 나오는 인물은 영입이 빠른 루트에서 제대로 키우고, 다른 루트에서는 <strong>다른 병종·다른 무기</strong>로 키운다(예: 메인 루트 워리어, 다른 루트 중갑).</li></ul></div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">3부 인과융합은 능력치를 항목별 높은 값으로 합치고 스킬은 모두 이어받는다. 루트마다 다른 능력치를 채우면 융합 결과가 가장 높다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">같은 무기를 두 루트에서 C에서 멈추면 낭비다. 융합 계획은 <a href="part3.html">3부</a>를 본다.</div></div></div>
+</section>
+<section id="2부-준비">
+<h2>2부 준비</h2>
+<h3 id="2부-증서-다-쓰기-장마다-5장으로-채워지니-남기면-손해다">2부 증서 다 쓰기 — 장마다 5장으로 채워지니 남기면 손해다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">2부에 들어가면 초·중·상급 증서를 5장씩 받는다. 1장에서 동료를 상급직으로 올리고, 남는 증서로 기본치 시험을 본다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">장마다 5장이 되도록 다시 채워지고 보유 상한도 5장이다. 쓰지 않은 만큼 그대로 버린다.</div></div><div class="g-row"><span class="g-label">시점</span><div class="g-val">상급 전직과 기본치 점검은 <strong>2부 1~4장 안에</strong> 끝낸다. 5장 이후 준비 화면에 시험 메뉴가 있는지는 인게임에서 확인한다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">2부도 응시 즉시 자동 저장된다. 합격률 100%일 때만 본다.</div></div></div>
+<h3 id="병력-끌어올리기-누르기-전에-벤치-유닛을-전직시킨다">병력 끌어올리기 — 누르기 전에 벤치 유닛을 전직시킨다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">2부 준비 단계 군행동 「병력 끌어올리기」는 동료 평균 레벨보다 낮은 유닛을 <strong>평균 레벨까지</strong> 올린다. 누르기 전에 올라갈 유닛을 성장률이 좋은 병종으로 바꾸거나 전직시킨다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">1부에서 덜 키운 유닛이 2부·3부에 쓸 수 있는 레벨이 된다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val"><ul><li>2부에 쓸 13명(세오도라 루트 14명)과 여유분만 영입해 둔다. 안 쓸 저레벨 유닛이 많으면 평균이 내려갈 수 있다.</li><li>자세한 편성은 <a href="part2.html">2부 전쟁편</a>.</li></ul></div></div></div>
+</section>
+</div><!-- /.container -->
+
+<div class="footer">파이어 엠블렘 만자천홍 하드 / 클래식 공략 가이드 · 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS</div>
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
+</body>
+</html>

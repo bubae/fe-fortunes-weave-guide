@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>함정·실수 방지 — 파이어 엠블렘 만자천홍 공략</title>
+<link rel="stylesheet" href="style.css?v=b457c51a">
+<style>
+  code { font-family: ui-monospace, monospace; font-size: .85em; background: var(--slate-100); padding: 0 .3rem; border-radius: 4px; }
+  .g-rows { display: grid; gap: .45rem; margin: .7rem 0; }
+  .g-row { display: grid; grid-template-columns: 5.5rem 1fr; gap: .7rem; align-items: start; }
+  .g-label { font-size: .82rem; font-weight: 700; padding: .2rem .45rem; border-radius: 5px; background: var(--slate-100); text-align: center; }
+  .g-val ul { margin: .3rem 0 0 1.1rem; }
+  ul.checklist { list-style: none; padding-left: .2rem; }
+  ul.checklist li { position: relative; padding-left: 1.6rem; margin-bottom: .35rem; }
+  ul.checklist li::before { content: ""; position: absolute; left: 0; top: .25em; width: 1em; height: 1em; border: 2px solid var(--slate-400, #94a3b8); border-radius: 3px; }
+  .guide h3 { margin-top: 1.4rem; }
+  .guide section > h2 { scroll-margin-top: 1rem; }
+  @media (max-width: 600px) { .g-row { grid-template-columns: 1fr; gap: .2rem; } .g-label { justify-self: start; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
+  <span class="hero-badge">팁</span>
+  <h1>함정·실수 방지</h1>
+  <p class="subtitle">되돌릴 수 없는 것과 자주 하는 실수. 클래식 세이브 1개로 가는 만큼 미리 막는다</p>
+</header>
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히 → 카이</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">공략 가이드</div>
+<a href="index.html">개요</a>
+<a href="theodora.html">세오도라 1부</a>
+<a href="leda.html">레다 1부</a>
+<a href="dietrich.html">디트리히 1부</a>
+<a href="part2.html">2부 전쟁편</a>
+<a href="kai.html">카이 1·2부</a>
+<a href="part3.html">3부 구세편</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">팁</div>
+<a href="tips.html">육성 핵심 팁</a>
+<a href="tricks.html">꿀팁·트릭</a>
+<a href="pitfalls.html" class="active" aria-current="page">함정·실수 방지</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">참고</div>
+<a href="units.html">선물·마법</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
+<nav class="nav-bar">
+  <div class="row sub"><span class="gl">이 페이지</span><a href="#되돌릴-수-없는-것">되돌릴 수 없는 것</a><a href="#장-다시-하기-함정">장 다시 하기 함정</a><a href="#전투-진행-실수">전투·진행 실수</a></div>
+</nav>
+<div class="container guide">
+<section><p>하드 클래식은 세이브가 하나라 한 번 한 실수가 그대로 남는다. 되돌릴 수 없는 것부터, 장 다시 하기와 전투·진행 중 실수 순서로 모았다. 각 항목의 <strong>방법</strong>만 지켜도 대부분 막을 수 있다.</p></section>
+<section id="되돌릴-수-없는-것">
+<h2>되돌릴 수 없는 것</h2>
+<h3 id="시험-응시-즉시-자동-저장-합격률-100-일-때만-본다">시험 응시 즉시 자동 저장 — 합격률 100%일 때만 본다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">정규 전직·기본치 시험은 <strong>합격률 100%</strong>일 때만 응시한다. 100%가 아니면 레벨이나 기술을 더 채운다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">증서를 쓰는 순간 자동 저장된다. 떨어진 뒤 불러와도 증서는 소모된 상태이고 결과도 같다. 세이브 로드로는 되돌릴 수 없다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val"><ul><li>되돌리는 수단은 「장 다시 하기」로 장 시작에 돌아가는 것뿐이다. 같은 순번에서 같은 시험을 다시 보면 결과도 같다.</li><li>예외는 두 가지다: 띵작용 일부러 떨어지는 시험, 합격 순번을 확인한 뒤 보는 시험(<a href="tricks.html#합격-순번-활용-원하는-시험이-붙는-칸에-맞춘다">꿀팁·트릭</a>).</li><li>초급직을 모두 합격하면 띵작에 쓸 낙방용 시험이 사라진다. 띵작할 유닛은 목표 경로 밖 병종을 합격시키지 않는다.</li></ul></div></div></div>
+<h3 id="늦은-영입-영입-전-자동-성장은-되돌릴-수-없다">늦은 영입 — 영입 전 자동 성장은 되돌릴 수 없다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">쓸 유닛은 조건이 차는 즉시 영입한다(<a href="tips.html#빨리-영입하기-쓸-유닛은-조건이-차는-즉시-데려온다">빨리 영입하기</a>).</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">영입 전에 혼자 오른 레벨은 평균보다 성장이 낮고, 그 사이 레벨업은 시험·병종으로 관리할 수도 없다. 늦게 데려와 띵작하는 것보다 일찍 데려오는 편이 낫다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">이미 늦게 영입했다면 합류한 그 주에 병종 기본치로 약점 능력치를 메운다.</div></div></div>
+<h3 id="경험치-과다-레벨만-높고-능력치는-낮은-버전을-만들지-않는다">경험치 과다 — 레벨만 높고 능력치는 낮은 버전을 만들지 않는다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val"><ul><li>경험치 축복은 사 두되 초급·중급 전직이 열리기 전에는 끈다. 레벨이 명성보다 앞서면 끈다.</li><li>한 장소에서 경험치를 무한정 뽑는 파밍, 2부 6장을 다시 해서 스킵으로 레벨만 올리는 요령은 쓰지 않는다.</li></ul></div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">3부 인과융합은 <strong>레벨도 높은 쪽</strong>을 따른다. 레벨만 높은 버전을 합치면 남은 레벨업 횟수가 줄어 손해다. 레벨이 명성보다 빠르면 중급(명성 4)·상급(명성 8) 시험을 못 보고 기본 병종 성장률로 레벨을 낭비한다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">축복 구매는 되돌릴 수 없다고 보고, 파편을 쓰기 전에 고른 항목을 다시 확인한다.</div></div></div>
+<h3 id="3부-영입-순서-2부-작업을-다-끝낸-뒤-영입한다">3부 영입 순서 — 2부 작업을 다 끝낸 뒤 영입한다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val"><ul><li>3부에서 말을 걸어 영입하기 전에 그 유닛의 2부 작업(2부 클리어·스킵, <a href="tricks.html#2부-1장-스킵-융합-반복-병종을-바꿔-스킵할-때마다-능력치가-조금씩-오른다">2부 1장 스킵 융합</a>)을 끝낸다. 카이 진영은 카이 2부까지 끝낸 뒤 영입한다.</li><li>로드 4명이 모두 모인 뒤 영입하면 버전을 잘못 고르는 실수가 준다. 다른 버전보다 모든 능력치가 낮은 버전은 고르지 않는다.</li></ul></div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">영입 <strong>전</strong>이면 갱신된 2부 데이터가 무료로 반영된다. 영입한 <strong>뒤</strong>에는 반영되지 않아 방첨탑에서 파편 300으로 수동 융합해야 한다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">3부에서 장을 다시 하면 그 장에서 쓴 융합 파편은 돌아오지 않는다. 융합은 수동 저장 뒤, 장을 다시 할 일이 없을 때 한다. 자세한 순서는 <a href="part3.html">3부</a>.</div></div></div>
+<h3 id="다른-루트판-영입-탈것이-따라오지-않을-수-있다">다른 루트판 영입 — 탈것이 따라오지 않을 수 있다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">대상</span><div class="g-val">카이 루트에서 탈것을 태운 유닛(전차병 피터르·그자람·미카엘라 등)</div></div><div class="g-row"><span class="g-label">방법</span><div class="g-val">탈것 유닛은 <strong>카이판 레벨을 가장 높게</strong> 두고, 3부에서 <strong>카이판으로 영입</strong>한다. 다른 루트 능력치는 융합으로 채운다. 영입 화면에서 탈것이 붙어 있는지 확인한다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">다른 루트 버전을 고르면 카이 루트 탈것이 사라지고 인연의 성궤에서 파편으로 다시 사야 할 수 있다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">전차병 운용과 탈것 배치는 <a href="kai.html">카이 1·2부</a>를 함께 본다.</div></div></div>
+</section>
+<section id="장-다시-하기-함정">
+<h2>장 다시 하기 함정</h2>
+<h3 id="장-다시-하기-장-맨-처음부터-시작하고-잘못-누르기-쉽다">장 다시 하기 — 장 맨 처음부터 시작하고, 잘못 누르기 쉽다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val"><ul><li>「장 다시 하기」는 「전투 다시 하기」 옆에 있다. 누르기 전에 한 번 더 본다.</li><li>잘못 눌렀으면 <strong>자동 저장이 일어나기 전에</strong> 게임을 강제 종료한다.</li><li>기한 있는 외전·퀘스트를 끝낸 뒤에는 그 장을 다시 하지 않는다.</li></ul></div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">장 다시 하기는 "행동 개시" 화면이 아니라 장 첫 장면(튜토리얼 포함)부터 시작한다. 골드·아이템·명성·레벨이 장 시작으로 돌아가고 지원·가호 레벨·위업·축복·파편만 남는다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">1부 12장을 다시 클리어하면 그 로드가 2부에 가져갈 부대가 그 결과로 바뀐다. 다시 할 계획이 없으면 12장은 한 번에 끝낸다.</div></div></div>
+<h3 id="친밀도를-올린-뒤-장-다시-하기-탈것-친밀도가-초기화된다">친밀도를 올린 뒤 장 다시 하기 — 탈것 친밀도가 초기화된다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">대상</span><div class="g-val">카이 루트, 탈것에 먹이를 주기 시작한 뒤</div></div><div class="g-row"><span class="g-label">방법</span><div class="g-val">첫 먹이를 준 뒤에는 그 장을 다시 하지 않는다. 지원도 루프는 5장 첫 먹이 <strong>전까지만</strong> 돌린다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">하루 1회씩 며칠 들여 올린 친밀도를 지킨다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">알렉산드라·이오처럼 전투로 친밀도를 올리는 유닛도 같은 원칙을 지킨다.</div></div></div>
+<h3 id="2부-6장-다시-클리어-장비-배치-아이템이-덮어써진다">2부 6장 다시 클리어 — 장비·배치 아이템이 덮어써진다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">같은 로드의 2부를 다시 클리어할 거라면 카이·세오도라 루트는 <strong>탈것·군단병 배치를 해제</strong>하고 클리어(또는 2부 1장에서 해제 후 스킵)한다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">다시 클리어하면 앞 회차에 그 유닛이 장비·배치한 아이템이 덮어써져 사라진다. 사라진 것은 인연의 성궤에서 파편으로 다시 사야 한다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">2부를 다시 클리어해서 모은 아이템은 3부로 넘어가지 않는다고 보고 계획한다. 3부 시작 인벤토리는 루트별 <strong>첫 클리어(스킵 포함)</strong> 때 소지품이다.</div></div></div>
+</section>
+<section id="전투-진행-실수">
+<h2>전투·진행 실수</h2>
+<h3 id="레다-9장-버커니어-장비를-미리-다른-유닛에게-옮긴다">레다 9장 버커니어 — 장비를 미리 다른 유닛에게 옮긴다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">시점</span><div class="g-val"><a href="leda.html">레다 1부</a> 9장에 들어가기 전</div></div><div class="g-row"><span class="g-label">방법</span><div class="g-val">9장 시작 직후 버커니어가 적으로 돌아선다. 8장이 끝나기 전에 버커니어가 든 좋은 무기·장신구를 다른 유닛에게 옮긴다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">장비를 들고 적이 된 버커니어에게 내 장비로 맞는 일을 막는다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">클래식에서는 버커니어를 죽이지 않고 버티는 것을 기본으로 한다.</div></div></div>
+<h3 id="승리-조건-적-쓰러뜨리면-전투가-바로-끝난다">승리 조건 적 — 쓰러뜨리면 전투가 바로 끝난다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">경험치·지원을 챙기려면 나머지 적을 먼저 정리하고, 회복·보조 행동은 막타 전에 쓴다. 키울 유닛이 막타를 치게 한다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">보스를 잡는 순간 전투가 끝나 남은 경험치와 행동 기회가 사라진다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">자동 전투는 경험치 분배를 통제할 수 없다. 키울 유닛이 있는 전투는 직접 한다.</div></div></div>
+<h3 id="2부-스킵-키울-유닛이-있는-2부는-직접-한다">2부 스킵 — 키울 유닛이 있는 2부는 직접 한다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">3부 주력으로 쓸 유닛이 많은 루트(레다·디트리히·카이)는 2부를 직접 클리어한다. 스킵은 투자를 적게 할 루트에만 쓴다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">스킵은 그 루트 유닛 전원 레벨 +5를 주지만, 직접 클리어보다 레벨업 성장이 나쁘다. 장비 드랍·클리어 보상 무기도 없다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">2부를 클리어도 스킵도 하지 않은 루트의 유닛은 3부에 오지 않는다. 투자하지 않는 루트도 최소한 스킵은 한다. 순서는 <a href="part2.html">2부 전쟁편</a>.</div></div></div>
+</section>
+</div><!-- /.container -->
+
+<div class="footer">파이어 엠블렘 만자천홍 하드 / 클래식 공략 가이드 · 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS</div>
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
+</body>
+</html>

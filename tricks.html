@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꿀팁·트릭 — 파이어 엠블렘 만자천홍 공략</title>
+<link rel="stylesheet" href="style.css?v=b457c51a">
+<style>
+  code { font-family: ui-monospace, monospace; font-size: .85em; background: var(--slate-100); padding: 0 .3rem; border-radius: 4px; }
+  .g-rows { display: grid; gap: .45rem; margin: .7rem 0; }
+  .g-row { display: grid; grid-template-columns: 5.5rem 1fr; gap: .7rem; align-items: start; }
+  .g-label { font-size: .82rem; font-weight: 700; padding: .2rem .45rem; border-radius: 5px; background: var(--slate-100); text-align: center; }
+  .g-val ul { margin: .3rem 0 0 1.1rem; }
+  ul.checklist { list-style: none; padding-left: .2rem; }
+  ul.checklist li { position: relative; padding-left: 1.6rem; margin-bottom: .35rem; }
+  ul.checklist li::before { content: ""; position: absolute; left: 0; top: .25em; width: 1em; height: 1em; border: 2px solid var(--slate-400, #94a3b8); border-radius: 3px; }
+  .guide h3 { margin-top: 1.4rem; }
+  .guide section > h2 { scroll-margin-top: 1rem; }
+  @media (max-width: 600px) { .g-row { grid-template-columns: 1fr; gap: .2rem; } .g-label { justify-self: start; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+<button class="nav-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="메뉴 열기">☰</button>
+  <span class="hero-badge">팁</span>
+  <h1>꿀팁·트릭</h1>
+  <p class="subtitle">띵작(성장 순번 밀기)부터 2부 스킵 융합, 탈것 선별, 경험치·기술 몰아주기까지</p>
+</header>
+<div class="shell">
+<!-- side-nav:start -->
+<aside class="side-nav" id="side-nav" aria-label="사이트 메뉴">
+<div class="aside-title"><a href="index.html">만자천홍 공략</a><small>하드 / 클래식 · 세오도라 → 레다 → 디트리히 → 카이</small></div>
+<nav class="nav-group">
+<div class="nav-group-title">공략 가이드</div>
+<a href="index.html">개요</a>
+<a href="theodora.html">세오도라 1부</a>
+<a href="leda.html">레다 1부</a>
+<a href="dietrich.html">디트리히 1부</a>
+<a href="part2.html">2부 전쟁편</a>
+<a href="kai.html">카이 1·2부</a>
+<a href="part3.html">3부 구세편</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">팁</div>
+<a href="tips.html">육성 핵심 팁</a>
+<a href="tricks.html" class="active" aria-current="page">꿀팁·트릭</a>
+<a href="pitfalls.html">함정·실수 방지</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">참고</div>
+<a href="units.html">선물·마법</a>
+</nav>
+<nav class="nav-group">
+<div class="nav-group-title">도감</div>
+<a href="characters.html">캐릭터</a>
+<a href="mounts.html">탈것</a>
+<a href="classes.html">병종</a>
+<a href="locations.html">위치</a>
+<a href="quests.html">퀘스트</a>
+<a href="paralogues.html">외전</a>
+</nav>
+</aside>
+<!-- side-nav:end -->
+<main class="shell-main" id="main">
+<nav class="nav-bar">
+  <div class="row sub"><span class="gl">이 페이지</span><a href="#띵작-성장-순번-밀기">띵작 — 성장 순번 밀기</a><a href="#2부-3부-트릭">2부·3부 트릭</a><a href="#탈것-경험치-기술">탈것·경험치·기술</a></div>
+</nav>
+<div class="container guide">
+<section><p>시스템을 알고 쓰면 이득이 큰 요령을 모았다. 전부 <strong>선택 사항</strong>이다. 하드 클래식은 이 페이지 없이도 깰 수 있다. 기본기는 <a href="tips.html">육성 핵심 팁</a>, 하지 말아야 할 것은 <a href="pitfalls.html">함정·실수 방지</a>를 먼저 본다.</p></section>
+<section id="띵작-성장-순번-밀기">
+<h2>띵작 — 성장 순번 밀기</h2>
+<div class="tip">💡 한 줄 요약: 레벨업 결과는 유닛마다 정해진 순서대로 나온다. 앞으로 나올 결과를 미리 보고, 나쁜 칸은 자격 시험을 한 번 봐서 건너뛴다.</div>
+<h3 id="은어-풀이-띵-성장-순번-띵작-미래시">은어 풀이 — 띵·성장 순번·띵작·미래시</h3>
+<div class="table-wrap"><table><thead><tr><th>말</th><th>뜻</th></tr></thead><tbody><tr><td><strong>띵</strong></td><td>레벨업 때 능력치가 1 오르는 것. 효과음에서 왔다. "2띵" = 한 번에 2개, "야짤" = 9개 전부</td></tr><tr><td><strong>성장 순번(띵 테이블)</strong></td><td>유닛마다 미리 정해진 레벨업 판정 순서. 레벨업 1회마다 1칸씩 쓴다</td></tr><tr><td><strong>띵작</strong></td><td>"띵 + 작업". 자격 시험을 봐서 순번을 1칸씩 밀어 나쁜 레벨업을 건너뛰는 것</td></tr><tr><td><strong>미래시</strong></td><td>여관 맡겨 두기 "실전"으로 미리 레벨을 올려 결과를 보고 되돌리는 것</td></tr><tr><td><strong>밀기·쳐내기</strong></td><td>시험 1회로 순번 1칸을 써 버리는 것</td></tr><tr><td><strong>쌀먹</strong></td><td>공짜 이득. "시험 쌀먹" = 합격 순번을 알고 원하는 시험을 확실히 합격시키는 것</td></tr></tbody></table></div>
+<h3 id="원리-순번은-고정-시험-1회-1칸">원리 — 순번은 고정, 시험 1회 = 1칸</h3>
+<ol><li><strong>순번은 고정이다.</strong> 천각, 전투 다시 하기, 세이브 로드, 타이틀 복귀, 다른 장소에서 전투, 레벨업을 다음 전투로 미루기로는 결과가 바뀌지 않는다.</li><li><strong>시험 응시 1회 = 순번 1칸.</strong> 레벨업 1회와 똑같이 1칸을 쓴다.</li><li><strong>합격·불합격과 상관없다.</strong> 시험 등급(초·중·상급)·병종과도 상관없다. 같은 병종에 세 번 떨어지면 세 칸이 밀린다.</li><li><strong>뒤 칸이 당겨진다.</strong> 새 순번이 생기는 것이 아니라 다음 칸이 한 칸 앞으로 온다. 미리 본 뒤쪽 결과는 그대로 쓸 수 있다.</li><li><strong>병종만 바꾸면 순번은 그대로다.</strong> 바뀌는 것은 그 칸을 판정하는 성장률뿐이다. 칸마다 능력치별 기준선이 있고 성장률이 넘으면 오른다고 생각하면 된다.</li><li><strong>합격 여부도 순번에 고정이다.</strong> n번째 응시에는 "몇 % 이상이면 합격"인 선이 정해져 있다. 같은 순번에서 다시 보면 결과도 같다. 레벨업과 시험은 같은 순번을 함께 쓴다.</li><li>순번은 <strong>유닛마다 따로</strong>다. 시험을 본 유닛의 순번만 밀린다.</li></ol>
+<div class="warning">⚠️ 시험에 <strong>합격해 병종이 바뀌면</strong> 성장률이 달라져 같은 칸의 결과도 조금 달라진다. 합격한 뒤에는 미래시를 다시 본다.</div>
+<h3 id="순번이-정해지는-때-1장-유닛-이후-합류-스카우트가-다르다">순번이 정해지는 때 — 1장 유닛·이후 합류·스카우트가 다르다</h3>
+<div class="table-wrap"><table><thead><tr><th>유닛</th><th>정해지는 때</th><th>바꾸는 법</th></tr></thead><tbody><tr><td><strong>1장부터 있는 유닛</strong>: 카이·피터르·티아라 / 디트리히·파비오 / 세오도라·보나파르트·토비아스 / 레다·버커니어·시로코·무우</td><td>루트를 처음 시작할 때</td><td>1장부터 다시 해도, 1부를 깨고 다시 해도 같다. <strong>시험으로 미는 것뿐</strong>이다</td></tr><tr><td><strong>2장 이후 자동 합류 유닛</strong>(예: 디트리히 2장 에스메랄다)</td><td>합류하는 장</td><td>합류 <strong>전</strong> 장부터 다시 하면 다른 순번으로 합류한다. 합류 뒤에는 장을 넘겨도 유지된다</td></tr><tr><td><strong>스카우트 유닛</strong></td><td>영입하는 순간</td><td>영입 전 시점으로 장 다시 하기 → 다시 영입하면 바뀐다. 세이브 로드로는 안 바뀐다</td></tr></tbody></table></div>
+<ul><li>1장 유닛은 초급 시험이 열리기 전(1부 4~5장)까지 오르는 레벨을 손댈 수 없다. 이 구간은 그대로 받아들인다.</li><li>자동 합류 유닛을 장째로 다시 하는 것은 하드 클래식에서 진행 시간이 많이 든다. 순번이 아주 나쁠 때만 한다.</li></ul>
+<h3 id="미래시-여관에서-앞으로의-레벨업을-미리-본다">미래시 — 여관에서 앞으로의 레벨업을 미리 본다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val"><ul><li>장 시작 직후 <strong>수동 저장</strong>한다.</li><li>다그시온 여관 개별 행동(맡겨 두기)에서 볼 유닛만 <strong>실전</strong>, 나머지는 <strong>탐색</strong>으로 둔다.</li><li>턴을 넘기며 레벨을 올리고 레벨마다 오른 능력치를 적는다.</li><li>다 봤으면 <strong>저장하지 않고</strong> 게임을 끄거나 타이틀에서 불러온다. 장 다시 하기를 써도 된다(장 맨 처음부터 시작).</li></ul></div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">여기서 나온 결과는 실제 전투 레벨업과 같다. 다음 몇 레벨의 결과를 미리 안다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">레벨업 연출이 길다. 한 번에 2~3명만 본다. 병종을 바꿔 가며 같은 구간을 보면 칸마다 어느 병종이 좋은지도 비교할 수 있다.</div></div></div>
+<h3 id="단계별-절차-장-시작에-한-번씩-돈다">단계별 절차 — 장 시작에 한 번씩 돈다</h3>
+<ol><li>이번 루트에서 띵작할 유닛을 <strong>2~3명</strong> 정한다.</li><li>장 시작 직후 수동 저장한다.</li><li>미래시로 다음 몇 레벨의 결과를 적는다.</li><li>불러와서 미래시 전으로 돌아간다.</li><li>다음에 올 칸이 나쁘면 그 수만큼 <strong>낙방용 시험</strong>(합격률 1~5%)을 본다. 응시하는 순간 자동 저장된다.</li><li>미래시를 다시 봐서 좋은 칸이 앞으로 왔는지 확인한다. 합격해서 병종이 바뀌었으면 반드시 다시 본다.</li><li>좋은 칸이 이어지면 <a href="tips.html#레벨업-직전-병종-변경-같은-레벨업이라도-병종에-따라-오르는-능력치가-달라진다">레벨업 직전 병종 변경</a>으로 칸마다 맞는 병종을 고르고 경험치를 몰아준다.</li></ol>
+<div class="tip">💡 미래시 없이도 된다. 전투 중 나쁜 레벨업이 나오면 <strong>천각으로 레벨업 전으로 되돌리고</strong>, 그 유닛은 레벨업하지 않은 채 전투를 끝낸다. 다그시온에 돌아가 시험 1회로 그 칸을 밀어 버린다. 하드 천각은 백사 5를 쓴다.</div>
+<h3 id="판단-기준-2띵만-쳐내도-평균-이상">판단 기준 — 2띵만 쳐내도 평균 이상</h3>
+<div class="table-wrap"><table><thead><tr><th>구분</th><th>기준</th></tr></thead><tbody><tr><td>최소 기준</td><td><strong>2띵만 쳐내도 평균은 넘는다.</strong> 처음이면 이것부터</td></tr><tr><td>받는다</td><td>2띵이라도 <strong>힘·속, 마·속, 힘·기</strong></td></tr><tr><td>민다</td><td>힘이 있어도 짝이 <strong>매력·마방</strong>이면 민다(내구 없이 힘만 오른다)</td></tr><tr><td>민다</td><td><strong>체·행, 체·마방, 행·매</strong> 2띵</td></tr><tr><td>역할 기준</td><td>물리 딜러는 힘·속이 없는 칸, 마법 유닛은 마력이 없는 칸부터 민다</td></tr></tbody></table></div>
+<h3 id="제약-응시-조건과-자동-저장">제약 — 응시 조건과 자동 저장</h3>
+<ul><li><strong>합격률 0%인 병종은 응시할 수 없다.</strong> 낙방용 병종은 합격률이 <strong>1~5%</strong>가 되게 기술을 조절한다.</li><li><strong>합격한 병종은 다시 응시할 수 없다.</strong> 낙방용으로 쓸 수 있는 시험은 "아직 합격하지 않은, 합격률 1% 이상인 병종" 수만큼이다.</li></ul>
+<div class="card g-rows"><div class="g-row"><span class="g-label">초급직이 다 붙었을 때</span><div class="g-val"><ul><li>중급 증서로 계속 민다(500G로 더 비싸다).</li><li>물리 유닛도 마법 기술을 한 번 올려 마법 병종을 낙방용으로 쓴다. 마법 유닛은 물리 병종을 쓴다.</li><li>미리 막으려면 목표 경로가 아닌 병종은 합격시키지 않고, 목표 외 무기는 필요 이상 올리지 않는다(다른 시험 합격률이 올라간다).</li></ul></div></div></div>
+<ul><li><strong>응시 즉시 자동 저장된다.</strong> 세이브 로드로는 되돌릴 수 없다. 되돌리는 수단은 「장 다시 하기」(장 시작으로)뿐이다. 닌텐도 온라인 세이브 맡기기 백업을 쓸 거라면 자동 백업을 끈다.</li></ul>
+<div class="card g-rows"><div class="g-row"><span class="g-label">2부 시험 제한</span><div class="g-val">2부는 1~4장 안에 띵작을 끝낸다. 5장 이후 시험 메뉴가 있는지는 인게임에서 확인한다.</div></div></div>
+<ul><li><strong>자동·스킵 레벨업은 관리하기 어렵다.</strong> 영입 전 자동 성장, 2부 「병력 끌어올리기」, 2부 스킵 레벨업은 미래시를 끼울 틈이 없다. 3부는 동료가 50명이라 사실상 관리하지 않는다.</li><li><strong>돈이 든다.</strong> 응시마다 증서 1장(초급 300G)이다. 본격적으로 하면 증서·무기 값으로 돈이 마른다.</li></ul>
+<h3 id="비용-대비-효과-한-루트에-2-3명이면-충분하다">비용 대비 효과 — 한 루트에 2~3명이면 충분하다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">대상</span><div class="g-val">합류가 빠르고 끝까지 쓸 주력, 3부 융합에서 메인 버전이 될 유닛. 한 루트에 2~3명(많아도 4~5명)</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">나쁜 2띵만 지워도 같은 레벨에서 평균보다 높은 능력치가 된다. 3부 융합 재료가 좋아진다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">하드는 띵작 없이도 클리어할 수 있다. 첫 루트는 증서가 정규 전직에도 빠듯하니 무리하지 않는다. 애매하게 여러 명을 하면 시간만 든다.</div></div></div>
+<h3 id="합격-순번-활용-원하는-시험이-붙는-칸에-맞춘다">합격 순번 활용 — 원하는 시험이 붙는 칸에 맞춘다</h3>
+<ol><li>장 시작 직후 싼 초급 시험(합격률 낮은 병종)을 연달아 보며 <strong>몇 번째 응시에서 합격하는지</strong> 적는다.</li><li>장 다시 하기로 돌아간다.</li><li>합격 칸 앞의 칸은 싼 초급 시험으로 써 버리고, <strong>합격 칸에서 원하는 시험</strong>을 본다.</li></ol>
+<div class="card g-rows"><div class="g-row"><span class="g-label">효과</span><div class="g-val">합격률이 100%가 아닌 시험도 확실히 합격시킨다. 합격 칸에 낙방용 병종이 걸려 낭비되는 일도 막는다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">원하는 병종의 합격률이 <strong>확인한 병종 이상</strong>일 때만 확실하다. 레벨업도 같은 순번을 쓰므로 확인 뒤 레벨이 오르면 합격 칸도 한 칸 밀린다.</div></div></div>
+</section>
+<section id="2부-3부-트릭">
+<h2>2부·3부 트릭</h2>
+<h3 id="2부-1장-스킵-융합-반복-병종을-바꿔-스킵할-때마다-능력치가-조금씩-오른다">2부 1장 스킵 융합 반복 — 병종을 바꿔 스킵할 때마다 능력치가 조금씩 오른다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">대상</span><div class="g-val">2부를 이미 한 번 이상 클리어한 루트의 유닛(스킵은 아무 2부나 한 번 직접 클리어하면 열린다)</div></div></div>
+<ol><li>2부 1장에서 올리고 싶은 능력치 성장률이 높은 병종으로 바꾼다(1장에서 받은 증서로 전직해도 된다).</li><li>군행동으로 레벨업시킨다.</li><li>저장하고 방첨탑에서 2부를 스킵한다.</li><li>노릴 능력치를 바꿔 반복한다.</li></ol>
+<div class="card g-rows"><div class="g-row"><span class="g-label">효과</span><div class="g-val">2부를 클리어하거나 스킵할 때마다 같은 루트의 기존 2부 데이터와 <strong>무료로 융합</strong>된다(레벨·능력치·기술은 높은 값, 마법·전투 기술은 합집합). 한 번에 능력치가 2~3씩 오른다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val"><ul><li>3부에서 그 유닛을 <strong>영입하기 전에</strong> 끝낸다. 영입한 뒤에는 무료로 반영되지 않는다.</li><li>스킵 레벨업은 직접 클리어보다 성장이 나쁘다. 아껴 키운 유닛은 2부를 직접 하는 편이 고점이 높다.</li><li>다시 클리어하면 그 유닛의 장비·배치 아이템(탈것·군단병 포함)이 덮어써진다. 카이·세오도라 루트는 배치를 풀고 스킵한다.</li></ul></div></div></div>
+<h3 id="탈것-군단병-복사-2부-첫-클리어-전에-한-번만-된다">탈것·군단병 복사 — 2부 첫 클리어 전에 한 번만 된다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">대상</span><div class="g-val">카이·세오도라 루트, 그 루트 2부를 아직 클리어(스킵)하지 않았을 때</div></div><div class="g-row"><span class="g-label">방법</span><div class="g-val">2부에 들어가자마자 탈것·군단병 배치를 해제하고 스킵한다(소지품으로 들어간다) → 다시 태우고 2부를 클리어한다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">3부 인벤토리에 같은 탈것·군단병이 하나 더 생긴다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">이미 그 루트 2부를 클리어했으면 안 된다. 3부 인벤토리에 실제로 하나 더 들어왔는지 인게임에서 확인하고, 안 되면 기대하지 않는다.</div></div></div>
+</section>
+<section id="탈것-경험치-기술">
+<h2>탈것·경험치·기술</h2>
+<h3 id="탈것-개체-스킬-고르기-저장-후-행동을-바꿔-원하는-결과를-뽑는다">탈것 개체·스킬 고르기 — 저장 후 행동을 바꿔 원하는 결과를 뽑는다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">먹이로 유인하기 전, 포획하기 전에 각각 저장한다. 결과가 마음에 안 들면 불러와 <strong>대기·탐색 같은 행동 순서를 바꾼 뒤</strong> 다시 한다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">같은 저장에서 같은 행동을 하면 결과가 같고, 행동을 바꾸면 결과가 바뀐다. 원하는 개체와 스킬을 고를 수 있다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">그 사이에 자동 저장이 일어나지 않게 한다. 먹이 종류·개체는 <a href="mounts.html">탈것 도감</a>에서 본다.</div></div></div>
+<h3 id="하수도-퀵-배틀-턴을-안-쓰고-키울-유닛에-경험치를-몰아준다">하수도·퀵 배틀 — 턴을 안 쓰고 키울 유닛에 경험치를 몰아준다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val"><ul><li>하수도(카이 루트 전용 하수도 포함)는 턴을 쓰지 않는 던전이고 장이 바뀌면 적이 다시 나온다. 매 장 한 번씩 돈다.</li><li>파티보다 레벨이 높은 던전 적과 <strong>퀵 배틀</strong>을 한다. 출격 전원이 경험치를 받는다.</li><li>키울 유닛이 막타를 치게 한다. <strong>연계 공격으로 잡으면 두 유닛 모두 MVP</strong>로 경험치를 더 받는다.</li></ul></div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">턴 소비 없이 경험치·벌레 진주(초반 자금)·재료를 얻는다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">띵작 중인 유닛은 좋은 칸이 이어질 때 몰아준다. 경험치를 너무 쌓으면 <a href="pitfalls.html#경험치-과다-레벨만-높고-능력치는-낮은-버전을-만들지-않는다">레벨만 높은 데이터</a>가 된다.</div></div></div>
+<h3 id="실버-머미와-루트별-레벨-수단-보이면-먼저-잡는다">실버 머미와 루트별 레벨 수단 — 보이면 먼저 잡는다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val"><ul><li><strong>실버 머미</strong>는 다른 적의 조우전에 섞여 나오는 희귀 적이다. 경험치가 매우 많고 내버려 두면 도망간다. 최우선으로 잡는다.</li><li>카이: 좋아하지 않는 먹이로 유인하면 동물 대신 조우전이 난다(턴을 많이 쓴다).</li><li>디트리히: 칼날울림으로 주변 적을 부른다. 반복하면 범위가 줄고, 턴이 지나거나 거점·던전에 들어가면 회복된다.</li><li>레다: 공연으로 비밀 장소를 연다. 중후반 비밀 장소에 실버 머미가 자주 나온다.</li></ul></div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">레벨이 모자란 유닛을 짧은 시간에 따라잡게 한다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">레다 루트 공연은 <a href="leda.html">레다 1부</a>, 카이 먹이는 <a href="kai.html">카이 1·2부</a>에서 일정을 맞춘다.</div></div></div>
+<h3 id="기술-경험치-올리기-퀵-배틀에서-때리고-철수한다">기술 경험치 올리기 — 퀵 배틀에서 때리고 철수한다</h3>
+<div class="card g-rows"><div class="g-row"><span class="g-label">방법</span><div class="g-val">던전 퀵 배틀에서 적을 잡지 않을 만큼만 피해를 주고 <strong>철수</strong>한다. 반복한다. 스스로 회복하는 모래벌레가 상대로 좋다. 끼어들어 잡아 버리지 않게 다른 출격 유닛은 약한 무기를 든다.</div></div><div class="g-row"><span class="g-label">효과</span><div class="g-val">기술 경험치는 남고 적 HP는 회복되며 턴도 쓰지 않는다. 시험 요구 기술을 빨리 채운다.</div></div><div class="g-row"><span class="g-label">주의</span><div class="g-val">철수 뒤 기술 경험치가 실제로 남았는지 처음 한 번 인게임에서 확인한다. 필살로 적을 잡아 버릴 수 있다. 백마법 회복을 반복해도 오르는지는 직접 써 보고 판단한다.</div></div></div>
+</section>
+</div><!-- /.container -->
+
+<div class="footer">파이어 엠블렘 만자천홍 하드 / 클래식 공략 가이드 · 캐릭터 이미지 © Nintendo / INTELLIGENT SYSTEMS</div>
+</main>
+</div>
+<div class="side-backdrop" hidden></div>
+<!-- side-nav-js:start -->
+<script>
+(function(){
+ var b=document.body,t=document.querySelector('.nav-toggle'),a=document.getElementById('side-nav'),k=document.querySelector('.side-backdrop');
+ if(!t||!a) return;
+ function set(o){b.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');if(k) k.hidden=!o;}
+ t.addEventListener('click',function(){set(!b.classList.contains('nav-open'));});
+ if(k) k.addEventListener('click',function(){set(false);});
+ a.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.classList.contains('nav-open')){set(false);t.focus();}});
+ window.addEventListener('resize',function(){if(window.innerWidth>=900) set(false);});
+})();
+</script>
+<!-- side-nav-js:end -->
+</body>
+</html>
